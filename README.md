@@ -38,7 +38,7 @@ Kota Bima, Nusa Tenggara Barat — 2026
 ## Struktur Repository
 
 ```
-SENS_ABLE/
+SENS_ABLE_OPSI/
 ├── README.md              # File ini
 ├── train.py               # Training script v3 (PIMA → train, SENS-Able → validate)
 ├── train_v1.py            # Training script v1 (data sendiri saja)
@@ -49,7 +49,8 @@ SENS_ABLE/
 │   └── sensable_final.csv # Dataset bersih (33 sampel, 30 responden)
 ├── docs/
 │   ├── proposal.pdf       # Proposal penelitian
-│   └── chat_history.md    # History diskusi pengolahan data
+│   ├── chat_history.md    # History diskusi pengolahan data
+│   └── planning.md        # Planning & konfirmasi plan
 └── .gitignore
 ```
 
@@ -104,12 +105,16 @@ Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri.
 
 ## Langkah Selanjutnya
 
-1. Tambah data SENS-Able (target 100+ sampel)
-2. Uji kalibrasi sensor vs alat standar
-3. Kuesioner usability (Likert 1-5)
-4. Konversi model ke TensorFlow Lite
-5. Deploy ke ESP32 via TinyML
-6. Uji responden (5 tunanetra, 5 tunarungu, 5 non-disabilitas)
+1. ✅ ~~Pengumpulan data sensor~~ (33 sampel)
+2. ✅ ~~Training model~~ (PIMA → train, SENS-Able → validate)
+3. 🔲 Kalibrasi sensor vs alat standar (target MAE HR<3bpm, Suhu<0.3°C, Glukosa<15mg/dL)
+4. 🔲 Uji 15 responden (5 tunanetra, 5 tunarungu, 5 non-disabilitas)
+5. 🔲 Kuesioner usability Likert 1-5 (target skor ≥4)
+6. 🔲 Konversi model ke TensorFlow Lite
+7. 🔲 Deploy ke ESP32 via TinyML
+8. 🔲 Penyusunan laporan akhir
+
+📋 Lihat [docs/planning.md](docs/planning.md) untuk detail lengkap & checklist.
 
 ## License
 
