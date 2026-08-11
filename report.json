@@ -1,0 +1,44 @@
+{
+  "model": "RandomForestClassifier",
+  "features": [
+    "Age",
+    "BMI",
+    "Glucose"
+  ],
+  "training": {
+    "dataset": "PIMA Indians Diabetes",
+    "samples": 768,
+    "cv_accuracy": 75.1,
+    "cv_f1": 0.691
+  },
+  "validation": {
+    "dataset": "SENS-Able (data sendiri)",
+    "samples": 33,
+    "accuracy": 90.9,
+    "f1": 0.0,
+    "confusion_matrix": [
+      [
+        30,
+        2
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "baseline_glucose_threshold": {
+    "threshold": 190,
+    "accuracy": 0.9696969696969697,
+    "confusion_matrix": [
+      [
+        32,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  }
+}
