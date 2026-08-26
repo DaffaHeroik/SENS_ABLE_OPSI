@@ -209,3 +209,9 @@ Disiapkan dokumen pendukung:
 - `reports/MANIFEST_v0_1.sha256` — hash dataset/config/model/laporan.
 
 Arah laporan yang dikunci: evaluasi awal fitur PPG dan suhu untuk estimasi glukosa berbasis referensi glucometer. Audio, vibrasi, TinyML embedded, diagnosis, dan validasi klinis tidak boleh diklaim selesai tanpa bukti tersendiri. Perubahan dokumen dan pipeline ini masih lokal dan belum dipush.
+
+## 15. Remote Publication and Fresh-Clone Verification (26 Agustus 2026)
+
+Commit `00cd3a0` berhasil dipush ke branch private `data-cleaning-glucometer-validation`. Fresh clone dari remote menunjukkan commit dan branch yang sama. Pipeline berhasil dijalankan ulang dari fresh clone: syntax check PASS, seluruh 9 regression tests PASS, artifact model tersedia, 6 figure tersedia, dan metrik sama dengan hasil lokal. Repository terkonfirmasi berstatus PRIVATE.
+
+Pemeriksaan klaim laporan juga PASS: dokumen memakai bahasa eksploratif dan secara eksplisit melarang klaim diagnosis, pengganti glucometer, akurasi klinis, TinyML selesai, atau audio/vibrasi teruji tanpa bukti. Identitas tim hanya muncul pada dokumen kerja yang memang memerlukan informasi penulis; report artifacts dan hasil model tidak memuat identitas responden.
