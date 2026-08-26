@@ -30,7 +30,7 @@ Fitur PPG, suhu, dan kondisi dasar pengukuran dapat menghasilkan estimasi `Gluko
 
 ## Batasan Penelitian
 
-Penelitian ini tidak menetapkan diagnosis diabetes, tidak menggantikan glucometer, dan bukan validasi klinis. Audio dan vibrasi belum menjadi fitur yang diuji. TinyML inference langsung di ESP32 belum dinyatakan selesai. Data penelitian terdiri atas 40 sesi processed dan 32 SubjectID dari data yang tersedia.
+Penelitian ini tidak menetapkan diagnosis diabetes, tidak menggantikan glucometer, dan bukan validasi klinis. Audio dan vibrasi sudah terintegrasi pada satu perangkat fisik SENS-Able, tetapi fungsi dan usability-nya belum diuji secara formal dengan data valid. TinyML inference langsung di ESP32 belum dinyatakan selesai. Data penelitian terdiri atas 40 sesi processed dan 32 SubjectID dari data yang tersedia.
 
 ## Metode yang Disarankan
 
@@ -77,7 +77,7 @@ Gunakan tanggal aktual kegiatan. Jangan mempertahankan jadwal Maret–Juni jika 
 
 ## Bagian yang Dipindahkan ke Pengembangan Lanjutan
 
-Audio, motor vibrasi, TinyML embedded, kalibrasi yang lebih luas, penambahan responden, timestamp otomatis, dan uji usability terstruktur dipindahkan ke saran/pengembangan lanjutan apabila belum memiliki bukti hasil.
+Uji audio, uji motor vibrasi, TinyML embedded, kalibrasi yang lebih luas, penambahan responden, timestamp otomatis, dan uji usability terstruktur dipindahkan ke saran/pengembangan lanjutan apabila belum memiliki bukti hasil. Implementasi fisik audio dan motor vibrasi tetap boleh dijelaskan sebagai bagian perangkat, tetapi jangan diklaim efektif sebelum diuji.
 
 ## File Pendukung
 

@@ -24,7 +24,7 @@ Diskusi yang dibagikan juga mengambil arah yang tepat: data kecil dipakai untuk 
 | Validasi regresi saat ini | Setelah mempertahankan sesi dengan suhu nol yang optiknya valid dan mengimputasi suhu secara transparan, konfigurasi V0.1 yang sama menghasilkan MAE 22,5716 mg/dL, RMSE 27,0552 mg/dL, R² 0,0614 dengan GroupKFold berdasarkan `SubjectID` | Hasil ini masih eksploratif; belum memenuhi target MAE <15 mg/dL dan tidak boleh disebut akurasi klinis |
 | Firmware | Kode collector menyimpan fitur MAX30100/MLX90614 dan `GlukosaRef` ke LittleFS | Alur akuisisi data dapat menjadi kontribusi teknis yang nyata |
 | Kesesuaian hardware | Proposal menyebut MAX30102, sedangkan firmware memakai library dan objek `MAX30100` | Harus diverifikasi dari modul fisik; laporan tidak boleh menyebut MAX30102 bila hardware sebenarnya MAX30100 |
-| Output inklusif | Proposal menyebut OLED, audio, dan vibrasi; kode collector yang diperiksa terutama menangani OLED/web/LittleFS dan tidak memperlihatkan implementasi speaker atau vibromotor | Audio/vibrasi hanya boleh dimasukkan sebagai hasil jika ada kode, foto, video, dan pengujian terpisah |
+| Output inklusif | Audio dan vibrasi sudah terintegrasi pada satu perangkat fisik SENS-Able menurut konfirmasi peneliti; data uji fungsi dan usability formal belum tersedia | Implementasi fisik boleh dijelaskan sebagai komponen alat. Klaim efektivitas, aksesibilitas, dan usability harus menunggu bukti pengujian |
 | TinyML | Belum ada bukti `model.tflite`, `model.h`, sketch inference, waktu inference, atau penggunaan RAM di ESP32 | Jadikan pekerjaan lanjutan, bukan hasil yang sudah selesai |
 | Privasi | Repository sudah private; raw dataset tetap berisi identitas dan data kesehatan | Jangan membuka repository; laporan/presentasi gunakan SubjectID atau data agregat |
 
@@ -87,7 +87,7 @@ Jika pengujian usability dilakukan, gunakan indikator yang benar-benar dapat diu
 | Suhu nol langsung dibuang | Jangan langsung dibuang bila fitur optik valid. Imputasi mean hanya pada kolom suhu yang nol, tandai provenance, dan jangan mengubah `GlukosaRef`. |
 | “Model sudah berjalan di ESP32 via TinyML” | Jangan diklaim sebelum ada `model.tflite`/`model.h`, sketch inference, dan pengukuran performa. |
 | MAX30102 dan MAX30100 dipakai bergantian dalam dokumen | Verifikasi modul fisik dan pilih satu nama/library yang benar. |
-| Audio dan vibrasi dianggap sudah tervalidasi | Masukkan hanya jika ada implementasi dan hasil uji; kode collector yang diperiksa belum membuktikan keduanya. |
+| Audio dan vibrasi dianggap sudah tervalidasi | Implementasi fisiknya sudah ada, tetapi jangan menyatakan efektif atau tervalidasi sebelum ada uji fungsi, uji respons, dan uji usability dengan bukti. |
 | Data nama asli di laporan/poster | Ganti dengan `SubjectID`, tabel agregat, atau hapus identitas. Raw hanya untuk arsip private. |
 | Mengubah nilai lama agar terlihat bersih | Jangan. Simpan raw, log perubahan, dan keluarkan baris sensor gagal secara transparan. |
 
@@ -131,7 +131,7 @@ Panduan resmi menampilkan dua bagian yang sama-sama disebut Bab 5 pada ringkasan
 | Firmware | Kode original, supported sketch, konfigurasi pin, library, dan screenshot serial/web collector |
 | Analisis | Script reproducible, konfigurasi V0.1, artifact model, tabel metrik, grafik, baseline, dan penjelasan keterbatasan |
 | Etika | Klirens etik atau dokumen kelayakan/izin yang diminta panitia, surat pengantar sekolah, dan consent sesuai arahan pembimbing |
-| Aksesibilitas | Bukti audio/vibrasi bila diklaim, prosedur uji, peserta/kriteria, observasi, dan hasil kuesioner |
+| Aksesibilitas | Foto/video atau demo audio-vibrasi untuk bukti integrasi, lalu prosedur uji, peserta/kriteria, observasi, dan hasil kuesioner jika efektivitas/usability diklaim |
 | Pelaporan | Logbook, versi dataset/model, manifest hash, foto kegiatan, dan backup lokal/cloud private |
 
 ## 9. Quality Gate Sebelum Unggah
