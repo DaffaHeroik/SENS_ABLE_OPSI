@@ -5,3 +5,7 @@ __pycache__/
 .DS_Store
 *.pkl
 *.joblib
+# Keep the reproducible V0.1 artifact in the private repository.
+!models/
+!models/*.joblib
+!models/*.json

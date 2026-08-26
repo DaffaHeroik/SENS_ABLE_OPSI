@@ -12,13 +12,13 @@
 
 ## Aturan Pembersihan
 
-Pembersihan dilakukan secara deterministik oleh `scripts/prepare_dataset.py`. Nilai numerik dinormalisasi dan semua file CSV/XLSX harus memiliki skema yang sama. Baris yang merupakan salinan identik setelah normalisasi numerik digabungkan. Baris dengan nilai suhu nol atau negatif, denyut jantung tidak valid, SpO2 di luar rentang pemeriksaan, rentang sinyal terbalik, atau tangkapan optik dengan `IR_Mean`/`RED_Mean` terlalu rendah dikeluarkan. Kegagalan sensor tidak diimputasi.
+Pembersihan dilakukan secara deterministik oleh `scripts/prepare_dataset.py`. Nilai numerik dinormalisasi dan semua file CSV/XLSX harus memiliki skema yang sama. Baris yang merupakan salinan identik setelah normalisasi numerik digabungkan. Baris dengan suhu negatif, denyut jantung tidak valid, SpO2 di luar rentang pemeriksaan, rentang sinyal terbalik, atau tangkapan optik dengan `IR_Mean`/`RED_Mean` terlalu rendah dikeluarkan. Nilai suhu nol diperlakukan sebagai celah pengukuran yang masih dapat dipulihkan jika tangkapan optiknya valid: nilainya diganti dengan rata-rata observasi suhu positif setelah deduplikasi, dan ditandai dengan `SuhuTubuh_Imputed` atau `SuhuAmbient_Imputed`. Kegagalan sensor optik tidak diimputasi.
 
 Kolom `Nama` tidak dibawa ke file processed. Sebagai gantinya digunakan `SubjectID` pseudonim yang stabil. Nama asli tetap berada di `data/raw/` untuk kebutuhan arsip internal dan **tidak boleh dipublikasikan pada repository public tanpa anonimisasi dan izin yang sesuai**.
 
 ## Referensi Glukometer
 
-`GlukosaRef` adalah **nilai gula darah asli dari glucometer dalam mg/dL** berdasarkan keterangan pemilik proyek. Nilai ini menjadi target atau referensi validasi dan **tidak boleh dimasukkan sebagai fitur input model**. Pengujian regresi dilakukan dengan:
+`GlukosaRef` adalah **nilai gula darah asli dari glucometer dalam mg/dL** berdasarkan keterangan pemilik proyek. Nilai ini menjadi target atau referensi validasi dan **tidak boleh dimasukkan sebagai fitur input model**. Kolom provenance `SuhuTubuh_Imputed` dan `SuhuAmbient_Imputed` juga bukan fitur model; keduanya hanya digunakan untuk audit kualitas. Pengujian regresi dilakukan dengan:
 
 ```bash
 python3 scripts/validate_glucometer.py

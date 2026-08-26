@@ -43,9 +43,16 @@ SENS_ABLE_OPSI/
 ├── train.py               # Klasifikasi baseline PIMA → SENS-Able
 ├── train_v1.py            # Arsip: training dari data sendiri
 ├── train_v2.py            # Arsip: eksperimen gabungan
+├── configs/
+│   └── glucose_model_v0_1.json # Kontrak fitur, target, dan parameter model
 ├── scripts/
 │   ├── prepare_dataset.py # Raw → processed, deduplikasi, audit kualitas
-│   └── validate_glucometer.py # Validasi regresi terhadap GlukosaRef
+│   ├── validate_glucometer.py # Validasi regresi terhadap GlukosaRef
+│   ├── compare_glucose_models.py # Banding baseline dan model regresi
+│   └── plot_model_results.py # Buat grafik actual-vs-predicted dan residual
+├── models/
+│   ├── glucose_model_v0_1.joblib # Artifact RF eksploratif
+│   └── glucose_model_v0_1_metadata.json # Metadata artifact
 ├── requirements.txt       # Dependensi Python
 ├── firmware/
 │   └── SENS_ABLE_Data_Collector/ # Kode Arduino/ESP32 pengambil data
@@ -56,9 +63,15 @@ SENS_ABLE_OPSI/
 ├── model.pkl              # Artifact lokal hasil training; tidak ditrack
 ├── report.json            # Laporan baseline klasifikasi
 ├── reports/
-│   └── glucometer_validation.json # Hasil validasi terhadap glucometer
+│   ├── glucometer_validation.json # Hasil validasi terhadap glucometer
+│   ├── model_comparison.json # Hasil perbandingan V0.1
+│   ├── modeling_v0_1_summary.md # Ringkasan faktual untuk laporan
+│   ├── MANIFEST_v0_1.sha256 # Hash dataset/model/laporan V0.1
+│   └── figures/             # Grafik untuk laporan penelitian
 ├── docs/
 │   ├── proposal.pdf       # Proposal penelitian
+│   ├── model_building_guide.md # Panduan pembuatan dan penggunaan model
+│   ├── ml_modeling_plan_summary.md # Planning modeling lengkap
 │   ├── chat_history.md    # History diskusi pengolahan data
 │   └── planning.md        # Planning & konfirmasi plan
 └── .gitignore
@@ -71,11 +84,28 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python3 scripts/prepare_dataset.py
-python3 train.py
+python3 scripts/compare_glucose_models.py
+python3 scripts/plot_model_results.py
 python3 scripts/validate_glucometer.py
+python3 -m unittest discover -s tests -v
 ```
 
-`prepare_dataset.py` membaca seluruh file di `data/raw/`, tidak mengubahnya, lalu membuat dataset processed. `validate_glucometer.py` menggunakan `GlukosaRef` sebagai target/referensi gula darah dari glucometer, bukan sebagai fitur input. Dengan demikian tidak terjadi kebocoran label dari nilai glucometer ke prediksi model.
+`prepare_dataset.py` membaca seluruh file di `data/raw/`, tidak mengubahnya, lalu membuat dataset processed. `compare_glucose_models.py` membaca kontrak fitur dari `configs/glucose_model_v0_1.json`, membandingkan baseline/Linear Regression/Random Forest dengan GroupKFold, menyimpan laporan dan artifact model eksploratif. `validate_glucometer.py` menggunakan `GlukosaRef` sebagai target/referensi gula darah dari glucometer, bukan sebagai fitur input. Dengan demikian tidak terjadi kebocoran label dari nilai glucometer ke prediksi model.
+
+## Tahap Pemodelan V0.1
+
+| Komponen | Lokasi |
+|---|---|
+| Kontrak fitur dan parameter | `configs/glucose_model_v0_1.json` |
+| Script perbandingan model | `scripts/compare_glucose_models.py` |
+| Script grafik | `scripts/plot_model_results.py` |
+| Model exploratory artifact | `models/glucose_model_v0_1.joblib` |
+| Metadata model | `models/glucose_model_v0_1_metadata.json` |
+| Laporan model | `reports/model_comparison.json` dan `reports/modeling_v0_1_summary.md` |
+| Hash untuk reproducibility | `reports/MANIFEST_v0_1.sha256` |
+| Panduan penggunaan | `docs/model_building_guide.md` |
+
+Model V0.1 menggunakan `GlukosaRef` sebagai target glucometer dan `GroupKFold` berdasarkan `SubjectID`. Kandidat terbaik sementara adalah `RandomForestRegressor` dengan MAE 22,5716 mg/dL, tetapi statusnya masih eksploratif dan bukan validasi klinis.
 
 ## Strategi Training
 
@@ -94,10 +124,13 @@ Validasi gula darah dilakukan secara terpisah melalui `scripts/validate_glucomet
 Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri. Strategi ini lebih valid karena:
 - Data training terpisah dari data validasi
 - Model belajar dari pola umum diabetes (768 sampel)
-- Data sensor sendiri jadi test set nyata
+- Data sensor sendiri menjadi set evaluasi nyata
+- Validasi tetap memakai pembagian berbasis subject agar sesi yang sama tidak bocor antar-fold
 - Tidak overfitting pada data kecil
 
 ## Hasil Baseline Klasifikasi
+
+> Bagian ini adalah hasil historis dari pipeline klasifikasi lama. Fokus penelitian yang direkomendasikan sekarang adalah estimasi regresi terhadap `GlukosaRef`, bukan klasifikasi diabetes.
 
 > Catatan penting: skor akurasi di bawah bukan bukti akurasi deteksi diabetes. Dataset memiliki hanya satu label positif, sehingga recall/F1 dan confusion matrix harus diprioritaskan.
 
@@ -106,7 +139,7 @@ Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri.
 - Accuracy: 75.1% ± 4.9%
 - F1 Score: 0.691 ± 0.043
 
-### Validasi (SENS-Able, 33 sampel)
+### Validasi Klasifikasi Historis (SENS-Able, 33 sesi sebelum pemulihan suhu)
 - Accuracy: 90.9%
 - True Negative: 30
 - False Positive: 2
@@ -130,15 +163,16 @@ Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri.
 
 ## Langkah Selanjutnya
 
-1. ✅ ~~Pengumpulan data sensor~~ (33 sampel)
-2. ✅ ~~Training model~~ (PIMA → train, SENS-Able → validate)
-3. ✅ Pembersihan dataset dan pemisahan `GlukosaRef` sebagai referensi glucometer
+1. ✅ Pengumpulan dan penggabungan data sensor (40 sesi processed dari 46 sesi unik)
+2. ✅ Pipeline training/validasi terpisah (PIMA → train, SENS-Able → evaluasi lama)
+3. ✅ Pembersihan dataset, pemulihan suhu nol secara transparan, dan pemisahan `GlukosaRef` sebagai referensi glucometer
 4. 🔲 Kalibrasi sensor vs alat standar (target MAE HR<3bpm, Suhu<0.3°C, Glukosa<15mg/dL)
 5. 🔲 Uji 15 responden (5 tunanetra, 5 tunarungu, 5 non-disabilitas)
 6. 🔲 Kuesioner usability Likert 1-5 (target skor ≥4)
-7. 🔲 Konversi model ke TensorFlow Lite
-8. 🔲 Deploy ke ESP32 via TinyML
-9. 🔲 Penyusunan laporan akhir
+7. 🔲 Validasi ulang dengan dataset yang diperluas dan seluruh logbook berpasangan glucometer-sensor
+8. 🔲 Konversi model ke TensorFlow Lite
+9. 🔲 Deploy ke ESP32 via TinyML
+10. 🔲 Penyusunan laporan akhir
 
 📋 Lihat [docs/planning.md](docs/planning.md) untuk detail lengkap & checklist.
 

@@ -1,0 +1,33 @@
+{
+  "version": "glucose_model_v0.1",
+  "task": "regression",
+  "target": "GlukosaRef",
+  "features": [
+    "Usia",
+    "Berat_kg",
+    "Tinggi_cm",
+    "BMI",
+    "TerakhirMakan_jam",
+    "SuhuTubuh",
+    "SuhuAmbient",
+    "HR_est",
+    "SpO2_est",
+    "IR_Mean",
+    "IR_Min",
+    "IR_Max",
+    "IR_Std",
+    "IR_RMS",
+    "RED_Mean",
+    "RED_Min",
+    "RED_Max",
+    "RED_Std",
+    "RED_RMS",
+    "Ratio_AC",
+    "Ratio_DC",
+    "Samples"
+  ],
+  "model": "RandomForestRegressor",
+  "trained_rows": 40,
+  "trained_subjects": 32,
+  "warning": "Exploratory artifact only; not clinical validation and not directly executable on Arduino/ESP32."
+}

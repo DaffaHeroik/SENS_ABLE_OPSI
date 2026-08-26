@@ -76,8 +76,12 @@ def classify_row(row: pd.Series) -> str:
         return "invalid_glucose_reference"
     if row["Diabetes"] not in {0, 1}:
         return "invalid_diabetes_label"
-    if row["SuhuTubuh"] <= 0:
-        return "invalid_temperature_zero_or_negative"
+    # Zero temperature is a recoverable sensor gap when the optical capture is valid.
+    # Negative values remain invalid and are never imputed.
+    if row["SuhuTubuh"] < 0:
+        return "invalid_body_temperature_negative"
+    if row["SuhuAmbient"] < 0:
+        return "invalid_ambient_temperature_negative"
     if row["HR_est"] <= 0:
         return "invalid_heart_rate"
     if row["SpO2_est"] < 70 or row["SpO2_est"] > 100:
@@ -105,13 +109,27 @@ def main() -> None:
     excluded = unique[unique["exclude_reason"] != ""].copy()
     clean = unique[unique["exclude_reason"] == ""].copy()
 
+    # Recover only zero temperatures from otherwise usable captures. The reference
+    # values are computed from positive observations in this same deduplicated set;
+    # raw values remain untouched and provenance flags are written to processed data.
+    valid_body_temperature = clean.loc[clean["SuhuTubuh"] > 0, "SuhuTubuh"]
+    valid_ambient_temperature = clean.loc[clean["SuhuAmbient"] > 0, "SuhuAmbient"]
+    if valid_body_temperature.empty or valid_ambient_temperature.empty:
+        raise ValueError("No positive temperature observations available for imputation")
+    body_temperature_mean = float(valid_body_temperature.mean())
+    ambient_temperature_mean = float(valid_ambient_temperature.mean())
+    clean["SuhuTubuh_Imputed"] = (clean["SuhuTubuh"] == 0).astype(int)
+    clean["SuhuAmbient_Imputed"] = (clean["SuhuAmbient"] == 0).astype(int)
+    clean.loc[clean["SuhuTubuh"] == 0, "SuhuTubuh"] = body_temperature_mean
+    clean.loc[clean["SuhuAmbient"] == 0, "SuhuAmbient"] = ambient_temperature_mean
+
     # Keep raw names out of the processed public-facing validation file.
     clean["SubjectID"] = [
         make_subject_id(name, age, gender)
         for name, age, gender in zip(clean["Nama"], clean["Usia"], clean["Gender"])
     ]
     clean = clean.drop(columns=["Nama", "_source", "_row_key", "exclude_reason", "source_file_count"])
-    clean = clean[["SubjectID"] + COLUMNS[1:]]
+    clean = clean[["SubjectID"] + COLUMNS[1:] + ["SuhuTubuh_Imputed", "SuhuAmbient_Imputed"]]
     clean = clean.sort_values(["SubjectID", "GlukosaRef", "Samples"], kind="stable").reset_index(drop=True)
 
     excluded_out = excluded.drop(columns=["_row_key"])
@@ -139,13 +157,24 @@ def main() -> None:
             "min_mg_dL": float(clean["GlukosaRef"].min()),
             "max_mg_dL": float(clean["GlukosaRef"].max()),
         },
+        "temperature_imputation": {
+            "method": "mean of positive observations after deduplication, calculated separately per temperature column",
+            "body_temperature_reference_mean_c": round(body_temperature_mean, 6),
+            "ambient_temperature_reference_mean_c": round(ambient_temperature_mean, 6),
+            "body_temperature_imputed_rows": int(clean["SuhuTubuh_Imputed"].sum()),
+            "ambient_temperature_imputed_rows": int(clean["SuhuAmbient_Imputed"].sum()),
+            "flags": ["SuhuTubuh_Imputed", "SuhuAmbient_Imputed"],
+            "glucose_reference_changed": False,
+        },
         "class_counts_preserved_for_reference": {str(k): int(v) for k, v in clean["Diabetes"].value_counts().sort_index().items()},
         "cleaning_rules": [
             "Trim text and parse numeric fields; fail on schema mismatch.",
             "Collapse exact duplicate records after numeric normalization.",
             "Exclude missing/non-numeric required values and invalid labels.",
-            "Exclude zero/negative temperature, invalid heart rate/SpO2, invalid signal ranges, and optical captures with IR_Mean or RED_Mean below 10000.",
-            "Do not impute sensor failures and do not change GlukosaRef values.",
+            "Retain zero body/ambient temperature only when the optical capture and other required measurements are valid.",
+            "Impute retained zero temperatures with the corresponding positive-observation mean and record an explicit provenance flag.",
+            "Exclude negative temperatures, invalid heart rate/SpO2, invalid signal ranges, and optical captures with IR_Mean or RED_Mean below 10000.",
+            "Never impute optical sensor failures and never change GlukosaRef values.",
             "Replace names with stable pseudonymous SubjectID in the processed file.",
         ],
     }

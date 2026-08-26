@@ -98,3 +98,9 @@ Tanggal: 12 Agustus 2025
 - `GlukosaRef` dipertahankan tanpa perubahan dan ditetapkan sebagai nilai referensi gula darah dari glucometer dalam mg/dL.
 - Validasi regresi dilakukan terpisah melalui `scripts/validate_glucometer.py`; `GlukosaRef` tidak digunakan sebagai fitur input.
 - Hasil validasi saat ini bersifat eksploratif: MAE 23.7345 mg/dL, RMSE 28.4437 mg/dL, dan R² -0.0102 pada GroupKFold berdasarkan `SubjectID`.
+
+## 12. Revised Data-Retention Decision (26 Agustus 2026)
+
+Atas arahan pemilik proyek, nilai suhu nol dievaluasi ulang dan tidak langsung dibuang. Sesi tetap dipertahankan jika tangkapan optiknya valid; hanya nilai suhu tubuh/ambient yang nol yang diimputasi menggunakan rata-rata observasi positif setelah deduplikasi. Dataset processed mencatat flag `SuhuTubuh_Imputed` dan `SuhuAmbient_Imputed` agar transformasi dapat diaudit. Nilai `GlukosaRef` tidak diimputasi dan tidak diubah.
+
+Pipeline revisi berisi 40 sesi processed dari 46 sesi unik yang telah dinormalisasi, dengan 32 `SubjectID` pseudonim. Enam sesi tetap dikeluarkan karena tangkapan sinyal optik rendah. Sebanyak 7 nilai suhu tubuh dan 6 nilai suhu ambient diimputasi. Validasi regresi terhadap referensi glucometer menghasilkan MAE 22.4158 mg/dL, RMSE 27.0395 mg/dL, dan R² 0.0625 menggunakan GroupKFold berdasarkan `SubjectID`. Hasil ini tetap bersifat eksploratif dan bukan validasi klinis.

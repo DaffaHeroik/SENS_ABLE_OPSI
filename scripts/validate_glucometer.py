@@ -20,7 +20,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_FILE = ROOT / "data" / "processed" / "sensable_validation.csv"
 REPORT_FILE = ROOT / "reports" / "glucometer_validation.json"
 REFERENCE_COLUMN = "GlukosaRef"
-IDENTIFIER_COLUMNS = {"SubjectID", "Nama", "Gender", REFERENCE_COLUMN, "Diabetes"}
+IDENTIFIER_COLUMNS = {
+    "SubjectID", "Nama", "Gender", REFERENCE_COLUMN, "Diabetes",
+    "SuhuTubuh_Imputed", "SuhuAmbient_Imputed",
+}
 
 
 def load_data() -> pd.DataFrame:
@@ -74,6 +77,10 @@ def main() -> None:
             "rows": int(len(frame)),
             "unique_subjects": int(groups.nunique()),
             "feature_columns": feature_columns,
+            "temperature_imputation_rows": {
+                "body": int(frame.get("SuhuTubuh_Imputed", pd.Series(dtype=int)).sum()),
+                "ambient": int(frame.get("SuhuAmbient_Imputed", pd.Series(dtype=int)).sum()),
+            },
         },
         "evaluation": {
             "method": "5-fold GroupKFold by SubjectID (or fewer folds when needed)",

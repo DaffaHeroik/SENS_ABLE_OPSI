@@ -462,8 +462,9 @@ LAMPIRAN
 | File | Keterangan |
 |---|---|
 | `train.py` | Script training model |
-| `data/sensable_final.csv` | Dataset bersih (33 sampel) |
-| `report.json` | Hasil training |
+| `data/processed/sensable_validation.csv` | Dataset processed (40 sesi, 32 SubjectID; suhu nol yang recoverable diberi flag imputasi) |
+| `report.json` | Hasil baseline klasifikasi historis |
+| `reports/glucometer_validation.json` | Hasil validasi regresi terhadap `GlukosaRef` dari glucometer |
 | `docs/proposal.pdf` | Proposal penelitian |
 | `docs/chat_history.md` | History pengolahan data |
 | `docs/planning.md` | File ini |
