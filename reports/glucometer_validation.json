@@ -1,0 +1,244 @@
+{
+  "target": {
+    "column": "GlukosaRef",
+    "meaning": "original glucometer reference supplied by project owner",
+    "unit": "mg/dL",
+    "used_as_feature": false
+  },
+  "dataset": {
+    "path": "data/processed/sensable_validation.csv",
+    "rows": 33,
+    "unique_subjects": 31,
+    "feature_columns": [
+      "Usia",
+      "Berat_kg",
+      "Tinggi_cm",
+      "BMI",
+      "TerakhirMakan_jam",
+      "SuhuTubuh",
+      "SuhuAmbient",
+      "HR_est",
+      "SpO2_est",
+      "IR_Mean",
+      "IR_Min",
+      "IR_Max",
+      "IR_Std",
+      "IR_RMS",
+      "RED_Mean",
+      "RED_Min",
+      "RED_Max",
+      "RED_Std",
+      "RED_RMS",
+      "Ratio_AC",
+      "Ratio_DC",
+      "Samples"
+    ]
+  },
+  "evaluation": {
+    "method": "5-fold GroupKFold by SubjectID (or fewer folds when needed)",
+    "mae_mg_dL": 23.7345,
+    "rmse_mg_dL": 28.4437,
+    "r2": -0.0102,
+    "warning": "Exploratory only: the cleaned dataset is small and is not sufficient to establish clinical accuracy."
+  },
+  "predictions": [
+    {
+      "SubjectID": "SUB-0F8BD6AE84",
+      "reference_glucose_mg_dL": 131.0,
+      "predicted_glucose_mg_dL": 102.6301,
+      "absolute_error_mg_dL": 28.3699
+    },
+    {
+      "SubjectID": "SUB-15FD66AB0B",
+      "reference_glucose_mg_dL": 78.0,
+      "predicted_glucose_mg_dL": 99.2194,
+      "absolute_error_mg_dL": 21.2194
+    },
+    {
+      "SubjectID": "SUB-29DDC0C9EF",
+      "reference_glucose_mg_dL": 78.0,
+      "predicted_glucose_mg_dL": 98.4812,
+      "absolute_error_mg_dL": 20.4812
+    },
+    {
+      "SubjectID": "SUB-3171DE7EA5",
+      "reference_glucose_mg_dL": 77.0,
+      "predicted_glucose_mg_dL": 105.9581,
+      "absolute_error_mg_dL": 28.9581
+    },
+    {
+      "SubjectID": "SUB-33907F2FC4",
+      "reference_glucose_mg_dL": 122.0,
+      "predicted_glucose_mg_dL": 109.4237,
+      "absolute_error_mg_dL": 12.5763
+    },
+    {
+      "SubjectID": "SUB-34B1CC2B5F",
+      "reference_glucose_mg_dL": 120.0,
+      "predicted_glucose_mg_dL": 118.9269,
+      "absolute_error_mg_dL": 1.0731
+    },
+    {
+      "SubjectID": "SUB-3655F511EF",
+      "reference_glucose_mg_dL": 122.0,
+      "predicted_glucose_mg_dL": 94.5237,
+      "absolute_error_mg_dL": 27.4763
+    },
+    {
+      "SubjectID": "SUB-3655F511EF",
+      "reference_glucose_mg_dL": 122.0,
+      "predicted_glucose_mg_dL": 95.279,
+      "absolute_error_mg_dL": 26.721
+    },
+    {
+      "SubjectID": "SUB-3853D34388",
+      "reference_glucose_mg_dL": 72.0,
+      "predicted_glucose_mg_dL": 89.4533,
+      "absolute_error_mg_dL": 17.4533
+    },
+    {
+      "SubjectID": "SUB-4A5A479131",
+      "reference_glucose_mg_dL": 87.0,
+      "predicted_glucose_mg_dL": 106.0339,
+      "absolute_error_mg_dL": 19.0339
+    },
+    {
+      "SubjectID": "SUB-4C742F23F4",
+      "reference_glucose_mg_dL": 83.0,
+      "predicted_glucose_mg_dL": 107.6329,
+      "absolute_error_mg_dL": 24.6329
+    },
+    {
+      "SubjectID": "SUB-4D0B985BA2",
+      "reference_glucose_mg_dL": 92.0,
+      "predicted_glucose_mg_dL": 138.9695,
+      "absolute_error_mg_dL": 46.9695
+    },
+    {
+      "SubjectID": "SUB-4D6E180877",
+      "reference_glucose_mg_dL": 109.0,
+      "predicted_glucose_mg_dL": 108.9305,
+      "absolute_error_mg_dL": 0.0695
+    },
+    {
+      "SubjectID": "SUB-4FFF9369A9",
+      "reference_glucose_mg_dL": 125.0,
+      "predicted_glucose_mg_dL": 116.4034,
+      "absolute_error_mg_dL": 8.5966
+    },
+    {
+      "SubjectID": "SUB-50BC564BD4",
+      "reference_glucose_mg_dL": 121.0,
+      "predicted_glucose_mg_dL": 105.5843,
+      "absolute_error_mg_dL": 15.4157
+    },
+    {
+      "SubjectID": "SUB-643FA146FA",
+      "reference_glucose_mg_dL": 137.0,
+      "predicted_glucose_mg_dL": 104.6953,
+      "absolute_error_mg_dL": 32.3047
+    },
+    {
+      "SubjectID": "SUB-65766578B4",
+      "reference_glucose_mg_dL": 84.0,
+      "predicted_glucose_mg_dL": 120.3634,
+      "absolute_error_mg_dL": 36.3634
+    },
+    {
+      "SubjectID": "SUB-6B67421CC1",
+      "reference_glucose_mg_dL": 77.0,
+      "predicted_glucose_mg_dL": 100.8362,
+      "absolute_error_mg_dL": 23.8362
+    },
+    {
+      "SubjectID": "SUB-6BFCBC2313",
+      "reference_glucose_mg_dL": 116.0,
+      "predicted_glucose_mg_dL": 96.5293,
+      "absolute_error_mg_dL": 19.4707
+    },
+    {
+      "SubjectID": "SUB-73EF9845F7",
+      "reference_glucose_mg_dL": 110.0,
+      "predicted_glucose_mg_dL": 110.6669,
+      "absolute_error_mg_dL": 0.6669
+    },
+    {
+      "SubjectID": "SUB-8D7E932AEF",
+      "reference_glucose_mg_dL": 78.0,
+      "predicted_glucose_mg_dL": 92.633,
+      "absolute_error_mg_dL": 14.633
+    },
+    {
+      "SubjectID": "SUB-9835C98865",
+      "reference_glucose_mg_dL": 94.0,
+      "predicted_glucose_mg_dL": 100.5471,
+      "absolute_error_mg_dL": 6.5471
+    },
+    {
+      "SubjectID": "SUB-9BE232A7F7",
+      "reference_glucose_mg_dL": 167.0,
+      "predicted_glucose_mg_dL": 110.8508,
+      "absolute_error_mg_dL": 56.1492
+    },
+    {
+      "SubjectID": "SUB-ADAA6982DB",
+      "reference_glucose_mg_dL": 77.0,
+      "predicted_glucose_mg_dL": 108.1555,
+      "absolute_error_mg_dL": 31.1555
+    },
+    {
+      "SubjectID": "SUB-B2E44BD421",
+      "reference_glucose_mg_dL": 110.0,
+      "predicted_glucose_mg_dL": 104.3719,
+      "absolute_error_mg_dL": 5.6281
+    },
+    {
+      "SubjectID": "SUB-B5DD399D76",
+      "reference_glucose_mg_dL": 142.0,
+      "predicted_glucose_mg_dL": 118.8314,
+      "absolute_error_mg_dL": 23.1686
+    },
+    {
+      "SubjectID": "SUB-C2055445E6",
+      "reference_glucose_mg_dL": 117.0,
+      "predicted_glucose_mg_dL": 132.7448,
+      "absolute_error_mg_dL": 15.7448
+    },
+    {
+      "SubjectID": "SUB-DCF12E9AD7",
+      "reference_glucose_mg_dL": 116.0,
+      "predicted_glucose_mg_dL": 108.8574,
+      "absolute_error_mg_dL": 7.1426
+    },
+    {
+      "SubjectID": "SUB-DCF12E9AD7",
+      "reference_glucose_mg_dL": 155.0,
+      "predicted_glucose_mg_dL": 107.4082,
+      "absolute_error_mg_dL": 47.5918
+    },
+    {
+      "SubjectID": "SUB-E263C0B482",
+      "reference_glucose_mg_dL": 138.0,
+      "predicted_glucose_mg_dL": 90.7589,
+      "absolute_error_mg_dL": 47.2411
+    },
+    {
+      "SubjectID": "SUB-E33A2320BA",
+      "reference_glucose_mg_dL": 82.0,
+      "predicted_glucose_mg_dL": 105.2817,
+      "absolute_error_mg_dL": 23.2817
+    },
+    {
+      "SubjectID": "SUB-F768B099EF",
+      "reference_glucose_mg_dL": 97.0,
+      "predicted_glucose_mg_dL": 123.4289,
+      "absolute_error_mg_dL": 26.4289
+    },
+    {
+      "SubjectID": "SUB-FBDC5227CD",
+      "reference_glucose_mg_dL": 187.0,
+      "predicted_glucose_mg_dL": 120.1639,
+      "absolute_error_mg_dL": 66.8361
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Nama,Usia,Gender,Berat_kg,Tinggi_cm,BMI,Diabetes,GlukosaRef,TerakhirMakan_jam,SuhuTubuh,SuhuAmbient,HR_est,SpO2_est,IR_Mean,IR_Min,IR_Max,IR_Std,IR_RMS,RED_Mean,RED_Min,RED_Max,RED_Std,RED_RMS,Ratio_AC,Ratio_DC,Samples
+Liwang,71,L,40.0,167.0,14.34,0,117.0,0.5,34.77,30.91,62.0,95.44,41982.48,41258.00,42990.00,273.88,41983.39,25619.92,25256.00,26265.00,166.43,25620.45,0.582564,0.610253,1003

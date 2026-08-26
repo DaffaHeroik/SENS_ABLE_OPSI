@@ -1,0 +1,2 @@
+Nama,Usia,Gender,Berat_kg,Tinggi_cm,BMI,Diabetes,GlukosaRef,TerakhirMakan_jam,SuhuTubuh,SuhuAmbient,HR_est,SpO2_est,IR_Mean,IR_Min,IR_Max,IR_Std,IR_RMS,RED_Mean,RED_Min,RED_Max,RED_Std,RED_RMS,Ratio_AC,Ratio_DC,Samples
+Muhammad Daffa Ramadhan,17,L,57.0,172.0,19.27,0,125.0,1.5,32.31,30.51,62.0,100.00,48499.64,47967.00,49018.00,328.32,48500.77,35781.03,35599.00,35982.00,82.91,35781.12,0.364415,0.737759,1002

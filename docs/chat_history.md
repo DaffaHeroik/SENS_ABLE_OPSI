@@ -86,3 +86,15 @@ Tanggal: 12 Agustus 2025
 | `train.py` | Script training v3 (utama) |
 | `model.pkl` | Model terlatih |
 | `report.json` | Laporan training |
+
+
+## 11. Ingestion & Pembersihan Dataset Baru (26 Agustus 2026)
+
+- Seluruh file CSV/XLSX yang tersedia disalin apa adanya ke `data/raw/` dan diberi manifest SHA-256.
+- Semua sumber memiliki skema 26 kolom yang sama; total input yang diproses adalah 237 baris dari 25 file/sheet yang tersedia di workspace.
+- Setelah normalisasi format angka dan penghapusan salinan identik, tersisa 46 baris unik.
+- Tiga belas baris dikeluarkan karena sensor gagal atau data suhu nol/tidak valid; baris tidak diimputasi.
+- Dataset processed berisi 33 baris dan 31 `SubjectID` pseudonim.
+- `GlukosaRef` dipertahankan tanpa perubahan dan ditetapkan sebagai nilai referensi gula darah dari glucometer dalam mg/dL.
+- Validasi regresi dilakukan terpisah melalui `scripts/validate_glucometer.py`; `GlukosaRef` tidak digunakan sebagai fitur input.
+- Hasil validasi saat ini bersifat eksploratif: MAE 23.7345 mg/dL, RMSE 28.4437 mg/dL, dan R² -0.0102 pada GroupKFold berdasarkan `SubjectID`.

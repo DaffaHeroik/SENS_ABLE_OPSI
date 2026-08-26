@@ -40,13 +40,21 @@ Kota Bima, Nusa Tenggara Barat — 2026
 ```
 SENS_ABLE_OPSI/
 ├── README.md              # File ini
-├── train.py               # Training script v3 (PIMA → train, SENS-Able → validate)
-├── train_v1.py            # Training script v1 (data sendiri saja)
-├── train_v2.py            # Training script v2 (gabungan PIMA + SENS-Able)
-├── model.pkl              # Model terlatih (Random Forest)
-├── report.json            # Laporan training
+├── train.py               # Klasifikasi baseline PIMA → SENS-Able
+├── train_v1.py            # Arsip: training dari data sendiri
+├── train_v2.py            # Arsip: eksperimen gabungan
+├── scripts/
+│   ├── prepare_dataset.py # Raw → processed, deduplikasi, audit kualitas
+│   └── validate_glucometer.py # Validasi regresi terhadap GlukosaRef
+├── requirements.txt       # Dependensi Python
 ├── data/
-│   └── sensable_final.csv # Dataset bersih (33 sampel, 30 responden)
+│   ├── raw/               # Salinan input asli, tidak diubah
+│   ├── processed/         # Dataset hasil pembersihan dan laporan kualitas
+│   └── README.md          # Kontrak data dan catatan privasi
+├── model.pkl              # Artifact lokal hasil training; tidak ditrack
+├── report.json            # Laporan baseline klasifikasi
+├── reports/
+│   └── glucometer_validation.json # Hasil validasi terhadap glucometer
 ├── docs/
 │   ├── proposal.pdf       # Proposal penelitian
 │   ├── chat_history.md    # History diskusi pengolahan data
@@ -54,20 +62,32 @@ SENS_ABLE_OPSI/
 └── .gitignore
 ```
 
-## Cara Training
+## Cara Menjalankan
 
 ```bash
-pip install scikit-learn pandas numpy
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python3 scripts/prepare_dataset.py
 python3 train.py
+python3 scripts/validate_glucometer.py
 ```
+
+`prepare_dataset.py` membaca seluruh file di `data/raw/`, tidak mengubahnya, lalu membuat dataset processed. `validate_glucometer.py` menggunakan `GlukosaRef` sebagai target/referensi gula darah dari glucometer, bukan sebagai fitur input. Dengan demikian tidak terjadi kebocoran label dari nilai glucometer ke prediksi model.
 
 ## Strategi Training
 
 | | Training | Validasi |
 |---|---|---|
 | **Dataset** | PIMA Indians Diabetes (public) | SENS-Able (data sendiri) |
-| **Sampel** | 768 | 33 |
-| **Fitur** | Age, BMI, Glucose | Usia, BMI, GlukosaRef |
+| **Sampel** | 768 | Dataset processed; lihat `data/processed/quality_report.json` |
+| **Fitur** | Age, BMI, Glucose | Usia, BMI, GlukosaRef (baseline klasifikasi lama) |
+
+Tabel di atas menjelaskan baseline klasifikasi diabetes yang masih dipertahankan untuk perbandingan historis. Untuk **model estimasi gula darah**, gunakan alur regresi berikut.
+
+### Validasi Regresi Glukosa dengan Glukometer
+
+Validasi gula darah dilakukan secara terpisah melalui `scripts/validate_glucometer.py`. Kolom `GlukosaRef` diperlakukan sebagai **target referensi glucometer dalam mg/dL**. Fitur input hanya berasal dari data demografi dan sinyal sensor; `GlukosaRef`, `Nama`, `SubjectID`, dan `Diabetes` tidak digunakan sebagai fitur. Evaluasi menggunakan `GroupKFold` berdasarkan `SubjectID` dan melaporkan MAE, RMSE, serta R². Hasilnya bersifat eksploratif dan belum merupakan validasi klinis.
 
 Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri. Strategi ini lebih valid karena:
 - Data training terpisah dari data validasi
@@ -75,7 +95,10 @@ Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri.
 - Data sensor sendiri jadi test set nyata
 - Tidak overfitting pada data kecil
 
-## Hasil Training
+## Hasil Baseline Klasifikasi
+
+> Catatan penting: skor akurasi di bawah bukan bukti akurasi deteksi diabetes. Dataset memiliki hanya satu label positif, sehingga recall/F1 dan confusion matrix harus diprioritaskan.
+
 
 ### Training (PIMA, 5-fold CV)
 - Accuracy: 75.1% ± 4.9%
@@ -107,14 +130,19 @@ Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri.
 
 1. ✅ ~~Pengumpulan data sensor~~ (33 sampel)
 2. ✅ ~~Training model~~ (PIMA → train, SENS-Able → validate)
-3. 🔲 Kalibrasi sensor vs alat standar (target MAE HR<3bpm, Suhu<0.3°C, Glukosa<15mg/dL)
-4. 🔲 Uji 15 responden (5 tunanetra, 5 tunarungu, 5 non-disabilitas)
-5. 🔲 Kuesioner usability Likert 1-5 (target skor ≥4)
-6. 🔲 Konversi model ke TensorFlow Lite
-7. 🔲 Deploy ke ESP32 via TinyML
-8. 🔲 Penyusunan laporan akhir
+3. ✅ Pembersihan dataset dan pemisahan `GlukosaRef` sebagai referensi glucometer
+4. 🔲 Kalibrasi sensor vs alat standar (target MAE HR<3bpm, Suhu<0.3°C, Glukosa<15mg/dL)
+5. 🔲 Uji 15 responden (5 tunanetra, 5 tunarungu, 5 non-disabilitas)
+6. 🔲 Kuesioner usability Likert 1-5 (target skor ≥4)
+7. 🔲 Konversi model ke TensorFlow Lite
+8. 🔲 Deploy ke ESP32 via TinyML
+9. 🔲 Penyusunan laporan akhir
 
 📋 Lihat [docs/planning.md](docs/planning.md) untuk detail lengkap & checklist.
+
+## Catatan Privasi dan Keselamatan
+
+File di `data/raw/` merupakan arsip input yang dapat mengandung identitas dan data kesehatan. Jangan push repository ini sebagai public sebelum semua identitas dianonimkan dan izin publikasi dipastikan. Output SENS-Able adalah prototipe penelitian dan bukan alat diagnosis atau pengganti pemeriksaan medis.
 
 ## License
 

@@ -1,0 +1,31 @@
+{
+  "raw_file_count": 25,
+  "combined_rows": 237,
+  "normalized_unique_rows": 46,
+  "duplicate_rows_removed": 191,
+  "processed_rows": 33,
+  "excluded_rows": 13,
+  "excluded_by_reason": {
+    "invalid_temperature_zero_or_negative": 10,
+    "low_optical_signal_capture": 3
+  },
+  "processed_subjects": 31,
+  "processed_glucose_reference": {
+    "column": "GlukosaRef",
+    "meaning": "glucometer reference value in mg/dL, supplied by project owner",
+    "min_mg_dL": 72.0,
+    "max_mg_dL": 187.0
+  },
+  "class_counts_preserved_for_reference": {
+    "0": 32,
+    "1": 1
+  },
+  "cleaning_rules": [
+    "Trim text and parse numeric fields; fail on schema mismatch.",
+    "Collapse exact duplicate records after numeric normalization.",
+    "Exclude missing/non-numeric required values and invalid labels.",
+    "Exclude zero/negative temperature, invalid heart rate/SpO2, invalid signal ranges, and optical captures with IR_Mean or RED_Mean below 10000.",
+    "Do not impute sensor failures and do not change GlukosaRef values.",
+    "Replace names with stable pseudonymous SubjectID in the processed file."
+  ]
+}

@@ -24,12 +24,14 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 import pickle
 import json
 import warnings
+from pathlib import Path
 warnings.filterwarnings('ignore')
 
 # ============================================================
 # CONFIG
 # ============================================================
-SENSABLE_FILE = 'data/sensable_final.csv'
+ROOT = Path(__file__).resolve().parent
+SENSABLE_FILE = ROOT / 'data' / 'processed' / 'sensable_validation.csv'
 
 # Fitur yang dipakai model (common features)
 TRAIN_FEATURES = ['Age', 'BMI', 'Glucose']
@@ -78,13 +80,17 @@ def train_model(X_train, y_train):
     skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     f1_scores = []
     acc_scores = []
-    for train_idx, test_idx in skf.split(X_scaled, y_train):
+    for train_idx, test_idx in skf.split(X_train, y_train):
+        # Fit preprocessing only on each training fold to avoid validation leakage.
+        cv_scaler = StandardScaler()
+        X_fold_train = cv_scaler.fit_transform(X_train[train_idx])
+        X_fold_test = cv_scaler.transform(X_train[test_idx])
         model_cv = RandomForestClassifier(
             n_estimators=100, class_weight='balanced',
             max_depth=5, random_state=42
         )
-        model_cv.fit(X_scaled[train_idx], y_train[train_idx])
-        y_pred = model_cv.predict(X_scaled[test_idx])
+        model_cv.fit(X_fold_train, y_train[train_idx])
+        y_pred = model_cv.predict(X_fold_test)
         f1_scores.append(f1_score(y_train[test_idx], y_pred))
         acc_scores.append(accuracy_score(y_train[test_idx], y_pred))
 
@@ -240,7 +246,8 @@ if __name__ == '__main__':
         pred = val_metrics['predictions'][i]
         prob = val_metrics['probabilities'][i]
         match = "✅" if actual == pred else "❌"
-        print(f"  {i+1:3d} {row['Nama']:25s} {row['GlukosaRef']:>6} {'Diabetes' if actual==1 else 'Sehat':>7} {'Diabetes' if pred==1 else 'Sehat':>9} {prob:>6.2f} {match:>6}")
+        subject = str(row.get('SubjectID', row.get('Nama', f'row-{i+1}')))
+        print(f"  {i+1:3d} {subject:25s} {row['GlukosaRef']:>6} {'Diabetes' if actual==1 else 'Sehat':>7} {'Diabetes' if pred==1 else 'Sehat':>9} {prob:>6.2f} {match:>6}")
 
     # --- Glucose threshold baseline ---
     print(f"\n📊 Baseline: Glukosa Threshold")
@@ -253,8 +260,8 @@ if __name__ == '__main__':
 
     # --- Export ---
     print(f"\n📦 Export...")
-    export_model(model, scaler, train_metrics, 'model.pkl')
-    export_report(train_metrics, val_metrics, baseline, 'report.json')
+    export_model(model, scaler, train_metrics, str(ROOT / 'model.pkl'))
+    export_report(train_metrics, val_metrics, baseline, str(ROOT / 'report.json'))
 
     # --- Summary ---
     print(f"\n{'='*60}")
