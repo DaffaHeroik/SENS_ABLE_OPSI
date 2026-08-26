@@ -35,6 +35,27 @@ class ModelingPipelineTests(unittest.TestCase):
         self.assertEqual(metadata["trained_subjects"], 32)
         self.assertEqual(len(model.feature_importances_), len(metadata["features"]))
 
+    def test_ai_final_contract_matches_canonical_contract(self):
+        canonical = json.loads((ROOT / "configs" / "glucose_model_v0_1.json").read_text())
+        physical = json.loads((ROOT / "ai_final" / "config" / "model_contract_v0_1.json").read_text())
+        self.assertEqual(canonical["version"], physical["version"])
+        self.assertEqual(canonical["features"], physical["features"])
+        self.assertNotIn("GlukosaRef", physical["features"])
+        self.assertEqual(len(physical["features"]), 22)
+
+    def test_improvement_experiment_is_exploratory_and_leakage_safe(self):
+        report = json.loads((ROOT / "reports" / "model_improvement_experiment.json").read_text())
+        self.assertTrue(report["validation"]["no_synthetic_data"])
+        self.assertTrue(report["validation"]["no_target_leakage"])
+        self.assertEqual(report["dataset"]["rows"], 40)
+        self.assertEqual(report["dataset"]["unique_subjects"], 32)
+        self.assertEqual(report["best_exploratory_result"]["model"], "TunedRandomForestWithFeatureSelection")
+
+    def test_ai_final_evaluation_matches_canonical_v01(self):
+        evaluation = json.loads((ROOT / "ai_final" / "evaluation" / "evaluation_v0_1.json").read_text())
+        self.assertEqual(evaluation["metrics"]["mae_mg_dL"], 22.5716)
+        self.assertTrue(evaluation["validation"]["no_target_leakage"])
+
 
 if __name__ == "__main__":
     unittest.main()

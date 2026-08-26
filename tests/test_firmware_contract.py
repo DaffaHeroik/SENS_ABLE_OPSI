@@ -23,6 +23,12 @@ class FirmwareContractTests(unittest.TestCase):
         self.assertIn("LittleFS.begin(false)", source)
         self.assertNotIn("LittleFS.begin(true)", source)
 
+    def test_physical_ai_header_keeps_target_out_of_esp32_inputs(self):
+        header = (ROOT / "ai_final" / "deployment_esp32" / "model_contract_v0_1.h").read_text()
+        self.assertIn("SENSABLE_FEATURE_COUNT = 22", header)
+        self.assertIn('"IR_Mean"', header)
+        self.assertNotIn('"GlukosaRef"', header)
+
 
 if __name__ == "__main__":
     unittest.main()

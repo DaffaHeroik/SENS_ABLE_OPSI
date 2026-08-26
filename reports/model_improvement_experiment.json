@@ -1,0 +1,552 @@
+{
+  "experiment": "nested model improvement V0.1",
+  "target": {
+    "column": "GlukosaRef",
+    "meaning": "glucometer reference in mg/dL",
+    "used_as_feature": false
+  },
+  "dataset": {
+    "rows": 40,
+    "unique_subjects": 32,
+    "features": [
+      "Usia",
+      "Berat_kg",
+      "Tinggi_cm",
+      "BMI",
+      "TerakhirMakan_jam",
+      "SuhuTubuh",
+      "SuhuAmbient",
+      "HR_est",
+      "SpO2_est",
+      "IR_Mean",
+      "IR_Min",
+      "IR_Max",
+      "IR_Std",
+      "IR_RMS",
+      "RED_Mean",
+      "RED_Min",
+      "RED_Max",
+      "RED_Std",
+      "RED_RMS",
+      "Ratio_AC",
+      "Ratio_DC",
+      "Samples"
+    ]
+  },
+  "validation": {
+    "outer": "5-fold GroupKFold by SubjectID",
+    "inner": "4-fold GroupKFold by SubjectID inside each outer training fold",
+    "selection_metric": "negative mean absolute error",
+    "no_synthetic_data": true,
+    "no_target_leakage": true
+  },
+  "models": [
+    {
+      "model": "MeanBaseline",
+      "overall": {
+        "mae_mg_dL": 24.2937,
+        "rmse_mg_dL": 29.0975,
+        "median_absolute_error_mg_dL": 23.9062,
+        "r2": -0.0856
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 21.875,
+          "rmse_mg_dL": 23.6184,
+          "median_absolute_error_mg_dL": 24.4062,
+          "r2": -0.0229,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 21.5547,
+          "rmse_mg_dL": 26.906,
+          "median_absolute_error_mg_dL": 19.5,
+          "r2": -0.0118,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 26.5156,
+          "rmse_mg_dL": 27.828,
+          "median_absolute_error_mg_dL": 31.7812,
+          "r2": -1.1632,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 35.2734,
+          "rmse_mg_dL": 43.0031,
+          "median_absolute_error_mg_dL": 21.5,
+          "r2": -0.332,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7
+        },
+        {
+          "mae_mg_dL": 16.25,
+          "rmse_mg_dL": 18.1078,
+          "median_absolute_error_mg_dL": 12.625,
+          "r2": -0.0966,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7
+        }
+      ],
+      "predictions": [
+        104.625,
+        101.4062,
+        109.7812,
+        106.2812,
+        106.4062,
+        104.625,
+        109.7812,
+        109.7812,
+        106.2812,
+        106.2812,
+        101.4062,
+        109.7812,
+        104.625,
+        104.625,
+        106.2812,
+        106.4062,
+        101.4062,
+        101.4062,
+        104.625,
+        101.4062,
+        109.7812,
+        106.2812,
+        106.4062,
+        109.7812,
+        109.7812,
+        104.625,
+        101.4062,
+        109.7812,
+        106.2812,
+        106.4062,
+        104.625,
+        106.2812,
+        106.2812,
+        101.4062,
+        106.4062,
+        106.4062,
+        106.4062,
+        106.4062,
+        104.625,
+        101.4062
+      ]
+    },
+    {
+      "model": "TunedRandomForestRegressor",
+      "overall": {
+        "mae_mg_dL": 23.2412,
+        "rmse_mg_dL": 27.6333,
+        "median_absolute_error_mg_dL": 19.8324,
+        "r2": 0.0209
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 13.4689,
+          "rmse_mg_dL": 15.2484,
+          "median_absolute_error_mg_dL": 14.0133,
+          "r2": 0.5737,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": 5,
+            "max_features": 0.5,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 26.6848
+        },
+        {
+          "mae_mg_dL": 23.8744,
+          "rmse_mg_dL": 27.5811,
+          "median_absolute_error_mg_dL": 24.4651,
+          "r2": -0.0632,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": 5,
+            "max_features": 1.0,
+            "min_samples_leaf": 2,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 20.9288
+        },
+        {
+          "mae_mg_dL": 24.2881,
+          "rmse_mg_dL": 25.0223,
+          "median_absolute_error_mg_dL": 24.4539,
+          "r2": -0.749,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": 5,
+            "max_features": 0.5,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 25.2695
+        },
+        {
+          "mae_mg_dL": 32.0402,
+          "rmse_mg_dL": 38.3631,
+          "median_absolute_error_mg_dL": 23.2078,
+          "r2": -0.06,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "max_depth": 3,
+            "max_features": 1.0,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 20.1426
+        },
+        {
+          "mae_mg_dL": 22.5344,
+          "rmse_mg_dL": 26.9616,
+          "median_absolute_error_mg_dL": 18.104,
+          "r2": -1.4312,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "max_depth": 3,
+            "max_features": 1.0,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 20.9079
+        }
+      ],
+      "predictions": [
+        125.2956,
+        89.4145,
+        95.9372,
+        108.3761,
+        108.9032,
+        133.6791,
+        102.6304,
+        104.0067,
+        100.3463,
+        100.2534,
+        98.7222,
+        106.9908,
+        135.4236,
+        125.6519,
+        117.7732,
+        110.1566,
+        99.9994,
+        95.5849,
+        93.3347,
+        99.5742,
+        114.5494,
+        95.3232,
+        106.3412,
+        103.4875,
+        102.917,
+        97.9431,
+        111.7336,
+        104.0602,
+        101.6763,
+        116.6184,
+        135.0521,
+        103.3425,
+        102.4117,
+        94.2212,
+        96.045,
+        102.2952,
+        95.9816,
+        80.449,
+        115.1559,
+        114.8499
+      ]
+    },
+    {
+      "model": "TunedRandomForestWithFeatureSelection",
+      "overall": {
+        "mae_mg_dL": 21.4932,
+        "rmse_mg_dL": 26.3387,
+        "median_absolute_error_mg_dL": 18.0284,
+        "r2": 0.1105
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 12.6502,
+          "rmse_mg_dL": 14.3191,
+          "median_absolute_error_mg_dL": 13.5689,
+          "r2": 0.624,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "model__max_depth": 5,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 1,
+            "model__n_estimators": 200,
+            "select__k": 8
+          },
+          "inner_best_mae_mg_dL": 23.7634
+        },
+        {
+          "mae_mg_dL": 22.1911,
+          "rmse_mg_dL": 26.4421,
+          "median_absolute_error_mg_dL": 24.9025,
+          "r2": 0.0228,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "model__max_depth": 5,
+            "model__max_features": 1.0,
+            "model__min_samples_leaf": 1,
+            "model__n_estimators": 200,
+            "select__k": 12
+          },
+          "inner_best_mae_mg_dL": 19.7748
+        },
+        {
+          "mae_mg_dL": 16.8509,
+          "rmse_mg_dL": 18.9967,
+          "median_absolute_error_mg_dL": 12.6423,
+          "r2": -0.0081,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "model__max_depth": 3,
+            "model__max_features": 0.5,
+            "model__min_samples_leaf": 2,
+            "model__n_estimators": 200,
+            "select__k": 5
+          },
+          "inner_best_mae_mg_dL": 23.5573
+        },
+        {
+          "mae_mg_dL": 29.1765,
+          "rmse_mg_dL": 36.6646,
+          "median_absolute_error_mg_dL": 20.1887,
+          "r2": 0.0317,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "model__max_depth": 8,
+            "model__max_features": 1.0,
+            "model__min_samples_leaf": 1,
+            "model__n_estimators": 200,
+            "select__k": 12
+          },
+          "inner_best_mae_mg_dL": 18.2544
+        },
+        {
+          "mae_mg_dL": 26.5975,
+          "rmse_mg_dL": 29.313,
+          "median_absolute_error_mg_dL": 22.0656,
+          "r2": -1.8737,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "model__max_depth": 5,
+            "model__max_features": 1.0,
+            "model__min_samples_leaf": 1,
+            "model__n_estimators": 200,
+            "select__k": 5
+          },
+          "inner_best_mae_mg_dL": 18.1919
+        }
+      ],
+      "predictions": [
+        121.4943,
+        82.505,
+        87.0554,
+        105.3487,
+        111.8673,
+        137.3594,
+        107.4745,
+        111.2408,
+        103.1023,
+        102.9413,
+        94.305,
+        109.9972,
+        132.5831,
+        132.5831,
+        112.5396,
+        115.4275,
+        99.4988,
+        102.1238,
+        93.0046,
+        99.47,
+        109.8438,
+        94.5437,
+        104.7352,
+        87.0604,
+        87.0604,
+        110.6224,
+        108.5807,
+        99.5054,
+        104.8998,
+        123.3025,
+        137.9145,
+        106.7076,
+        107.2522,
+        99.325,
+        99.1716,
+        103.9706,
+        99.005,
+        79.3867,
+        120.2167,
+        118.34
+      ]
+    },
+    {
+      "model": "TunedExtraTreesRegressor",
+      "overall": {
+        "mae_mg_dL": 22.0535,
+        "rmse_mg_dL": 26.8893,
+        "median_absolute_error_mg_dL": 20.914,
+        "r2": 0.0729
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 15.5296,
+          "rmse_mg_dL": 17.7023,
+          "median_absolute_error_mg_dL": 18.2008,
+          "r2": 0.4254,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": 3,
+            "max_features": 1.0,
+            "min_samples_leaf": 2,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 24.7476
+        },
+        {
+          "mae_mg_dL": 19.6981,
+          "rmse_mg_dL": 24.0841,
+          "median_absolute_error_mg_dL": 22.845,
+          "r2": 0.1893,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": null,
+            "max_features": 1.0,
+            "min_samples_leaf": 2,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 21.725
+        },
+        {
+          "mae_mg_dL": 20.3439,
+          "rmse_mg_dL": 21.4904,
+          "median_absolute_error_mg_dL": 21.5232,
+          "r2": -0.2901,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": 5,
+            "max_features": 1.0,
+            "min_samples_leaf": 2,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 23.804
+        },
+        {
+          "mae_mg_dL": 32.8076,
+          "rmse_mg_dL": 39.7459,
+          "median_absolute_error_mg_dL": 22.4716,
+          "r2": -0.1378,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "max_depth": 8,
+            "max_features": 1.0,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 18.459
+        },
+        {
+          "mae_mg_dL": 21.8881,
+          "rmse_mg_dL": 26.0805,
+          "median_absolute_error_mg_dL": 21.8175,
+          "r2": -1.2749,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "max_depth": null,
+            "max_features": 1.0,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 20.2281
+        }
+      ],
+      "predictions": [
+        108.035,
+        83.7044,
+        99.1581,
+        105.4521,
+        105.2069,
+        130.805,
+        100.1117,
+        105.3841,
+        98.8375,
+        98.6825,
+        102.4888,
+        107.7945,
+        137.035,
+        117.655,
+        114.3633,
+        117.0244,
+        102.4346,
+        95.7475,
+        97.065,
+        103.6907,
+        109.2825,
+        96.9925,
+        107.5834,
+        88.9731,
+        88.4252,
+        103.415,
+        113.1075,
+        101.6136,
+        106.2763,
+        122.3916,
+        137.67,
+        113.0458,
+        110.4358,
+        90.5484,
+        104.2531,
+        108.5675,
+        105.2657,
+        83.3567,
+        97.625,
+        110.5847
+      ]
+    }
+  ],
+  "best_exploratory_result": {
+    "model": "TunedRandomForestWithFeatureSelection",
+    "selection_rule": "lowest outer-test MAE in this exploratory comparison",
+    "warning": "Do not treat this small-sample comparison as clinical validation or as a final deployment decision."
+  }
+}

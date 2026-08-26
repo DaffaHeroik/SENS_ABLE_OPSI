@@ -1,0 +1,269 @@
+{
+  "experiment": "fixed Random Forest feature ablation V0.1",
+  "target": {
+    "column": "GlukosaRef",
+    "used_as_feature": false
+  },
+  "dataset": {
+    "rows": 40,
+    "unique_subjects": 32
+  },
+  "validation": {
+    "method": "5-fold GroupKFold by SubjectID",
+    "no_synthetic_data": true,
+    "no_target_leakage": true
+  },
+  "models": [
+    {
+      "feature_set": "all_features",
+      "features": [
+        "Usia",
+        "Berat_kg",
+        "Tinggi_cm",
+        "BMI",
+        "TerakhirMakan_jam",
+        "SuhuTubuh",
+        "SuhuAmbient",
+        "HR_est",
+        "SpO2_est",
+        "IR_Mean",
+        "IR_Min",
+        "IR_Max",
+        "IR_Std",
+        "IR_RMS",
+        "RED_Mean",
+        "RED_Min",
+        "RED_Max",
+        "RED_Std",
+        "RED_RMS",
+        "Ratio_AC",
+        "Ratio_DC",
+        "Samples"
+      ],
+      "overall": {
+        "mae_mg_dL": 22.5716,
+        "rmse_mg_dL": 27.0552,
+        "median_absolute_error_mg_dL": 20.558,
+        "r2": 0.0614
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 11.9867,
+          "rmse_mg_dL": 13.4818,
+          "median_absolute_error_mg_dL": 11.1648,
+          "r2": 0.6667,
+          "fold": 1
+        },
+        {
+          "mae_mg_dL": 23.6665,
+          "rmse_mg_dL": 27.4042,
+          "median_absolute_error_mg_dL": 24.4983,
+          "r2": -0.0496,
+          "fold": 2
+        },
+        {
+          "mae_mg_dL": 22.2215,
+          "rmse_mg_dL": 22.8506,
+          "median_absolute_error_mg_dL": 21.1182,
+          "r2": -0.4586,
+          "fold": 3
+        },
+        {
+          "mae_mg_dL": 31.7153,
+          "rmse_mg_dL": 37.9541,
+          "median_absolute_error_mg_dL": 22.5811,
+          "r2": -0.0376,
+          "fold": 4
+        },
+        {
+          "mae_mg_dL": 23.2679,
+          "rmse_mg_dL": 27.65,
+          "median_absolute_error_mg_dL": 19.0794,
+          "r2": -1.5569,
+          "fold": 5
+        }
+      ]
+    },
+    {
+      "feature_set": "ppg_only",
+      "features": [
+        "IR_Mean",
+        "IR_Min",
+        "IR_Max",
+        "IR_Std",
+        "IR_RMS",
+        "RED_Mean",
+        "RED_Min",
+        "RED_Max",
+        "RED_Std",
+        "RED_RMS",
+        "Ratio_AC",
+        "Ratio_DC",
+        "Samples"
+      ],
+      "overall": {
+        "mae_mg_dL": 28.2246,
+        "rmse_mg_dL": 34.1112,
+        "median_absolute_error_mg_dL": 26.6946,
+        "r2": -0.4919
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 22.5729,
+          "rmse_mg_dL": 27.3903,
+          "median_absolute_error_mg_dL": 24.1589,
+          "r2": -0.3757,
+          "fold": 1
+        },
+        {
+          "mae_mg_dL": 22.379,
+          "rmse_mg_dL": 28.7316,
+          "median_absolute_error_mg_dL": 21.7874,
+          "r2": -0.1538,
+          "fold": 2
+        },
+        {
+          "mae_mg_dL": 32.8727,
+          "rmse_mg_dL": 36.7022,
+          "median_absolute_error_mg_dL": 36.9464,
+          "r2": -2.7629,
+          "fold": 3
+        },
+        {
+          "mae_mg_dL": 40.4156,
+          "rmse_mg_dL": 46.1001,
+          "median_absolute_error_mg_dL": 33.101,
+          "r2": -0.5307,
+          "fold": 4
+        },
+        {
+          "mae_mg_dL": 22.8829,
+          "rmse_mg_dL": 27.7462,
+          "median_absolute_error_mg_dL": 17.4421,
+          "r2": -1.5748,
+          "fold": 5
+        }
+      ]
+    },
+    {
+      "feature_set": "ppg_temperature_vitals",
+      "features": [
+        "IR_Mean",
+        "IR_Min",
+        "IR_Max",
+        "IR_Std",
+        "IR_RMS",
+        "RED_Mean",
+        "RED_Min",
+        "RED_Max",
+        "RED_Std",
+        "RED_RMS",
+        "Ratio_AC",
+        "Ratio_DC",
+        "Samples",
+        "SuhuTubuh",
+        "SuhuAmbient",
+        "HR_est",
+        "SpO2_est"
+      ],
+      "overall": {
+        "mae_mg_dL": 26.8472,
+        "rmse_mg_dL": 31.2955,
+        "median_absolute_error_mg_dL": 23.0122,
+        "r2": -0.2558
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 19.594,
+          "rmse_mg_dL": 22.2284,
+          "median_absolute_error_mg_dL": 17.9806,
+          "r2": 0.094,
+          "fold": 1
+        },
+        {
+          "mae_mg_dL": 24.3079,
+          "rmse_mg_dL": 28.7605,
+          "median_absolute_error_mg_dL": 21.2855,
+          "r2": -0.1561,
+          "fold": 2
+        },
+        {
+          "mae_mg_dL": 32.6075,
+          "rmse_mg_dL": 33.9105,
+          "median_absolute_error_mg_dL": 33.098,
+          "r2": -2.2122,
+          "fold": 3
+        },
+        {
+          "mae_mg_dL": 38.3792,
+          "rmse_mg_dL": 42.2822,
+          "median_absolute_error_mg_dL": 34.4295,
+          "r2": -0.2877,
+          "fold": 4
+        },
+        {
+          "mae_mg_dL": 19.3472,
+          "rmse_mg_dL": 25.2599,
+          "median_absolute_error_mg_dL": 14.7769,
+          "r2": -1.134,
+          "fold": 5
+        }
+      ]
+    },
+    {
+      "feature_set": "context_only",
+      "features": [
+        "Usia",
+        "Berat_kg",
+        "Tinggi_cm",
+        "BMI",
+        "TerakhirMakan_jam"
+      ],
+      "overall": {
+        "mae_mg_dL": 18.784,
+        "rmse_mg_dL": 24.3522,
+        "median_absolute_error_mg_dL": 14.7891,
+        "r2": 0.2396
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 8.7664,
+          "rmse_mg_dL": 9.7,
+          "median_absolute_error_mg_dL": 9.9327,
+          "r2": 0.8275,
+          "fold": 1
+        },
+        {
+          "mae_mg_dL": 21.8419,
+          "rmse_mg_dL": 25.8378,
+          "median_absolute_error_mg_dL": 20.5514,
+          "r2": 0.0669,
+          "fold": 2
+        },
+        {
+          "mae_mg_dL": 13.2862,
+          "rmse_mg_dL": 15.6163,
+          "median_absolute_error_mg_dL": 15.442,
+          "r2": 0.3188,
+          "fold": 3
+        },
+        {
+          "mae_mg_dL": 25.1747,
+          "rmse_mg_dL": 33.876,
+          "median_absolute_error_mg_dL": 14.7891,
+          "r2": 0.1734,
+          "fold": 4
+        },
+        {
+          "mae_mg_dL": 24.8506,
+          "rmse_mg_dL": 28.4958,
+          "median_absolute_error_mg_dL": 20.1347,
+          "r2": -1.7158,
+          "fold": 5
+        }
+      ]
+    }
+  ],
+  "best_exploratory_feature_set": "context_only",
+  "warning": "Feature ablation is exploratory on a small dataset; do not interpret the best feature set as clinically validated."
+}

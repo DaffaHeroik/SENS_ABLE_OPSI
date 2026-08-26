@@ -56,6 +56,11 @@ SENS_ABLE_OPSI/
 ├── requirements.txt       # Dependensi Python
 ├── firmware/
 │   └── SENS_ABLE_Data_Collector/ # Kode Arduino/ESP32 pengambil data
+├── ai_final/              # Pusat AI untuk alat fisik SENS-Able
+│   ├── training/          # Training artifact V0.1
+│   ├── improvement/       # Tuning dan feature ablation
+│   ├── evaluation/        # Evaluasi dan prediksi out-of-fold
+│   └── deployment_esp32/  # Kontrak input dan scaffold inference
 ├── data/
 │   ├── raw/               # Salinan input asli, tidak diubah
 │   ├── processed/         # Dataset hasil pembersihan dan laporan kualitas
@@ -87,6 +92,10 @@ python3 scripts/prepare_dataset.py
 python3 scripts/compare_glucose_models.py
 python3 scripts/plot_model_results.py
 python3 scripts/validate_glucometer.py
+python3 ai_final/training/train_final_model.py
+python3 ai_final/evaluation/evaluate_final_model.py
+python3 ai_final/improvement/run_improvement_experiments.py
+python3 ai_final/improvement/run_feature_ablation.py
 python3 -m unittest discover -s tests -v
 ```
 
@@ -105,7 +114,7 @@ python3 -m unittest discover -s tests -v
 | Hash untuk reproducibility | `reports/MANIFEST_v0_1.sha256` |
 | Panduan penggunaan | `docs/model_building_guide.md` |
 
-Model V0.1 menggunakan `GlukosaRef` sebagai target glucometer dan `GroupKFold` berdasarkan `SubjectID`. Kandidat terbaik sementara adalah `RandomForestRegressor` dengan MAE 22,5716 mg/dL, tetapi statusnya masih eksploratif dan bukan validasi klinis.
+Model V0.1 menggunakan `GlukosaRef` sebagai target glucometer dan `GroupKFold` berdasarkan `SubjectID`. Kandidat terbaik sementara adalah `RandomForestRegressor` dengan MAE 22,5716 mg/dL, tetapi statusnya masih eksploratif dan bukan validasi klinis. Folder `ai_final/` adalah pusat kode AI untuk alat fisik, termasuk training, evaluasi, eksperimen improvement, dan kontrak input ESP32.
 
 ## Strategi Training
 

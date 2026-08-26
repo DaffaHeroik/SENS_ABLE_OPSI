@@ -221,3 +221,18 @@ Pemeriksaan klaim laporan juga PASS: dokumen memakai bahasa eksploratif dan seca
 A metric mismatch between `validate_glucometer.py` and `compare_glucose_models.py` was found and corrected. The dedicated validator now reads `configs/glucose_model_v0_1.json` and uses the same explicit feature list and Random Forest parameters (`n_estimators=200`, `max_depth=6`, `min_samples_leaf=2`, `random_state=42`) as the canonical comparison pipeline. The canonical V0.1 result is therefore MAE 22.5716 mg/dL, RMSE 27.0552 mg/dL, median absolute error 20.5580 mg/dL, and R² 0.0614. The earlier 22.4158 result remains only as historical output and is not the current canonical result.
 
 The full published branch was cloned into a clean workspace and run end-to-end: preparation produced 40 processed sessions, 32 SubjectID, 6 exclusions, 7 body-temperature imputations, 6 ambient-temperature imputations, and 40 non-null `GlukosaRef` values; validation, model comparison, artifact generation, and six figures completed; syntax checks and all 9 regression tests passed; the clean worktree and target-leakage checks passed. The latest remote branch is `e413ff2`.
+
+## 17. Dedicated AI Folder for the Physical SENS-Able Device (26 Agustus 2026)
+
+Dibuat folder `ai_final/` sebagai pusat coding AI untuk alat fisik SENS-Able. Struktur ini memisahkan kontrak model, training, improvement, evaluation, artifact, dan deployment ESP32:
+
+- `ai_final/config/` — `model_contract_v0_1.json`, salinan kontrak fitur yang hash-nya sama dengan konfigurasi canonical.
+- `ai_final/training/` — `train_final_model.py` untuk melatih artifact offline.
+- `ai_final/improvement/` — runner nested tuning dan feature ablation.
+- `ai_final/evaluation/` — evaluator V0.1, prediksi out-of-fold, dan runner grafik.
+- `ai_final/artifacts/` — artifact serta manifest V0.1.
+- `ai_final/deployment_esp32/` — header urutan 22 fitur dan scaffold inference yang sengaja belum mengaktifkan prediksi palsu.
+
+Eksperimen improvement nested GroupKFold menghasilkan kandidat terbaik `TunedRandomForestWithFeatureSelection` dengan MAE 21.4932 mg/dL, RMSE 26.3387 mg/dL, dan R² 0.1105. Namun nilai `k` fitur terpilih berubah antar-fold (8, 12, 5, 12, 5), sehingga kandidat belum stabil dan tidak dipromosikan menggantikan model fisik V0.1. Feature ablation juga menunjukkan `context_only` memiliki MAE 18.7840 mg/dL, tetapi kelompok ini tidak memakai PPG sehingga tidak boleh dianggap bukti sensor lebih akurat; hasilnya disimpan sebagai analisis confounding.
+
+Quality gate setelah folder AI ditambahkan: syntax check PASS, **13 regression tests PASS**, target leakage check PASS, artifact/evaluation contract PASS, improvement runners PASS, dan `git diff --check` PASS. Perubahan AI folder dan eksperimen improvement belum dipush.
