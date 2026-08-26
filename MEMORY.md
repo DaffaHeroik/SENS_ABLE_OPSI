@@ -242,3 +242,11 @@ Quality gate setelah folder AI ditambahkan: syntax check PASS, **13 regression t
 Fresh-clone verification menemukan dua sumber perubahan file yang tidak memengaruhi metrik: serialisasi float mentah pada CSV prediksi dan tie-breaking pada nested GridSearch ketika dijalankan paralel. `ai_final/evaluation/evaluate_final_model.py` sekarang menulis prediksi/error dengan pembulatan 4 desimal dan format CSV tetap. `scripts/improve_glucose_model.py` dan `scripts/feature_ablation_glucose.py` sekarang memakai serial execution dengan random seed tetap agar hasil JSON stabil.
 
 Folder AI-final telah dijalankan dari awal: training artifact, evaluator V0.1, grafik, nested improvement, dan feature ablation berhasil. Setelah penambahan contract test, quality gate menghasilkan **13 tests PASS**. Model fisik tetap V0.1; kandidat tuned feature-selection MAE 21.4932 mg/dL masih eksploratif dan belum dipromosikan karena fitur terpilih tidak stabil antar-fold.
+
+## 19. Further Honest Model-Improvement Search (26 Agustus 2026)
+
+A robust nested search was added under `ai_final/improvement/robust_model_search.py`. It tested deterministic sensor-derived features (`IR_Range`, `RED_Range`, `IR_CV`, `RED_CV`, `IR_RED_Mean_Ratio`, and `IR_RED_Std_Ratio`) with tuned Random Forest, Gradient Boosting, and Ridge. None beat the canonical V0.1 Random Forest: the best robust-search candidate was Tuned Gradient Boosting with MAE 23.7454 mg/dL, RMSE 28.6622 mg/dL, and R² -0.0534. It was therefore not promoted.
+
+The earlier tuned Random Forest with feature selection remains the numerically best exploratory candidate at MAE 21.4932 mg/dL and R² 0.1105, but its selected feature count varies across folds (8, 12, 5, 12, 5), so it is not stable enough to replace the physical-device V0.1 model. The official physical model remains Random Forest V0.1 with MAE 22.5716 mg/dL, RMSE 27.0552 mg/dL, and R² 0.0614.
+
+The repository now contains the `ai_final/` physical-device workflow, improvement reports, robustness report, and documentation. The latest local quality gate produced **14 tests PASS**, no target leakage, no synthetic data, and clean formatting. These latest changes are ready to commit and push.

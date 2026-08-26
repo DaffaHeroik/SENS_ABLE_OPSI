@@ -56,6 +56,13 @@ class ModelingPipelineTests(unittest.TestCase):
         self.assertEqual(evaluation["metrics"]["mae_mg_dL"], 22.5716)
         self.assertTrue(evaluation["validation"]["no_target_leakage"])
 
+    def test_robust_model_search_is_leakage_safe(self):
+        report = json.loads((ROOT / "reports" / "robust_model_search.json").read_text())
+        self.assertTrue(report["validation"]["no_synthetic_data"])
+        self.assertTrue(report["validation"]["no_target_leakage"])
+        self.assertEqual(report["dataset"]["rows"], 40)
+        self.assertEqual(report["dataset"]["unique_subjects"], 32)
+
 
 if __name__ == "__main__":
     unittest.main()

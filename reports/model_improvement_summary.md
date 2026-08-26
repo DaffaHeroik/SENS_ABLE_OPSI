@@ -50,3 +50,15 @@ Output detail:
 ## Larangan untuk Laporan
 
 Jangan menulis “akurasi naik menjadi 21,49%”. Angka 21,4932 adalah MAE dalam mg/dL, bukan persentase akurasi. Jika kandidat disebutkan, tulis sebagai eksperimen nested yang masih eksploratif dan jelaskan bahwa model belum memenuhi validasi klinis.
+
+## Pencarian Robust Fitur dan Model Tambahan
+
+Pencarian nested tambahan menguji enam fitur turunan sensor (`IR_Range`, `RED_Range`, `IR_CV`, `RED_CV`, `IR_RED_Mean_Ratio`, dan `IR_RED_Std_Ratio`) bersama Random Forest, Gradient Boosting, dan Ridge. Hasilnya tidak mengalahkan V0.1:
+
+| Kandidat | MAE (mg/dL) | RMSE (mg/dL) | R² |
+|---|---:|---:|---:|
+| Tuned Random Forest + fitur turunan | 23,8180 | 28,1903 | -0,0190 |
+| Tuned Gradient Boosting + fitur turunan | 23,7454 | 28,6622 | -0,0534 |
+| Tuned Ridge + fitur dasar | 26,5771 | 30,6880 | -0,2075 |
+
+Dengan demikian, penambahan fitur turunan tersebut tidak dipromosikan. Hasil ini penting untuk laporan karena menunjukkan bahwa tidak semua fitur tambahan meningkatkan model. Model fisik tetap V0.1, sedangkan `TunedRandomForestWithFeatureSelection` disimpan sebagai kandidat eksperimen dengan catatan ketidakstabilan fitur.

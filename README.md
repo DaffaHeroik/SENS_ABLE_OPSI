@@ -96,6 +96,7 @@ python3 ai_final/training/train_final_model.py
 python3 ai_final/evaluation/evaluate_final_model.py
 python3 ai_final/improvement/run_improvement_experiments.py
 python3 ai_final/improvement/run_feature_ablation.py
+python3 ai_final/improvement/robust_model_search.py
 python3 -m unittest discover -s tests -v
 ```
 

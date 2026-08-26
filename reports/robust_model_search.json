@@ -1,0 +1,295 @@
+{
+  "experiment": "robust model search with deterministic sensor feature engineering",
+  "target": {
+    "column": "GlukosaRef",
+    "used_as_feature": false
+  },
+  "dataset": {
+    "rows": 40,
+    "unique_subjects": 32
+  },
+  "validation": {
+    "outer": "5-fold GroupKFold by SubjectID",
+    "inner": "4-fold GroupKFold by SubjectID",
+    "no_synthetic_data": true,
+    "no_target_leakage": true
+  },
+  "engineered_features": [
+    "IR_Range",
+    "RED_Range",
+    "IR_CV",
+    "RED_CV",
+    "IR_RED_Mean_Ratio",
+    "IR_RED_Std_Ratio"
+  ],
+  "models": [
+    {
+      "model": "TunedRandomForestEngineeredFeatures",
+      "overall": {
+        "mae_mg_dL": 23.818,
+        "rmse_mg_dL": 28.1903,
+        "median_absolute_error_mg_dL": 20.9866,
+        "r2": -0.019
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 14.8232,
+          "rmse_mg_dL": 16.3802,
+          "median_absolute_error_mg_dL": 14.9412,
+          "r2": 0.508,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": 3,
+            "max_features": 0.5,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 26.2196
+        },
+        {
+          "mae_mg_dL": 23.4421,
+          "rmse_mg_dL": 27.1408,
+          "median_absolute_error_mg_dL": 24.3839,
+          "r2": -0.0295,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": 8,
+            "max_features": 1.0,
+            "min_samples_leaf": 2,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 21.2966
+        },
+        {
+          "mae_mg_dL": 23.8363,
+          "rmse_mg_dL": 25.6508,
+          "median_absolute_error_mg_dL": 24.1613,
+          "r2": -0.838,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "max_depth": 3,
+            "max_features": 0.5,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 25.2639
+        },
+        {
+          "mae_mg_dL": 33.7402,
+          "rmse_mg_dL": 39.5952,
+          "median_absolute_error_mg_dL": 24.61,
+          "r2": -0.1292,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "max_depth": 3,
+            "max_features": 0.5,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 20.4617
+        },
+        {
+          "mae_mg_dL": 23.2483,
+          "rmse_mg_dL": 27.2543,
+          "median_absolute_error_mg_dL": 20.5471,
+          "r2": -1.4843,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "max_depth": 8,
+            "max_features": 1.0,
+            "min_samples_leaf": 1,
+            "n_estimators": 200
+          },
+          "inner_best_mae_mg_dL": 21.4263
+        }
+      ]
+    },
+    {
+      "model": "TunedGradientBoostingEngineeredFeatures",
+      "overall": {
+        "mae_mg_dL": 23.7454,
+        "rmse_mg_dL": 28.6622,
+        "median_absolute_error_mg_dL": 21.4841,
+        "r2": -0.0534
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 18.0655,
+          "rmse_mg_dL": 19.0987,
+          "median_absolute_error_mg_dL": 19.2456,
+          "r2": 0.3312,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "learning_rate": 0.03,
+            "max_depth": 1,
+            "min_samples_leaf": 2,
+            "n_estimators": 50
+          },
+          "inner_best_mae_mg_dL": 26.3976
+        },
+        {
+          "mae_mg_dL": 24.8339,
+          "rmse_mg_dL": 29.2409,
+          "median_absolute_error_mg_dL": 28.5979,
+          "r2": -0.195,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "learning_rate": 0.05,
+            "max_depth": 1,
+            "min_samples_leaf": 2,
+            "n_estimators": 100
+          },
+          "inner_best_mae_mg_dL": 20.1793
+        },
+        {
+          "mae_mg_dL": 21.5103,
+          "rmse_mg_dL": 23.4667,
+          "median_absolute_error_mg_dL": 21.5306,
+          "r2": -0.5383,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "learning_rate": 0.1,
+            "max_depth": 1,
+            "min_samples_leaf": 4,
+            "n_estimators": 50
+          },
+          "inner_best_mae_mg_dL": 23.6084
+        },
+        {
+          "mae_mg_dL": 30.7036,
+          "rmse_mg_dL": 37.6669,
+          "median_absolute_error_mg_dL": 26.453,
+          "r2": -0.0219,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "learning_rate": 0.1,
+            "max_depth": 2,
+            "min_samples_leaf": 2,
+            "n_estimators": 100
+          },
+          "inner_best_mae_mg_dL": 20.943
+        },
+        {
+          "mae_mg_dL": 23.6139,
+          "rmse_mg_dL": 30.3039,
+          "median_absolute_error_mg_dL": 20.7957,
+          "r2": -2.0713,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "learning_rate": 0.1,
+            "max_depth": 1,
+            "min_samples_leaf": 2,
+            "n_estimators": 100
+          },
+          "inner_best_mae_mg_dL": 17.1811
+        }
+      ]
+    },
+    {
+      "model": "TunedRidgeBaseFeatures",
+      "overall": {
+        "mae_mg_dL": 26.5771,
+        "rmse_mg_dL": 30.688,
+        "median_absolute_error_mg_dL": 23.2353,
+        "r2": -0.2075
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 20.0028,
+          "rmse_mg_dL": 21.1995,
+          "median_absolute_error_mg_dL": 21.6003,
+          "r2": 0.1759,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "model__alpha": 100.0
+          },
+          "inner_best_mae_mg_dL": 25.7091
+        },
+        {
+          "mae_mg_dL": 24.9643,
+          "rmse_mg_dL": 30.3833,
+          "median_absolute_error_mg_dL": 25.1766,
+          "r2": -0.2902,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "model__alpha": 100.0
+          },
+          "inner_best_mae_mg_dL": 23.3597
+        },
+        {
+          "mae_mg_dL": 21.5286,
+          "rmse_mg_dL": 22.8083,
+          "median_absolute_error_mg_dL": 22.5718,
+          "r2": -0.4532,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6,
+          "best_params": {
+            "model__alpha": 100.0
+          },
+          "inner_best_mae_mg_dL": 24.6043
+        },
+        {
+          "mae_mg_dL": 35.1554,
+          "rmse_mg_dL": 40.6938,
+          "median_absolute_error_mg_dL": 33.1179,
+          "r2": -0.1928,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "model__alpha": 10.0
+          },
+          "inner_best_mae_mg_dL": 21.024
+        },
+        {
+          "mae_mg_dL": 31.2346,
+          "rmse_mg_dL": 34.0585,
+          "median_absolute_error_mg_dL": 34.4492,
+          "r2": -2.8795,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7,
+          "best_params": {
+            "model__alpha": 10.0
+          },
+          "inner_best_mae_mg_dL": 22.8629
+        }
+      ]
+    }
+  ],
+  "best_exploratory_result": {
+    "model": "TunedGradientBoostingEngineeredFeatures",
+    "overall": {
+      "mae_mg_dL": 23.7454,
+      "rmse_mg_dL": 28.6622,
+      "median_absolute_error_mg_dL": 21.4841,
+      "r2": -0.0534
+    },
+    "warning": "Exploratory only; do not promote without stable repeated validation and physical-device feasibility."
+  }
+}
