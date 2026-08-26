@@ -11,12 +11,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import mean_absolute_error, mean_squared_error, median_absolute_error, r2_score
 from sklearn.model_selection import GroupKFold, cross_val_predict
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
 
 ROOT = Path(__file__).resolve().parents[1]
+CONFIG_FILE = ROOT / "configs" / "glucose_model_v0_1.json"
 DATA_FILE = ROOT / "data" / "processed" / "sensable_validation.csv"
 REPORT_FILE = ROOT / "reports" / "glucometer_validation.json"
 REFERENCE_COLUMN = "GlukosaRef"
@@ -41,9 +40,13 @@ def load_data() -> pd.DataFrame:
 
 def main() -> None:
     frame = load_data()
-    feature_columns = [c for c in frame.columns if c not in IDENTIFIER_COLUMNS]
-    if REFERENCE_COLUMN in feature_columns:
-        raise AssertionError("GlukosaRef must never be used as an input feature")
+    config = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+    feature_columns = list(config["features"])
+    missing_features = sorted(set(feature_columns) - set(frame.columns))
+    if missing_features:
+        raise ValueError(f"Missing configured features: {missing_features}")
+    if REFERENCE_COLUMN in feature_columns or set(config["excluded_from_features"]) & set(feature_columns):
+        raise AssertionError("Target, identifiers, or provenance flags leaked into features")
     X = frame[feature_columns].apply(pd.to_numeric, errors="raise")
     y = frame[REFERENCE_COLUMN].astype(float)
     groups = frame["SubjectID"]
@@ -51,15 +54,14 @@ def main() -> None:
     if n_splits < 2:
         raise ValueError("At least two unique subjects are required")
 
-    estimator = Pipeline([
-        ("scale", StandardScaler()),
-        ("model", RandomForestRegressor(
-            n_estimators=200,
-            max_depth=6,
-            random_state=42,
-            n_jobs=-1,
-        )),
-    ])
+    params = config["models"]["random_forest"]
+    estimator = RandomForestRegressor(
+        n_estimators=int(params["n_estimators"]),
+        max_depth=int(params["max_depth"]),
+        min_samples_leaf=int(params["min_samples_leaf"]),
+        random_state=int(params["random_state"]),
+        n_jobs=int(params["n_jobs"]),
+    )
     cv = GroupKFold(n_splits=n_splits)
     predictions = cross_val_predict(estimator, X, y, cv=cv, groups=groups)
     mae = mean_absolute_error(y, predictions)
@@ -84,8 +86,11 @@ def main() -> None:
         },
         "evaluation": {
             "method": "5-fold GroupKFold by SubjectID (or fewer folds when needed)",
+            "model": "RandomForestRegressor",
+            "config": str(CONFIG_FILE.relative_to(ROOT)),
             "mae_mg_dL": round(float(mae), 4),
             "rmse_mg_dL": round(rmse, 4),
+            "median_absolute_error_mg_dL": round(float(median_absolute_error(y, predictions)), 4),
             "r2": round(float(r2), 4),
             "warning": "Exploratory only: the cleaned dataset is small and is not sufficient to establish clinical accuracy.",
         },
