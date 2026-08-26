@@ -236,3 +236,9 @@ Dibuat folder `ai_final/` sebagai pusat coding AI untuk alat fisik SENS-Able. St
 Eksperimen improvement nested GroupKFold menghasilkan kandidat terbaik `TunedRandomForestWithFeatureSelection` dengan MAE 21.4932 mg/dL, RMSE 26.3387 mg/dL, dan R² 0.1105. Namun nilai `k` fitur terpilih berubah antar-fold (8, 12, 5, 12, 5), sehingga kandidat belum stabil dan tidak dipromosikan menggantikan model fisik V0.1. Feature ablation juga menunjukkan `context_only` memiliki MAE 18.7840 mg/dL, tetapi kelompok ini tidak memakai PPG sehingga tidak boleh dianggap bukti sensor lebih akurat; hasilnya disimpan sebagai analisis confounding.
 
 Quality gate setelah folder AI ditambahkan: syntax check PASS, **13 regression tests PASS**, target leakage check PASS, artifact/evaluation contract PASS, improvement runners PASS, dan `git diff --check` PASS. Perubahan AI folder dan eksperimen improvement belum dipush.
+
+## 18. AI-final Reproducibility Fix (26 Agustus 2026)
+
+Fresh-clone verification menemukan dua sumber perubahan file yang tidak memengaruhi metrik: serialisasi float mentah pada CSV prediksi dan tie-breaking pada nested GridSearch ketika dijalankan paralel. `ai_final/evaluation/evaluate_final_model.py` sekarang menulis prediksi/error dengan pembulatan 4 desimal dan format CSV tetap. `scripts/improve_glucose_model.py` dan `scripts/feature_ablation_glucose.py` sekarang memakai serial execution dengan random seed tetap agar hasil JSON stabil.
+
+Folder AI-final telah dijalankan dari awal: training artifact, evaluator V0.1, grafik, nested improvement, dan feature ablation berhasil. Setelah penambahan contract test, quality gate menghasilkan **13 tests PASS**. Model fisik tetap V0.1; kandidat tuned feature-selection MAE 21.4932 mg/dL masih eksploratif dan belum dipromosikan karena fitur terpilih tidak stabil antar-fold.

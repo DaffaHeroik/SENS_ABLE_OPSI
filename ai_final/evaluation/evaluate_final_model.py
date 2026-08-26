@@ -38,10 +38,10 @@ def main() -> None:
     prediction_frame = pd.DataFrame({
         "SubjectID": frame["SubjectID"],
         "reference_glucose_mg_dL": y,
-        "predicted_glucose_mg_dL": predictions,
+        "predicted_glucose_mg_dL": np.round(predictions, 4),
     })
-    prediction_frame["absolute_error_mg_dL"] = (prediction_frame["reference_glucose_mg_dL"] - prediction_frame["predicted_glucose_mg_dL"]).abs()
-    prediction_frame.to_csv(PREDICTIONS_FILE, index=False)
+    prediction_frame["absolute_error_mg_dL"] = np.round((prediction_frame["reference_glucose_mg_dL"] - prediction_frame["predicted_glucose_mg_dL"]).abs(), 4)
+    prediction_frame.to_csv(PREDICTIONS_FILE, index=False, float_format="%.4f")
     report = {
         "version": contract["version"],
         "model": "RandomForestRegressor",

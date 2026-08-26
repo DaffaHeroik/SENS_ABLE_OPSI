@@ -46,7 +46,7 @@ def evaluate_nested(name, estimator, parameter_grid, X, y, groups, outer_splits,
             param_grid=parameter_grid,
             scoring="neg_mean_absolute_error",
             cv=inner,
-            n_jobs=-1,
+            n_jobs=1,
             refit=True,
         )
         search.fit(X_train, y_train)
@@ -105,7 +105,7 @@ def main():
     def make_inner(group_train, X_train, y_train):
         return GroupKFold(n_splits=min(4, int(group_train.nunique()))).split(X_train, y_train, group_train)
 
-    rf = RandomForestRegressor(random_state=42, n_jobs=-1)
+    rf = RandomForestRegressor(random_state=42, n_jobs=1)
     rf_grid = {
         "n_estimators": [200],
         "max_depth": [3, 5, 8, None],
@@ -114,7 +114,7 @@ def main():
     }
     rf_select = Pipeline([
         ("select", SelectKBest(score_func=f_regression)),
-        ("model", RandomForestRegressor(random_state=42, n_jobs=-1)),
+        ("model", RandomForestRegressor(random_state=42, n_jobs=1)),
     ])
     rf_select_grid = {
         "select__k": [5, 8, 12, "all"],
@@ -123,7 +123,7 @@ def main():
         "model__min_samples_leaf": [1, 2, 3],
         "model__max_features": [0.5, 1.0],
     }
-    extra = ExtraTreesRegressor(random_state=42, n_jobs=-1)
+    extra = ExtraTreesRegressor(random_state=42, n_jobs=1)
     extra_grid = {
         "n_estimators": [200],
         "max_depth": [3, 5, 8, None],

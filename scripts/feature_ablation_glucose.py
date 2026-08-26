@@ -36,7 +36,7 @@ def evaluate(name, feature_columns, frame, y, groups, folds, params):
             max_depth=int(params["max_depth"]),
             min_samples_leaf=int(params["min_samples_leaf"]),
             random_state=int(params["random_state"]),
-            n_jobs=int(params["n_jobs"]),
+            n_jobs=1,
         )
         model.fit(X.iloc[train_idx], y[train_idx])
         fold_prediction = model.predict(X.iloc[test_idx])
