@@ -1,0 +1,108 @@
+{
+  "experiment": "external public PPG augmentation without changing canonical SENS-Able model",
+  "source": {
+    "title": "Photoplethysmography (PPG) Dataset for Non-Invasive Blood Glucose Monitoring",
+    "doi": "10.5281/zenodo.21978226",
+    "url": "https://zenodo.org/records/21978226",
+    "license": "CC0",
+    "downloaded_archive_sha256": "6dde49ce143d3cd05983f461dcc4f5f02548b20ebfe28aff49b4c17e14c3a82c",
+    "target_conversion": "annotation GLY in mmol/L multiplied by 18.0182 to mg/dL; no SENS-Able label was changed"
+  },
+  "public_dataset": {
+    "records_seen": 125,
+    "records_retained_after_qc_and_parse": 105,
+    "records_quality_excluded": 20,
+    "records_parse_failed": 0,
+    "subjects_retained": 18,
+    "glucose_min_mg_dL": 39.64,
+    "glucose_max_mg_dL": 304.5076
+  },
+  "sensable_dataset": {
+    "rows": 40,
+    "subjects": 32
+  },
+  "features": [
+    "Age",
+    "Weight_kg",
+    "Height_cm",
+    "BMI",
+    "IR_CV",
+    "IR_Range_Rel",
+    "RED_CV",
+    "RED_Range_Rel",
+    "IR_RED_Mean_Ratio",
+    "HR_bpm"
+  ],
+  "validation": {
+    "public_only": "5-fold GroupKFold by public SubjectID",
+    "sensable_holdout": "5-fold GroupKFold by SENS-Able SubjectID; public rows only enter training folds",
+    "no_target_leakage": true,
+    "no_synthetic_data": true,
+    "canonical_model_unchanged": true
+  },
+  "public_only": {
+    "rows": 105,
+    "subjects": 18,
+    "metrics": {
+      "mae_mg_dL": 49.6547,
+      "rmse_mg_dL": 62.8886,
+      "median_absolute_error_mg_dL": 39.0309,
+      "r2": -0.1864
+    }
+  },
+  "sensable_holdout": {
+    "folded_metrics": {
+      "sensable_only_shared_features": {
+        "mae_mg_dL": 22.1055,
+        "rmse_mg_dL": 26.7885,
+        "median_absolute_error_mg_dL": 17.0694,
+        "r2": 0.0799
+      },
+      "public_plus_sensable_shared_features": {
+        "mae_mg_dL": 25.8117,
+        "rmse_mg_dL": 30.0596,
+        "median_absolute_error_mg_dL": 22.9388,
+        "r2": -0.1586
+      }
+    }
+  },
+  "weighted_public_augmentation": {
+    "public_weight_0.05": {
+      "mae_mg_dL": 23.3939,
+      "rmse_mg_dL": 28.6078,
+      "median_absolute_error_mg_dL": 18.3311,
+      "r2": -0.0494
+    },
+    "public_weight_0.1": {
+      "mae_mg_dL": 23.1664,
+      "rmse_mg_dL": 28.5623,
+      "median_absolute_error_mg_dL": 17.4055,
+      "r2": -0.046
+    },
+    "public_weight_0.25": {
+      "mae_mg_dL": 24.3011,
+      "rmse_mg_dL": 29.4511,
+      "median_absolute_error_mg_dL": 21.2805,
+      "r2": -0.1121
+    },
+    "public_weight_0.5": {
+      "mae_mg_dL": 24.2957,
+      "rmse_mg_dL": 29.039,
+      "median_absolute_error_mg_dL": 18.8333,
+      "r2": -0.0812
+    },
+    "public_weight_1": {
+      "mae_mg_dL": 24.7526,
+      "rmse_mg_dL": 29.2299,
+      "median_absolute_error_mg_dL": 22.4167,
+      "r2": -0.0955
+    },
+    "public_weight_2": {
+      "mae_mg_dL": 25.699,
+      "rmse_mg_dL": 30.2127,
+      "median_absolute_error_mg_dL": 24.84,
+      "r2": -0.1704
+    }
+  },
+  "interpretation": "External data is evaluated as an augmentation experiment only. It is not merged into the canonical processed dataset and is not used to claim clinical performance."
+}

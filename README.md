@@ -58,7 +58,7 @@ SENS_ABLE_OPSI/
 │   └── SENS_ABLE_Data_Collector/ # Kode Arduino/ESP32 pengambil data
 ├── ai_final/              # Pusat AI untuk alat fisik SENS-Able
 │   ├── training/          # Training artifact V0.1
-│   ├── improvement/       # Tuning dan feature ablation
+│   ├── improvement/       # Tuning, ablation, robust search, dan dataset publik
 │   ├── evaluation/        # Evaluasi dan prediksi out-of-fold
 │   └── deployment_esp32/  # Kontrak input dan scaffold inference
 ├── data/
@@ -70,6 +70,7 @@ SENS_ABLE_OPSI/
 ├── reports/
 │   ├── glucometer_validation.json # Hasil validasi terhadap glucometer
 │   ├── model_comparison.json # Hasil perbandingan V0.1
+│   ├── external_public_ppg_experiment.json # Uji augmentasi dataset PPG publik
 │   ├── modeling_v0_1_summary.md # Ringkasan faktual untuk laporan
 │   ├── MANIFEST_v0_1.sha256 # Hash dataset/model/laporan V0.1
 │   └── figures/             # Grafik untuk laporan penelitian
@@ -102,6 +103,8 @@ python3 -m unittest discover -s tests -v
 
 `prepare_dataset.py` membaca seluruh file di `data/raw/`, tidak mengubahnya, lalu membuat dataset processed. `compare_glucose_models.py` membaca kontrak fitur dari `configs/glucose_model_v0_1.json`, membandingkan baseline/Linear Regression/Random Forest dengan GroupKFold, menyimpan laporan dan artifact model eksploratif. `validate_glucometer.py` menggunakan `GlukosaRef` sebagai target/referensi gula darah dari glucometer, bukan sebagai fitur input. Dengan demikian tidak terjadi kebocoran label dari nilai glucometer ke prediksi model.
 
+Eksperimen dataset publik dijalankan terpisah melalui `ai_final/improvement/external_public_ppg_experiment.py`. Data publik tidak dimasukkan ke `data/processed/` dan tidak mengubah model V0.1. Script hanya menguji apakah data PPG publik membantu ketika ditambahkan ke data training, sementara data uji SENS-Able tetap dipisahkan berdasarkan `SubjectID`.
+
 ## Tahap Pemodelan V0.1
 
 | Komponen | Lokasi |
@@ -119,24 +122,15 @@ Model V0.1 menggunakan `GlukosaRef` sebagai target glucometer dan `GroupKFold` b
 
 ## Strategi Training
 
-| | Training | Validasi |
-|---|---|---|
-| **Dataset** | PIMA Indians Diabetes (public) | SENS-Able (data sendiri) |
-| **Sampel** | 768 | Dataset processed; lihat `data/processed/quality_report.json` |
-| **Fitur** | Age, BMI, Glucose | Usia, BMI, GlukosaRef (baseline klasifikasi lama) |
-
-Tabel di atas menjelaskan baseline klasifikasi diabetes yang masih dipertahankan untuk perbandingan historis. Untuk **model estimasi gula darah**, gunakan alur regresi berikut.
+Eksperimen PIMA yang masih ada di root repository adalah **baseline klasifikasi historis** dan bukan sumber training untuk model glukosa final. Model penelitian yang dipakai sekarang adalah regresi langsung terhadap referensi glucometer `GlukosaRef` menggunakan data SENS-Able yang telah diproses.
 
 ### Validasi Regresi Glukosa dengan Glukometer
 
 Validasi gula darah dilakukan secara terpisah melalui `scripts/validate_glucometer.py`. Kolom `GlukosaRef` diperlakukan sebagai **target referensi glucometer dalam mg/dL**. Fitur input hanya berasal dari data demografi dan sinyal sensor; `GlukosaRef`, `Nama`, `SubjectID`, dan `Diabetes` tidak digunakan sebagai fitur. Evaluasi menggunakan `GroupKFold` berdasarkan `SubjectID` dan melaporkan MAE, RMSE, serta R². Hasilnya bersifat eksploratif dan belum merupakan validasi klinis.
 
-Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri. Strategi ini lebih valid karena:
-- Data training terpisah dari data validasi
-- Model belajar dari pola umum diabetes (768 sampel)
-- Data sensor sendiri menjadi set evaluasi nyata
-- Validasi tetap memakai pembagian berbasis subject agar sesi yang sama tidak bocor antar-fold
-- Tidak overfitting pada data kecil
+### Uji Dataset Publik
+
+Dataset publik PPG dapat dipakai sebagai eksperimen augmentasi atau benchmark, tetapi tidak boleh dianggap identik dengan sensor MAX30102 SENS-Able. Karena perbedaan perangkat, panjang sinyal, populasi, dan cara memperoleh label, hasilnya dilaporkan terpisah. Validasi final SENS-Able tetap menggunakan `GroupKFold` berdasarkan `SubjectID` dan `GlukosaRef` tidak pernah menjadi fitur.
 
 ## Hasil Baseline Klasifikasi
 
@@ -179,7 +173,7 @@ Model dilatih pada data publik (PIMA), lalu divalidasi pada data sensor sendiri.
 4. 🔲 Kalibrasi sensor vs alat standar (target MAE HR<3bpm, Suhu<0.3°C, Glukosa<15mg/dL)
 5. 🔲 Uji 15 responden (5 tunanetra, 5 tunarungu, 5 non-disabilitas)
 6. 🔲 Kuesioner usability Likert 1-5 (target skor ≥4)
-7. 🔲 Validasi ulang dengan dataset yang diperluas dan seluruh logbook berpasangan glucometer-sensor
+7. 🔲 Evaluasi terpisah dengan dataset publik yang modalitasnya sesuai; jangan mencampurkan tanpa uji domain shift
 8. 🔲 Konversi model ke TensorFlow Lite
 9. 🔲 Deploy ke ESP32 via TinyML
 10. 🔲 Penyusunan laporan akhir

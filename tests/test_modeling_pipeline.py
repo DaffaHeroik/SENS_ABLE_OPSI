@@ -63,6 +63,25 @@ class ModelingPipelineTests(unittest.TestCase):
         self.assertEqual(report["dataset"]["rows"], 40)
         self.assertEqual(report["dataset"]["unique_subjects"], 32)
 
+    def test_external_public_ppg_experiment_is_separate_and_leakage_safe(self):
+        report = json.loads((ROOT / "reports" / "external_public_ppg_experiment.json").read_text())
+        self.assertTrue(report["validation"]["no_synthetic_data"])
+        self.assertTrue(report["validation"]["no_target_leakage"])
+        self.assertTrue(report["validation"]["canonical_model_unchanged"])
+        self.assertNotIn("GlukosaRef", report["features"])
+        self.assertEqual(report["public_dataset"]["records_retained_after_qc_and_parse"], 105)
+        self.assertEqual(report["public_dataset"]["subjects_retained"], 18)
+        self.assertEqual(report["source"]["license"], "CC0")
+        self.assertEqual(
+            report["sensable_holdout"]["folded_metrics"]["public_plus_sensable_shared_features"]["mae_mg_dL"],
+            25.8117,
+        )
+        self.assertEqual(report["weighted_public_augmentation"]["public_weight_0.1"]["mae_mg_dL"], 23.1664)
+        self.assertGreater(
+            report["weighted_public_augmentation"]["public_weight_0.1"]["mae_mg_dL"],
+            report["sensable_holdout"]["folded_metrics"]["sensable_only_shared_features"]["mae_mg_dL"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
