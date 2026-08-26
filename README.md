@@ -47,6 +47,8 @@ SENS_ABLE_OPSI/
 │   ├── prepare_dataset.py # Raw → processed, deduplikasi, audit kualitas
 │   └── validate_glucometer.py # Validasi regresi terhadap GlukosaRef
 ├── requirements.txt       # Dependensi Python
+├── firmware/
+│   └── SENS_ABLE_Data_Collector/ # Kode Arduino/ESP32 pengambil data
 ├── data/
 │   ├── raw/               # Salinan input asli, tidak diubah
 │   ├── processed/         # Dataset hasil pembersihan dan laporan kualitas
