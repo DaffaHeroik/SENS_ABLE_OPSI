@@ -1,28 +1,15 @@
 /*
- * SENS-ABLE Glucose Predictor v1.0
+ * SENS-ABLE Glucose Predictor v1.1
  * ESP32 + MAX30100 + MLX90614 + OLED + Speaker + Vibrator
- * 
+ *
  * Predicts blood glucose from PPG sensor signal using embedded Random Forest.
- * 
- * Features:
- * - Real-time glucose prediction from sensor data
- * - OLED display with glucose level and status
- * - Audio feedback (beep patterns for different levels)
- * - Vibration feedback for accessibility
- * - WiFi data export for calibration
- * 
+ *
  * Hardware Connections:
  *   OLED    : SDA=21, SCL=22
  *   MLX90614: SDA=21, SCL=22 (same bus as OLED)
  *   MAX30100: SDA=18, SCL=19 (separate bus)
  *   Speaker : GPIO 23
  *   Vibrator: GPIO 26
- * 
- * Usage:
- *   1. Place finger on MAX30100 sensor
- *   2. Wait 10 seconds for measurement
- *   3. Read glucose prediction from OLED
- *   4. Audio/vibration feedback indicates level
  */
 
 #include <Wire.h>
@@ -37,7 +24,6 @@
 #include "model_glucose_inference.h"
 
 // ===================== CONFIGURATION =====================
-// WiFi AP for calibration data export
 const char* AP_SSID = "SENS-Able";
 const char* AP_PASS = "sensable123";
 
@@ -51,10 +37,10 @@ const char* AP_PASS = "sensable123";
 #define VIBRO_PIN   26
 
 // Measurement Settings
-#define RECORD_SEC    10      // Seconds to record PPG
-#define SAMPLE_RATE   100     // Hz
-#define MAX_SAMPLES   1200    // Max buffer size
-#define MIN_SAMPLES   100     // Minimum valid samples
+#define RECORD_SEC    10
+#define SAMPLE_RATE   100
+#define MAX_SAMPLES   1200
+#define MIN_SAMPLES   100
 
 // ===================== OBJECTS =====================
 TwoWire BusOLED   = TwoWire(0);
@@ -83,12 +69,9 @@ struct SensorData {
 
 // ===================== FEATURES =====================
 struct Features {
-    // PPG Features
     float irMean, irMin, irMax, irStd, irRMS;
     float redMean, redMin, redMax, redStd, redRMS;
     float ratioAC, ratioDC;
-    
-    // Other features (need user input or defaults)
     float age;
     float weight;
     float height;
@@ -99,7 +82,7 @@ struct Features {
 
 // ===================== PREDICTION =====================
 float predictedGlucose = 0;
-int glucoseStatus = 0;  // 0=Normal, 1=Pre-diabetic, 2=Diabetic, 3=Low
+int glucoseStatus = 0;
 
 // ===================== MLX90614 MANUAL READ =====================
 float readMLXObject() {
@@ -156,18 +139,10 @@ void playBeep(int count, int durationMs = 100, int pauseMs = 50) {
 
 void playGlucoseBeep(int status) {
     switch (status) {
-        case 0:  // Normal - single short beep
-            playBeep(1, 100);
-            break;
-        case 1:  // Pre-diabetic - two beeps
-            playBeep(2, 150, 100);
-            break;
-        case 2:  // Diabetic - three long beeps
-            playBeep(3, 300, 200);
-            break;
-        case 3:  // Low (Hypoglycemia) - rapid beeps (alarm)
-            playBeep(5, 100, 50);
-            break;
+        case 0:  playBeep(1, 100); break;
+        case 1:  playBeep(2, 150, 100); break;
+        case 2:  playBeep(3, 300, 200); break;
+        case 3:  playBeep(5, 100, 50); break;
     }
 }
 
@@ -180,28 +155,30 @@ void vibrate(int durationMs = 200) {
 
 void vibratePattern(int status) {
     switch (status) {
-        case 0:  // Normal - single short vibration
-            vibrate(100);
-            break;
-        case 1:  // Pre-diabetic - two vibrations
-            vibrate(150);
-            delay(100);
-            vibrate(150);
-            break;
-        case 2:  // Diabetic - three vibrations
-            vibrate(200);
-            delay(100);
-            vibrate(200);
-            delay(100);
-            vibrate(200);
-            break;
-        case 3:  // Low - continuous vibration (alarm)
-            for (int i = 0; i < 5; i++) {
-                vibrate(150);
-                delay(50);
-            }
-            break;
+        case 0:  vibrate(100); break;
+        case 1:  vibrate(150); delay(100); vibrate(150); break;
+        case 2:  vibrate(200); delay(100); vibrate(200); delay(100); vibrate(200); break;
+        case 3:  for (int i = 0; i < 5; i++) { vibrate(150); delay(50); } break;
     }
+}
+
+// ===================== READ PPG SENSOR =====================
+// Read one sample from MAX30100 FIFO
+// Returns true if data available, false otherwise
+bool readPPGSample(float &irVal, float &redVal) {
+    // Check if FIFO has data
+    uint8_t samples = sensor.getFIFOSamples();
+    if (samples == 0) {
+        return false;
+    }
+    
+    // Read raw FIFO data
+    uint32_t irRaw = 0, redRaw = 0;
+    sensor.readFIFO(&irRaw, &redRaw);
+    
+    irVal = (float)irRaw;
+    redVal = (float)redRaw;
+    return true;
 }
 
 // ===================== COMPUTE FEATURES =====================
@@ -243,11 +220,10 @@ void computeFeatures() {
     features.redStd = sqrt((redSumSq / sampleCount) - (features.redMean * features.redMean));
     features.redRMS = sqrt(redSumSq / sampleCount);
     
-    // AC/DC components (simplified)
+    // AC/DC components
     features.ratioAC = (features.irMax - features.irMin) / features.irMean;
     features.ratioDC = (features.redMax - features.redMin) / features.redMean;
     
-    // Samples count
     features.samples = sampleCount;
     
     Serial.printf("Features computed: IR[%.1f, %.1f, %.1f] RED[%.1f, %.1f, %.1f]\n",
@@ -261,54 +237,47 @@ void runInference() {
     sensorData.bodyTemp = readMLXObject();
     sensorData.ambientTemp = readMLXAmbient();
     
-    // Estimate HR from PPG (simplified - count peaks)
-    // In production, use proper peak detection algorithm
-    sensorData.hr = 70.0;  // Placeholder - implement peak detection
-    sensorData.spo2 = 98.0; // Placeholder - implement SpO2 calculation
+    // Placeholder HR/SpO2
+    sensorData.hr = 70.0;
+    sensorData.spo2 = 98.0;
     
-    // Prepare feature array in correct order
-    // Order: Usia, Berat_kg, Tinggi_cm, BMI, TerakhirMakan_jam,
-    //        SuhuTubuh, SuhuAmbient, HR_est, SpO2_est,
-    //        IR_Mean, IR_Min, IR_Max, IR_Std, IR_RMS,
-    //        RED_Mean, RED_Min, RED_Max, RED_Std, RED_RMS,
-    //        Ratio_AC, Ratio_DC, Samples
-    
+    // Prepare feature array
     float inputFeatures[GLUCOSE_MODEL_FEATURES] = {
-        features.age,              // Usia
-        features.weight,           // Berat_kg
-        features.height,           // Tinggi_cm
-        features.bmi,              // BMI
-        features.lastMeal,         // TerakhirMakan_jam
-        sensorData.bodyTemp,       // SuhuTubuh
-        sensorData.ambientTemp,    // SuhuAmbient
-        sensorData.hr,             // HR_est
-        sensorData.spo2,           // SpO2_est
-        features.irMean,           // IR_Mean
-        features.irMin,            // IR_Min
-        features.irMax,            // IR_Max
-        features.irStd,            // IR_Std
-        features.irRMS,            // IR_RMS
-        features.redMean,          // RED_Mean
-        features.redMin,           // RED_Min
-        features.redMax,           // RED_Max
-        features.redStd,           // RED_Std
-        features.redRMS,           // RED_RMS
-        features.ratioAC,          // Ratio_AC
-        features.ratioDC,          // Ratio_DC
-        (float)features.samples    // Samples
+        features.age,
+        features.weight,
+        features.height,
+        features.bmi,
+        features.lastMeal,
+        sensorData.bodyTemp,
+        sensorData.ambientTemp,
+        sensorData.hr,
+        sensorData.spo2,
+        features.irMean,
+        features.irMin,
+        features.irMax,
+        features.irStd,
+        features.irRMS,
+        features.redMean,
+        features.redMin,
+        features.redMax,
+        features.redStd,
+        features.redRMS,
+        features.ratioAC,
+        features.ratioDC,
+        (float)features.samples
     };
     
-    // Run prediction
     predictedGlucose = predict_glucose(inputFeatures);
     glucoseStatus = interpret_glucose(predictedGlucose);
     
+    // Use String() to wrap const char* for printf
+    String statusStr = glucose_status_text(glucoseStatus);
     Serial.printf("Predicted Glucose: %.1f mg/dL (%s)\n", 
-                  predictedGlucose, glucose_status_text(glucoseStatus));
+                  predictedGlucose, statusStr.c_str());
 }
 
 // ===================== SHOW RESULT =====================
 void showResult() {
-    // Build display lines
     String line1 = "=== GLUCOSE ===";
     String line2 = String(predictedGlucose, 1) + " mg/dL";
     String line3 = glucose_status_text(glucoseStatus);
@@ -316,15 +285,13 @@ void showResult() {
     
     oledShow(line1, line2, line3, line4);
     
-    // Audio feedback
     playGlucoseBeep(glucoseStatus);
-    
-    // Vibration feedback
     vibratePattern(glucoseStatus);
     
     Serial.println("=== RESULT ===");
     Serial.printf("Glucose: %.1f mg/dL\n", predictedGlucose);
-    Serial.printf("Status: %s\n", glucose_status_text(glucoseStatus));
+    String statusStr = glucose_status_text(glucoseStatus);
+    Serial.printf("Status: %s\n", statusStr.c_str());
     Serial.printf("Body Temp: %.1f C\n", sensorData.bodyTemp);
     Serial.printf("Ambient: %.1f C\n", sensorData.ambientTemp);
 }
@@ -368,7 +335,10 @@ String buildHTML(String content = "") {
     }
     
     html += "'>" + String(predictedGlucose, 1) + " mg/dL</div>";
-    html += "<p>Status: " + String(glucose_status_text(glucoseStatus)) + "</p>";
+    
+    // Wrap const char* in String() for concatenation
+    String statusText = glucose_status_text(glucoseStatus);
+    html += "<p>Status: " + statusText + "</p>";
     html += "<p>Body Temp: " + String(sensorData.bodyTemp, 1) + " C</p>";
     html += "</div>";
     
@@ -394,7 +364,6 @@ void handleRoot() {
 }
 
 void handleMeasure() {
-    // Start measurement
     state = RECORDING;
     sampleCount = 0;
     recStart = millis();
@@ -405,9 +374,11 @@ void handleMeasure() {
 }
 
 void handleCSV() {
+    String statusText = glucose_status_text(glucoseStatus);
+    
     String csv = "PredictedGlucose,Status,BodyTemp,AmbientTemp,IR_Mean,RED_Mean\n";
     csv += String(predictedGlucose, 1) + ",";
-    csv += String(glucose_status_text(glucoseStatus)) + ",";
+    csv += statusText + ",";
     csv += String(sensorData.bodyTemp, 1) + ",";
     csv += String(sensorData.ambientTemp, 1) + ",";
     csv += String(features.irMean, 1) + ",";
@@ -436,14 +407,14 @@ void setup() {
         while (1);
     }
     
-    oledShow("SENS-Able v1.0", "Glucose Predictor", "Booting...", "");
+    oledShow("SENS-Able v1.1", "Glucose Predictor", "Booting...", "");
     
     // Initialize sensor bus
     BusSensor.begin(MAX_SDA, MAX_SCL);
     BusSensor.setClock(400000);
-    Wire = BusSensor;
     
-    if (!sensor.begin()) {
+    // Pass BusSensor directly to sensor.begin() — no need to reassign Wire
+    if (!sensor.begin(BusSensor)) {
         oledShow("ERROR!", "MAX30100 failed");
         while (1);
     }
@@ -453,14 +424,12 @@ void setup() {
     sensor.setLedsPulseWidth(MAX30100_SPC_PW_1600US_16BITS);
     sensor.setSamplingRate(MAX30100_SAMPRATE_100HZ);
     
-    Wire = BusOLED;
-    
-    // Set default user data (should be configured via web or serial)
+    // Set default user data
     features.age = 25.0;
     features.weight = 60.0;
     features.height = 165.0;
     features.bmi = features.weight / ((features.height / 100.0) * (features.height / 100.0));
-    features.lastMeal = 2.0;  // hours since last meal
+    features.lastMeal = 2.0;
     
     // Initialize WiFi
     WiFi.softAP(AP_SSID, AP_PASS);
@@ -473,13 +442,11 @@ void setup() {
     server.on("/csv", HTTP_GET, handleCSV);
     server.begin();
     
-    // Ready!
     oledShow("SENS-Able READY", "WiFi: SENS-Able", "Pass: sensable123", "IP: " + ip);
     
-    // Startup beep
     playBeep(2, 100, 100);
     
-    Serial.println("=== SENS-Able Glucose Predictor v1.0 ===");
+    Serial.println("=== SENS-Able Glucose Predictor v1.1 ===");
     Serial.println("Ready for measurements!");
 }
 
@@ -487,25 +454,22 @@ void setup() {
 void loop() {
     server.handleClient();
     
-    // Handle measurement state
     if (state == RECORDING) {
-        // Read PPG sensor
-        Wire = BusSensor;
-        
+        // Read PPG sensor (already configured on BusSensor)
         if (sampleCount < MAX_SAMPLES) {
-            uint32_t irRaw, redRaw;
-            sensor.readFIFO(&irRaw, &redRaw);
-            irBuf[sampleCount] = (float)irRaw;
-            redBuf[sampleCount] = (float)redRaw;
-            sampleCount++;
+            float irVal = 0, redVal = 0;
+            if (readPPGSample(irVal, redVal)) {
+                irBuf[sampleCount] = irVal;
+                redBuf[sampleCount] = redVal;
+                sampleCount++;
+            }
         }
-        
-        Wire = BusOLED;
         
         // Update display with progress
         if (millis() % 500 < 20) {
             int elapsed = (millis() - recStart) / 1000;
-            oledShow("Recording...", String(elapsed) + "/" + String(RECORD_SEC) + " sec", 
+            oledShow("Recording...", 
+                     String(elapsed) + "/" + String(RECORD_SEC) + " sec", 
                      "Samples: " + String(sampleCount), "");
         }
         
@@ -514,20 +478,14 @@ void loop() {
             state = PREDICTING;
             oledShow("Processing...", "Computing features", "Running AI model", "");
             
-            // Compute features
             computeFeatures();
-            
-            // Run inference
             runInference();
-            
-            // Show result
             showResult();
             
-            // Switch to result state
             state = SHOWING_RESULT;
         }
         
-        delay(10);  // ~100Hz sample rate
+        delay(10);
     }
     
     delay(10);
