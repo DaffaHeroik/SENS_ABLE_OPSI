@@ -407,7 +407,7 @@ void handleMeasure() {
 void handleCSV() {
     String csv = "PredictedGlucose,Status,BodyTemp,AmbientTemp,IR_Mean,RED_Mean\n";
     csv += String(predictedGlucose, 1) + ",";
-    csv += glucose_status_text(glucoseStatus) + ",";
+    csv += String(glucose_status_text(glucoseStatus)) + ",";
     csv += String(sensorData.bodyTemp, 1) + ",";
     csv += String(sensorData.ambientTemp, 1) + ",";
     csv += String(features.irMean, 1) + ",";
@@ -491,11 +491,12 @@ void loop() {
     if (state == RECORDING) {
         // Read PPG sensor
         Wire = BusSensor;
-        sensor.update();
         
         if (sampleCount < MAX_SAMPLES) {
-            irBuf[sampleCount] = sensor.getIR();
-            redBuf[sampleCount] = sensor.getRED();
+            uint32_t irRaw, redRaw;
+            sensor.readFIFO(&irRaw, &redRaw);
+            irBuf[sampleCount] = (float)irRaw;
+            redBuf[sampleCount] = (float)redRaw;
             sampleCount++;
         }
         
