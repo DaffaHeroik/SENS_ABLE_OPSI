@@ -1,0 +1,191 @@
+{
+  "note": "Replace example data with actual measurements from field testing",
+  "sections": [
+    {
+      "title": "Analisis Skor Usability (Kuesioner Likert 1-5)",
+      "data": {
+        "blind_scores": [
+          4.2,
+          3.8,
+          4.4,
+          4.0,
+          4.6
+        ],
+        "deaf_scores": [
+          3.8,
+          4.0,
+          4.2,
+          3.6,
+          4.4
+        ],
+        "normal_scores": [
+          4.4,
+          4.6,
+          4.0,
+          4.2,
+          4.8
+        ]
+      },
+      "descriptive": {
+        "blind": {
+          "mean": 4.2,
+          "std": 0.3162,
+          "n": 5,
+          "se": 0.1414,
+          "ci_lower": 3.9228,
+          "ci_upper": 4.4772,
+          "confidence_level": 0.95
+        },
+        "deaf": {
+          "mean": 4.0,
+          "std": 0.3162,
+          "n": 5,
+          "se": 0.1414,
+          "ci_lower": 3.7228,
+          "ci_upper": 4.2772,
+          "confidence_level": 0.95
+        },
+        "normal": {
+          "mean": 4.4,
+          "std": 0.3162,
+          "n": 5,
+          "se": 0.1414,
+          "ci_lower": 4.1228,
+          "ci_upper": 4.6772,
+          "confidence_level": 0.95
+        }
+      },
+      "kruskal_wallis": {
+        "test": "Kruskal-Wallis",
+        "H_statistic": 12.5,
+        "degrees_of_freedom": 2,
+        "p_value_approx": 0.0019,
+        "significant_at_05": true
+      },
+      "mannwhitney_blind_vs_deaf": {
+        "test": "Mann-Whitney U",
+        "U_statistic": 0.0,
+        "z_score": -2.6112,
+        "p_value": 0.009,
+        "significant_at_05": true
+      }
+    },
+    {
+      "title": "Confidence Interval untuk MAE Model",
+      "data": {
+        "mae_per_fold": [
+          11.99,
+          23.67,
+          22.22,
+          31.72,
+          24.17
+        ]
+      },
+      "analysis": {
+        "mean": 22.754,
+        "std": 7.0601,
+        "n": 5,
+        "se": 3.1574,
+        "ci_lower": 16.5655,
+        "ci_upper": 28.9425,
+        "confidence_level": 0.95
+      },
+      "interpretation": "MAE rata-rata 22.75 mg/dL dengan CI 95% [16.57, 28.94]. Lebar CI (12.38 mg/dL) menunjukkan variabilitas yang cukup besar antara fold, yang wajar untuk dataset kecil (40 sesi)."
+    },
+    {
+      "title": "Analisis Korelasi: Usia vs MAE",
+      "data": {
+        "ages": [
+          15,
+          17,
+          17,
+          19,
+          20,
+          24,
+          28,
+          33,
+          44,
+          46,
+          47,
+          52,
+          53,
+          69,
+          71,
+          76
+        ],
+        "mae_values": [
+          20,
+          15,
+          25,
+          22,
+          18,
+          12,
+          35,
+          28,
+          19,
+          31,
+          16,
+          23,
+          27,
+          14,
+          21,
+          45
+        ]
+      },
+      "pearson": {
+        "r": 0.3125,
+        "r_squared": 0.0976,
+        "p_value_approx": 0.75,
+        "n": 16,
+        "interpretation": "weak"
+      },
+      "spearman": {
+        "rho": 0.2471,
+        "rho_squared": 0.061,
+        "n": 16,
+        "interpretation": "weak"
+      }
+    },
+    {
+      "title": "Template Analisis Robustness (isi setelah uji lapangan)",
+      "experiments": [
+        {
+          "name": "Variasi Suhu Ruangan",
+          "conditions": [
+            "24°C (AC)",
+            "28°C (kipas)",
+            "32°C (tanpa pendingin)"
+          ],
+          "metric": "MAE per kondisi",
+          "test": "Kruskal-Wallis antar kondisi"
+        },
+        {
+          "name": "Variasi Tekanan Jari",
+          "conditions": [
+            "Ringan",
+            "Sedang",
+            "Kuat"
+          ],
+          "metric": "MAE per kondisi + CV",
+          "test": "Kruskal-Wallis antar kondisi"
+        },
+        {
+          "name": "Test-Retest Reliability",
+          "method": "Ukur orang yang sama 3× berturut-turut",
+          "metric": "CV (Coefficient of Variation) < 10%",
+          "test": "ICC (Intraclass Correlation) > 0.7"
+        },
+        {
+          "name": "Variasi Waktu Pengukuran",
+          "conditions": [
+            "Pagi (puasa)",
+            "Siang (postprandial)",
+            "Malam"
+          ],
+          "metric": "MAE per waktu + distribusi glukosa",
+          "test": "Mann-Whitney U pairwise"
+        }
+      ]
+    }
+  ]
+}

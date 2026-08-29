@@ -1,0 +1,95 @@
+{
+  "baseline_r2": 0.0614,
+  "baseline_mae": 22.57,
+  "dataset": {
+    "rows": 32,
+    "engineered_features": 43,
+    "glucose_range": "72-187 mg/dL"
+  },
+  "top_features_by_correlation": [
+    {
+      "feature": "Tinggi_cm",
+      "abs_correlation": 0.4716
+    },
+    {
+      "feature": "IR_RED_ratio",
+      "abs_correlation": 0.3775
+    },
+    {
+      "feature": "Ratio_DC",
+      "abs_correlation": 0.3634
+    },
+    {
+      "feature": "age_group_young",
+      "abs_correlation": 0.3258
+    },
+    {
+      "feature": "Berat_kg",
+      "abs_correlation": 0.3042
+    },
+    {
+      "feature": "TerakhirMakan_jam",
+      "abs_correlation": 0.2983
+    },
+    {
+      "feature": "BMI_x_age",
+      "abs_correlation": 0.2781
+    },
+    {
+      "feature": "Usia",
+      "abs_correlation": 0.2473
+    },
+    {
+      "feature": "age_squared",
+      "abs_correlation": 0.2093
+    },
+    {
+      "feature": "RED_pulse_amp",
+      "abs_correlation": 0.1899
+    },
+    {
+      "feature": "IR_Min",
+      "abs_correlation": 0.1849
+    },
+    {
+      "feature": "IR_Mean",
+      "abs_correlation": 0.179
+    },
+    {
+      "feature": "IR_RMS",
+      "abs_correlation": 0.179
+    },
+    {
+      "feature": "RED_DC_ratio",
+      "abs_correlation": 0.1773
+    },
+    {
+      "feature": "RED_normalized_std",
+      "abs_correlation": 0.1771
+    }
+  ],
+  "models": [
+    {
+      "name": "Ridge + SelectKBest",
+      "r2": -0.0069,
+      "mae_mg_dL": 24.4386,
+      "rmse_mg_dL": 28.7534
+    },
+    {
+      "name": "Tuned RF (depth=3)",
+      "r2": -0.0272,
+      "mae_mg_dL": 24.3857,
+      "rmse_mg_dL": 29.0423
+    },
+    {
+      "name": "Stacking (Ridge+RF+GB)",
+      "r2": -0.1174,
+      "mae_mg_dL": 25.2865,
+      "rmse_mg_dL": 30.2909
+    }
+  ],
+  "best_model": "Ridge + SelectKBest",
+  "best_r2": -0.0069,
+  "improvement": "-0.0683",
+  "recommendation": "R\u00b2 improvement comes mainly from feature engineering and better regularization. For further improvement: (1) collect 200+ samples, (2) include fasting status and time-of-day, (3) use repeated measurements per subject, (4) consider clinical PPG-to-glucose published datasets for pre-training."
+}

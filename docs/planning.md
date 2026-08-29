@@ -17,12 +17,12 @@
 | 4 | Rangkai & Program ESP32 | 29 Maret - 4 April 2026 | 1 minggu | ✅ |
 | 5 | Pengumpulan Data Sensor | 5-25 April 2026 | 3 minggu | ✅ |
 | 6 | Pengolahan Data & Training | 26 April - 9 Mei 2026 | 2 minggu | ✅ |
-| 7 | **Kalibrasi Sensor** | **10-16 Mei 2026** | **1 minggu** | ❌ |
-| 8 | **Uji Responden** | **17-30 Mei 2026** | **2 minggu** | ❌ |
-| 9 | **Analisis Hasil** | **31 Mei - 6 Juni 2026** | **1 minggu** | ❌ |
-| 10 | **Deploy ke ESP32** | **7-13 Juni 2026** | **1 minggu** | ❌ |
-| 11 | **Penyusunan Laporan** | **14-27 Juni 2026** | **2 minggu** | ❌ |
-| 12 | **Revisi & Finalisasi** | **28-30 Juni 2026** | **3 hari** | ❌ |
+| 7 | **Uji Responden + Usability** | **1-14 Agustus 2026** | **2 minggu** | ❌ **PRIORITAS** |
+| 8 | **Kalibrasi HR/SpO2/Suhu** | **1-7 Agustus 2026** | **1 minggu** | ❌ **PRIORITAS** |
+| 9 | **Deploy ESP32 + Video Demo** | **8-14 Agustus 2026** | **1 minggu** | ❌ |
+| 10 | **Tulis BAB 1-3 (Pustaka+Metode)** | **15-21 Agustus 2026** | **1 minggu** | ❌ |
+| 11 | **Tulis BAB 4-5 (Hasil+Kesimpulan)** | **22-28 Agustus 2026** | **1 minggu** | ❌ |
+| 12 | **Finalisasi & Kumpul** | **29-31 Agustus 2026** | **3 hari** | ❌ |
 
 ---
 
