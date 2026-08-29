@@ -1,0 +1,16 @@
+# SENS-Able ML Pipeline Dependencies
+
+# Core ML
+scikit-learn>=1.0.0
+numpy>=1.21.0
+pandas>=1.3.0
+
+# Model serialization
+joblib>=1.1.0
+
+# Data visualization (optional)
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Testing
+pytest>=6.0.0

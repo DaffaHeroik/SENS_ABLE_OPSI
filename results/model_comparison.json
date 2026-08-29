@@ -1,0 +1,349 @@
+{
+  "config": "configs/glucose_model_v0_1.json",
+  "target": {
+    "column": "GlukosaRef",
+    "meaning": "glucometer reference in mg/dL",
+    "used_as_feature": false
+  },
+  "dataset": {
+    "path": "data/processed/sensable_validation.csv",
+    "rows": 40,
+    "unique_subjects": 32,
+    "feature_columns": [
+      "Usia",
+      "Berat_kg",
+      "Tinggi_cm",
+      "BMI",
+      "TerakhirMakan_jam",
+      "SuhuTubuh",
+      "SuhuAmbient",
+      "HR_est",
+      "SpO2_est",
+      "IR_Mean",
+      "IR_Min",
+      "IR_Max",
+      "IR_Std",
+      "IR_RMS",
+      "RED_Mean",
+      "RED_Min",
+      "RED_Max",
+      "RED_Std",
+      "RED_RMS",
+      "Ratio_AC",
+      "Ratio_DC",
+      "Samples"
+    ],
+    "temperature_imputation_rows": {
+      "body": 7,
+      "ambient": 6
+    }
+  },
+  "validation": {
+    "method": "5-fold GroupKFold by SubjectID",
+    "no_synthetic_data": true,
+    "no_target_leakage": true
+  },
+  "models": [
+    {
+      "model": "MeanBaseline",
+      "overall": {
+        "mae_mg_dL": 24.2937,
+        "rmse_mg_dL": 29.0975,
+        "median_absolute_error_mg_dL": 23.9062,
+        "r2": -0.0856
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 21.875,
+          "rmse_mg_dL": 23.6184,
+          "median_absolute_error_mg_dL": 24.4062,
+          "r2": -0.0229,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 21.5547,
+          "rmse_mg_dL": 26.906,
+          "median_absolute_error_mg_dL": 19.5,
+          "r2": -0.0118,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 26.5156,
+          "rmse_mg_dL": 27.828,
+          "median_absolute_error_mg_dL": 31.7812,
+          "r2": -1.1632,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 35.2734,
+          "rmse_mg_dL": 43.0031,
+          "median_absolute_error_mg_dL": 21.5,
+          "r2": -0.332,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7
+        },
+        {
+          "mae_mg_dL": 16.25,
+          "rmse_mg_dL": 18.1078,
+          "median_absolute_error_mg_dL": 12.625,
+          "r2": -0.0966,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7
+        }
+      ],
+      "predictions": [
+        104.625,
+        101.4062,
+        109.7812,
+        106.2812,
+        106.4062,
+        104.625,
+        109.7812,
+        109.7812,
+        106.2812,
+        106.2812,
+        101.4062,
+        109.7812,
+        104.625,
+        104.625,
+        106.2812,
+        106.4062,
+        101.4062,
+        101.4062,
+        104.625,
+        101.4062,
+        109.7812,
+        106.2812,
+        106.4062,
+        109.7812,
+        109.7812,
+        104.625,
+        101.4062,
+        109.7812,
+        106.2812,
+        106.4062,
+        104.625,
+        106.2812,
+        106.2812,
+        101.4062,
+        106.4062,
+        106.4062,
+        106.4062,
+        106.4062,
+        104.625,
+        101.4062
+      ]
+    },
+    {
+      "model": "LinearRegression",
+      "overall": {
+        "mae_mg_dL": 57.8532,
+        "rmse_mg_dL": 71.9372,
+        "median_absolute_error_mg_dL": 47.57,
+        "r2": -5.6353
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 43.5885,
+          "rmse_mg_dL": 50.8176,
+          "median_absolute_error_mg_dL": 43.2558,
+          "r2": -3.7353,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 50.5728,
+          "rmse_mg_dL": 59.5542,
+          "median_absolute_error_mg_dL": 55.7163,
+          "r2": -3.9571,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 72.8969,
+          "rmse_mg_dL": 95.4245,
+          "median_absolute_error_mg_dL": 41.4468,
+          "r2": -24.4364,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 70.7154,
+          "rmse_mg_dL": 85.4694,
+          "median_absolute_error_mg_dL": 60.2586,
+          "r2": -4.2616,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7
+        },
+        {
+          "mae_mg_dL": 51.4922,
+          "rmse_mg_dL": 57.7481,
+          "median_absolute_error_mg_dL": 46.2091,
+          "r2": -10.1533,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7
+        }
+      ],
+      "predictions": [
+        79.3399,
+        110.3888,
+        202.5793,
+        133.7674,
+        143.4072,
+        39.6524,
+        -70.1877,
+        -1.6899,
+        59.8018,
+        53.9833,
+        117.1226,
+        124.1582,
+        195.2198,
+        138.3821,
+        43.1109,
+        157.9077,
+        4.9343,
+        51.0173,
+        121.858,
+        60.9485,
+        71.2139,
+        61.3348,
+        158.758,
+        114.0197,
+        96.0192,
+        61.5676,
+        97.0958,
+        35.2645,
+        129.5263,
+        192.8773,
+        163.0361,
+        51.838,
+        41.6424,
+        87.387,
+        134.1775,
+        181.9015,
+        119.7537,
+        73.0749,
+        133.7172,
+        13.4049
+      ]
+    },
+    {
+      "model": "RandomForestRegressor",
+      "overall": {
+        "mae_mg_dL": 22.5716,
+        "rmse_mg_dL": 27.0552,
+        "median_absolute_error_mg_dL": 20.558,
+        "r2": 0.0614
+      },
+      "folds": [
+        {
+          "mae_mg_dL": 11.9867,
+          "rmse_mg_dL": 13.4818,
+          "median_absolute_error_mg_dL": 11.1648,
+          "r2": 0.6667,
+          "fold": 1,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 23.6665,
+          "rmse_mg_dL": 27.4042,
+          "median_absolute_error_mg_dL": 24.4983,
+          "r2": -0.0496,
+          "fold": 2,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 22.2215,
+          "rmse_mg_dL": 22.8506,
+          "median_absolute_error_mg_dL": 21.1182,
+          "r2": -0.4586,
+          "fold": 3,
+          "test_rows": 8,
+          "test_subjects": 6
+        },
+        {
+          "mae_mg_dL": 31.7153,
+          "rmse_mg_dL": 37.9541,
+          "median_absolute_error_mg_dL": 22.5811,
+          "r2": -0.0376,
+          "fold": 4,
+          "test_rows": 8,
+          "test_subjects": 7
+        },
+        {
+          "mae_mg_dL": 23.2679,
+          "rmse_mg_dL": 27.65,
+          "median_absolute_error_mg_dL": 19.0794,
+          "r2": -1.5569,
+          "fold": 5,
+          "test_rows": 8,
+          "test_subjects": 7
+        }
+      ],
+      "predictions": [
+        123.4378,
+        90.2961,
+        94.8997,
+        108.3377,
+        105.3222,
+        131.7398,
+        100.7637,
+        103.9852,
+        100.4148,
+        100.3124,
+        98.2858,
+        106.4447,
+        135.1126,
+        127.6682,
+        117.6637,
+        113.2618,
+        100.3145,
+        96.5232,
+        91.8921,
+        99.4549,
+        112.3787,
+        95.3158,
+        104.2555,
+        99.0001,
+        98.5378,
+        98.7935,
+        110.3023,
+        98.2599,
+        101.7705,
+        119.6796,
+        134.5806,
+        104.38,
+        102.9304,
+        95.734,
+        91.8165,
+        99.1769,
+        92.5915,
+        79.8278,
+        117.5781,
+        116.4406
+      ]
+    }
+  ],
+  "selected_exploratory_model": {
+    "model": "RandomForestRegressor",
+    "selection_metric": "lowest overall MAE under the fixed comparison",
+    "artifact": "models/glucose_model_v0_1.joblib",
+    "metadata": "models/glucose_model_v0_1_metadata.json"
+  },
+  "interpretation": "Exploratory comparison only; dataset size is insufficient for clinical accuracy claims or deployment decisions."
+}

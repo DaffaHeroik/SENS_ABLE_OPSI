@@ -86,3 +86,21 @@ Tanggal: 12 Agustus 2025
 | `train.py` | Script training v3 (utama) |
 | `model.pkl` | Model terlatih |
 | `report.json` | Laporan training |
+
+
+## 11. Ingestion & Pembersihan Dataset Baru (26 Agustus 2026)
+
+- Seluruh file CSV/XLSX yang tersedia disalin apa adanya ke `data/raw/` dan diberi manifest SHA-256.
+- Semua sumber memiliki skema 26 kolom yang sama; total input yang diproses adalah 237 baris dari 25 file/sheet yang tersedia di workspace.
+- Setelah normalisasi format angka dan penghapusan salinan identik, tersisa 46 baris unik.
+- Tiga belas baris dikeluarkan karena sensor gagal atau data suhu nol/tidak valid; baris tidak diimputasi.
+- Dataset processed berisi 33 baris dan 31 `SubjectID` pseudonim.
+- `GlukosaRef` dipertahankan tanpa perubahan dan ditetapkan sebagai nilai referensi gula darah dari glucometer dalam mg/dL.
+- Validasi regresi dilakukan terpisah melalui `scripts/validate_glucometer.py`; `GlukosaRef` tidak digunakan sebagai fitur input.
+- Hasil validasi saat ini bersifat eksploratif: MAE 23.7345 mg/dL, RMSE 28.4437 mg/dL, dan R² -0.0102 pada GroupKFold berdasarkan `SubjectID`.
+
+## 12. Revised Data-Retention Decision (26 Agustus 2026)
+
+Atas arahan pemilik proyek, nilai suhu nol dievaluasi ulang dan tidak langsung dibuang. Sesi tetap dipertahankan jika tangkapan optiknya valid; hanya nilai suhu tubuh/ambient yang nol yang diimputasi menggunakan rata-rata observasi positif setelah deduplikasi. Dataset processed mencatat flag `SuhuTubuh_Imputed` dan `SuhuAmbient_Imputed` agar transformasi dapat diaudit. Nilai `GlukosaRef` tidak diimputasi dan tidak diubah.
+
+Pipeline revisi berisi 40 sesi processed dari 46 sesi unik yang telah dinormalisasi, dengan 32 `SubjectID` pseudonim. Enam sesi tetap dikeluarkan karena tangkapan sinyal optik rendah. Sebanyak 7 nilai suhu tubuh dan 6 nilai suhu ambient diimputasi. Validasi regresi terhadap referensi glucometer menghasilkan MAE 22.4158 mg/dL, RMSE 27.0395 mg/dL, dan R² 0.0625 menggunakan GroupKFold berdasarkan `SubjectID`. Hasil ini tetap bersifat eksploratif dan bukan validasi klinis.

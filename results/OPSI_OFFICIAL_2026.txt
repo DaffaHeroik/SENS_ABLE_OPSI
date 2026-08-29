@@ -1,0 +1,2662 @@
+Draft Usulan Panduan Olimpiade Penelitian Siswa Indonesia (OPSI) 2026
+
+                     Jenjang SMA/MA/Sederajat
+
+
+
+
+                                                                        1
+                Diterbitkan oleh:
+             Pusat Prestasi Nasional
+   Kementerian Pendidikan Dasar dan Menengah
+
+                    Pengarah:
+         Dr. Mariman Darto, S.E., M.Si.
+             Ir. Suharti, M.A., Ph.D.
+  Dr. Maria Veronica Irene Herdjiono, S.E., M.Si
+       Retno Juni Rochmaningsih, S.Sos.
+
+
+
+               Penanggung Jawab:
+             Topanal Gustiranda, M.M
+
+
+                 Tim Penyusun:
+  Prof. Ir. Wahyu Srigutomo, S.Si., M.Si., Ph.D.
+      Prof. Dr. Abdurakhman, S.S., M.Hum.
+            Dr rer nat Ir Abu Amar, IPM
+     Prof. Akhmad Fauzy, S.Si., M.Si., Ph.D
+         Prof. Suherman, S.Si. M.Sc. Ph.D
+        Dr. Sartika Djamaluddin, SE., M.Si
+
+
+
+
+                   Penyunting:
+                 Deri Luthfi, S.T
+
+
+
+                 Desain Sampul:
+                Muhammad Khosi
+
+                   Tata Letak:
+        Erry Agustiyan Abdullah, S.Kom
+
+
+
+
+©2026 Kementerian Pendidikan Dasar dan Menengah
+      Hak cipta dilindungi Undang-Undang.
+               All rights reserved.
+
+
+
+
+                                                   1
+                               KATA PENGANTAR
+      Olimpiade Penelitian Siswa Indonesia (OPSI) merupakan salah satu program strategis
+Pusat Prestasi Nasional, Kementerian Pendidikan Dasar dan Menengah dalam rangka membina
+dan mengembangkan talenta murid jenjang pendidikan menengah di bidang penelitian dan
+inovasi. Pada jenjang SMA/MA/SMK/Sederajat, OPSI menjadi ruang aktualisasi kemampuan
+berpikir, kreativitas ilmiah, serta kepemimpinan intelektual murid melalui kegiatan penelitian
+yang sistematis dan beretika.
+       Penyelenggaraan OPSI jenjang SMA/MA/SMK/Sederajat 2026 memiliki peran penting
+dalam mendukung peningkatan mutu pendidikan nasional, khususnya pada penguatan literasi
+sains, literasi membaca, dan literasi numerasi yang selaras dengan indikator asesmen
+internasional seperti Programme for International Student Assessment (PISA). Proses
+penelitian yang dilakukan murid SMA/MA/SMK/Sederajat dalam OPSI dirancang untuk
+melatih kemampuan analisis mendalam, penalaran berbasis data, serta pemecahan masalah
+kompleks yang relevan dengan konteks kehidupan nyata. Dengan demikian, OPSI diharapkan
+dapat menjadi bagian dari upaya sistematis dalam meningkatkan daya saing murid Indonesia
+di tingkat global.
+     Selain itu, OPSI jenjang SMA 2026 diarahkan untuk memperkuat implementasi
+pendekatan Science, Technology, Engineering, and Mathematics (STEM) secara terintegrasi.
+Melalui penelitian lintas disiplin, murid SMA/MA/SMK/Sederajat didorong untuk mengaitkan
+konsep teoretis dengan penerapan teknologi dan rekayasa, serta memanfaatkan pemodelan
+matematis dalam menghasilkan solusi inovatif. Pendekatan STEM dalam OPSI diharapkan
+mampu menumbuhkan karakter inovatif, kolaboratif, dan adaptif sebagai bekal murid dalam
+melanjutkan pendidikan ke jenjang yang lebih tinggi maupun menghadapi tantangan dunia
+masa depan.
+     Panduan OPSI Jenjang SMA/MA/SMK/Sederajat Tahun 2026 ini disusun sebagai acuan
+bagi murid, guru pembimbing, satuan pendidikan, dinas pendidikan, juri, serta panitia
+penyelenggara di berbagai tingkatan. Panduan ini memuat ketentuan umum, mekanisme
+pendaftaran, tahapan seleksi, serta kriteria penilaian secara jelas dan komprehensif guna
+menjamin penyelenggaraan OPSI yang objektif, transparan, dan akuntabel. Kami berharap
+OPSI jenjang SMA/MA/SMK/Sederajat 2026 dapat melahirkan peneliti muda Indonesia yang
+unggul, berkarakter, dan berdaya saing global, serta mampu memberikan kontribusi nyata
+dalam mewujudkan visi Indonesia Emas 2045.
+
+
+                                            Jakarta, 16 Februari 2026
+                                            Kepala
+
+
+
+                                             Dr. Maria Veronica Irene Herdjiono, S.E.,M.Si.
+                                             NIP 198103292012122001
+
+
+
+                                                                                             i
+Table of Contents
+                                                                DAFTAR ISI
+KATA PENGANTAR .............................................................................................................. I
+DAFTAR ISI............................................................................................................................ II
+BAB I PENDAHULUAN ......................................................................................................... 1
+      1.1              LATAR BELAKANG .................................................................................................... 1
+      1.2              DASAR HUKUM .......................................................................................................... 2
+      1.3              TUJUAN ...................................................................................................................... 2
+      1.4              BIDANG LOMBA DAN RUANG LINGKUP .................................................................... 3
+      1.5              UNSUR PENYELENGGARA DAN PELAKSANA ............................................................. 7
+      1.6              ALAMAT PENYELENGGARA DAN KONTAK ............................................................. 10
+BAB II PENJELASAN UMUM ........................................................................................... 11
+      2.1              DESKRIPSI KEGIATAN ............................................................................................. 11
+      2.2              TAHAPAN DAN JADWAL PELAKSANAAN OPSI ....................................................... 11
+      2.3              PERSYARATAN PESERTA ......................................................................................... 12
+      2.4              KETENTUAN KARYA PENELITIAN ........................................................................... 13
+      2.5              PENDAFTARAN PESERTA DAN PENGUNGGAHAN PROPOSAL .................................. 14
+      2.6              SELEKSI PROPOSAL PENELITIAN ............................................................................ 14
+      2.7              PELAKSANAAN PENELITIAN DAN PENYUSUNAN LAPORAN .................................... 15
+      2.8              PENGUNGGAHAN LAPORAN HASIL PENELITIAN .................................................... 16
+      2.9              PENILAIAN DAN SELEKSI LAPORAN HASIL PENELITIAN ....................................... 16
+      2.10             FINAL OPSI ............................................................................................................. 17
+      2.11             PENETAPAN PEMENANG DAN PENGHARGAAN ........................................................ 20
+      2.12             ETIKA PENELITIAN .................................................................................................. 21
+BAB III KETENTUAN PENULISAN PROPOSAL DAN LAPORAN PENELITIAN .. 24
+      3.1              KETENTUAN PROPOSAL PENELITIAN ..................................................................... 24
+      3.2              KETENTUAN LAPORAN PENELITIAN ....................................................................... 25
+      3.3              CONTOH TOPIK PENELITIAN BIDANG MST, ISH, DAN FTR ................................. 26
+BAB IV PROSEDUR PENGADUAN .................................................................................. 28
+      1.            PIHAK YANG DAPAT MENYAMPAIKAN PENGADUAN MENCAKUP: ............................... 28
+      2.            JENIS PENGADUAN YANG DITANGANI MELIPUTI:........................................................ 28
+      3.            PRINSIP LAYANAN PENGADUAN .................................................................................. 28
+BAB V PENUTUP.................................................................................................................. 36
+LAMPIRAN............................................................................................................................ 37
+
+
+
+
+                                                                                                                                                    ii
+                                     BAB I
+                                  Pendahuluan
+
+1.1 Latar Belakang
+    Dalam upaya mewujudkan visi Kementerian Pendidikan Dasar dan Menengah
+    (Kemendikdasmen) yaitu "Terwujudnya pendidikan bermutu untuk semua dengan
+    dukungan partisipasi semesta dalam rangka mewujudkan bersama Indonesia maju
+    menuju Indonesia Emas 2045," yang berfokus pada penyediaan pendidikan berkualitas
+    dan merata bagi semua warga negara, menciptakan pelajar Pancasila, serta mendukung
+    visi besar bangsa Indonesia menjadi negara maju dan berdaulat, dengan penekanan pada
+    kualitas, inklusivitas, dan gotong royong, Pusat Prestasi Nasional (Puspresnas)
+    menyelenggarakan     ajang    Olimpiade    Penelitian   Siswa    Indonesia    (OPSI)
+    SMA/MA/SMK/Sederajat tahun 2026.
+
+    OPSI merupakan ajang lomba penelitian untuk mendorong murid mengembangkan suatu
+    gagasan unik, inovatif, dan kreatif yang dapat memberikan kontribusi baik ke
+    pengetahuan, maupun kontribusi ke masyarakat dalam memberikan solusi terhadap
+    berbagai permasalahan nyata demi kemaslahatan bangsa dan negara Indonesia.
+
+    Penelitian dan pengembangan di bidang ilmu pengetahuan, teknologi, seni, dan budaya
+    menjadi kunci bagi sebuah negara untuk tumbuh menjadi negara maju. Jumlah publikasi
+    penelitian Indonesia yang dirilis dalam situs Scimago Journal & Country Rank pada
+    tahun 2024 sebanyak 376.908 dokumen dan mengalami peningkatan pesat menjadi
+    447.794 dokumen pada tahun 2025. Oleh karena itu, OPSI tahun 2026 diselenggarakan
+    dalam upaya mempersiapkan sumber daya manusia (SDM) khususnya generasi muda
+    untuk meningkatkan kemampuan literasi dan numerasi murid dalam upaya mendorong
+    inovasi guna penguatan ekonomi untuk menjadi negara maju berbasis Ilmu Pengetahuan,
+    Teknologi, Seni dan Budaya.
+
+    Olimpiade Penelitian Siswa Indonesia (OPSI) diharapkan sebagai wadah pengembangan
+    prestasi dan pembentukan kepribadian murid yang mandiri dan tangguh. Kegiatan
+    penelitian dapat meningkatkan integritas, sikap bertanggung jawab, kepedulian yang
+    tinggi, kemampuan berpikir logis dan analitis, kemampuan bekerja sama dalam
+    kelompok, kemandirian, kepercayaan diri, serta keterampilan menyajikan gagasan ilmiah
+
+
+                                                                                       1
+   baik secara lisan melalui presentasi maupun tulis melalui karya ilmiah dengan tema yang
+   ditetapkan pada OPSI Tahun 2026 adalah “Muda Berinovasi, Indonesia Berprestasi”.
+   Panduan ini sebagai acuan pelaksanaan kegiatan OPSI SMA/MA/SMK/Sederajat tahun
+   2026.
+
+
+
+1.2 Dasar Hukum
+   Dasar hukum penyelenggaraan Olimpiade Penelitian Siswa Indonesia (OPSI) adalah
+   sebagai berikut:
+
+   a.   Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional;
+
+   b.   Peraturan Menteri Pendidikan Nasional Nomor 19 Tahun 2007 tentang Standar
+        Pengelolaan Pendidikan dan Satuan Pendidikan Dasar dan Menengah;
+
+   c.   Peraturan Presiden Nomor 87 Tahun 2017 tentang Penguatan Pendidikan Karakter;
+
+   d.   Undang-Undang Nomor 59 Tahun 2024 tentang Rencana Pembangunan Jangka
+        Panjang Nasional (RPJPN) Tahun 2025-2045;
+
+   e.   Peraturan Presiden Nomor 108 Tahun 2024 tentang Desain Besar Manajemen
+        Talenta Nasional;
+
+   f.   Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 1 Tahun 2024 tentang
+        Organisasi Dan Tata Kerja Kementerian Pendidikan Dasar dan Menengah;
+
+   g.   Peraturan Sekretaris Jenderal Pendidikan, Kebudayaan, Riset, dan Teknologi,
+        Nomor 17 Tahun 2024 tentang Penyelenggaraan Ajang Talenta Nasional Peserta
+        Didik;
+   h.   Peraturan Menteri Pendidikan Dasar dan Menengah Nomor 25 Tahun 2025 tentang
+        Manajemen Talenta Murid.
+
+   i.   Daftar Isian Pelaksanaan Anggaran (DIPA) Pusat Prestasi Nasional Tahun 2026.
+
+
+
+1.3 Tujuan
+   Tujuan umum OPSI adalah mendorong pengembangan budaya penelitian/riset sejak dini
+   di   kalangan   murid   jenjang   SMA/MA/SMK/Sederajat        dengan    menumbuhkan
+   kemampuan berpikir ilmiah, kreatif, kritis, dan inovatif sebagai bekal menghadapi
+   tantangan masa depan.
+
+   Tujuan khusus penyelenggaraan OPSI adalah:
+
+
+
+                                                                                        2
+   a.   Menumbuhkan      budaya     riset   dan   berpikir   ilmiah   di   kalangan   murid
+        SMA/MA/SMK/Sederajat melalui kegiatan penelitian yang sistematis dan
+        bertanggung jawab
+   b.   Mengembangkan kreativitas, inovasi, dan kemampuan pemecahan masalah terhadap
+        persoalan nyata di lingkungan sekitar.
+   c.   Menjaring dan membina talenta unggul murid di bidang penelitian sebagai bagian
+        dari penguatan manajemen talenta nasional.
+   d.   Menanamkan integritas dan etika akademik dalam proses perumusan, pelaksanaan,
+        dan pelaporan penelitian.
+   e.   Meningkatkan kemampuan murdi dalam melakukan analisis data yang mendalam,
+        komprehensif, dan multidisiplin untuk menghasilkan kesimpulan yang berbasis
+        bukti (evidence-based).
+   f.   Mendorong terciptanya hasil penelitian yang memiliki potensi hilirisasi atau
+        kebermanfaatan praktis dalam mendukung pembangunan berkelanjutan (SDGs) di
+        tingkat lokal, nasional maupun global.
+   g.   Mengoptimalkan penggunaan perangkat teknologi, metodologi komputasi, dan
+        literasi digital dalam proses pengolahan data penelitian untuk akurasi hasil yang
+        lebih tinggi.
+   h.   Mengembangkan kemampuan komunikasi dan advokasi ilmiah murid agar mampu
+        mendiseminasikan hasil penelitiannya secara efektif, baik di forum nasional maupun
+        internasional.
+
+
+
+1.4 Bidang Lomba dan Ruang Lingkup
+   OPSI jenjang Sekolah Menengah Atas/Madrasah Aliyah (SMA/MA) atau sederajat
+   bersifat penguatan dan pendalaman talenta. Peneliti diharapkan mampu memahami dan
+   menjelaskan, mensintesis penelitian dengan baik, melaksanakan penelitian secara
+   terstruktur dan terukur, serta mampu mengaplikasikannya dalam kehidupan nyata,
+   melaporkan hasilnya secara logis dan sistematis. Bidang lomba dan ruang lingkup
+   penelitian OPSI adalah:
+
+   a.   Matematika, Sains, dan Teknologi (MST)
+        Penelitian bidang ini terkait dengan ilmu pengetahuan dasar dan terapan untuk
+        menyelesaikan permasalahan yang terkait dengan eksplorasi alam semesta,
+
+                                                                                         3
+   modifikasi, inovasi, atau aplikasi dari ilmu pengetahuan dasar dan terapan, untuk
+   memenuhi kebutuhan manusia. Arah dari penelitian ini tidak sekedar memahami
+   fenomena alam dan pembuktian kebenarannya namun mampu menganalisis,
+   memanfaatkan dan menawarkan solusi untuk kepentingan manusia. Luaran
+   Penelitian bidang MST ini berupa konsep, formula, produk berbasis hayati dan non
+   hayati dan lain lainnya.
+
+
+   Bidang Penelitian MST ini mencakup:
+   1) Matematika yang terdiri atas aljabar, kalkulus, algoritma, geometri, topologi,
+       trigonometri, statistika;
+   2) Fisika yang terdiri atas fisika klasik, fisika modern, fisika zat terkondensasi,
+       astrofisika, kosmologi, biofisika dan geofisika;
+   3) Biologi yang terdiri atas botani, zoologi, mikrobiologi, genetika, biokimia, serta
+       ilmu lingkungan;
+   4) Kimia yang terdiri atas kimia organik, kimia anorganik, kimia fisik, dan kimia
+       analitik;
+   5) Ilmu kesehatan yang terdiri atas ilmu kedokteran, ilmu keperawatan, ilmu
+       kesehatan masyarakat, ilmu gizi dan farmasi;
+   6) Agro komplek yang terdiri atas pertanian, peternakan, kehutanan, perikanan,
+       perkebunan, dan kelautan;
+
+
+b. Ilmu Sosial Humaniora (ISH)
+   Penelitian Ilmu Sosial dan Humaniora (ISH) berfokus pada kajian manusia,
+   masyarakat, nilai, perilaku, serta sistem sosial-budaya dalam berbagai konteks
+   kehidupan. Penelitian dalam bidang ini bertujuan untuk memahami, menganalisis,
+   dan menawarkan solusi terhadap permasalahan sosial melalui pendekatan ilmiah
+   yang berbasis teori, data empiris, dalam konteks lokal dan global. Luaran Penelitian
+   ini dapat berupa konsep dan atau profil dan atau rekomendasi dan atau pemanfaatan
+   produk.
+
+
+   Bidang Penelitian ISH meliputi:
+   1) Sosiologi, Komunikasi dan Antropologi Sosial mencakup pola interaksi dan
+      jaringan sosial, kelompok sosial, kebudayaan dan masyarakat;
+
+
+                                                                                      4
+     2) Psikologi dan Pendidikan. Penelitian Psikologi mencakup perilaku, proses
+       mental, emosi, dan perkembangan individu maupun kelompok dalam berbagai
+       konteks kehidupan. Penelitian Pendidikan mencakup proses pembelajaran,
+       pengembangan murid, serta sistem dan kebijakan pendidikan dalam berbagai
+       jenjang;
+     3) Ilmu Ekonomi dan Manajemen mencakup perilaku dan pengambilan keputusan
+       konsumen, produsen dan pemerintah dalam pengelolaan sumber daya ekonomi
+       dan tata kelolanya;
+     4) Seni, Budaya, dan Sejarah mencakup aktivitas dan ekspresi estetik manusia, cara
+       hidup kelompok masyarakat, dan merekonstruksi masa lalu manusia;
+     5) Bahasa dan Sastra mencakup bahasa sebagai sistem komunikasi, dan sastra
+       sebagai wujud ekspresi kreatif dan cerminan budaya masyarakat.
+
+
+c.   Fisika Terapan dan Rekayasa (FTR)
+     FTR adalah bidang penelitian/rekayasa yang berbasis prinsip fisika dan teknik untuk
+     merancang, membangun, menguji, dan memvalidasi solusi teknologi terhadap
+     permasalahan. Fokus utama FTR mencakup instrumentasi, sistem fisik, energi,
+     material, kontrol, dan teknologi berbasis pengukuran, dengan luaran atau produk
+     berupa prototipe/perangkat/metode/sistem yang disertai data uji kinerja.
+     Bidang Penelitian FTR meliputi:
+     1) Sistem Pengukuran & Monitoring Cerdas
+       Fokus pada pengembangan sistem pengukuran lengkap dari sensor hingga
+       monitoring lapangan, termasuk pengkondisi sinyal, akuisisi data, kalibrasi, dan
+       komunikasi. Karya yang baik menjaga akurasi–presisi, mengendalikan error,
+       serta memastikan stabilitas dan uptime. Umumnya melibatkan sensor optik,
+       elektrik, atau termal yang terhubung ke mikrokontroler dan edge device,
+       dilengkapi telemetri (LoRa/WiFi/4G), protokol MQTT, serta manajemen daya.
+       Luaran berupa perangkat monitoring end-to-end (sensor, embedded, komunikasi,
+       dashboard) dengan bukti uji kalibrasi, reliabilitas, konsumsi daya, dan integritas
+       data.
+     2) Robotika, Kendali, Otomasi & Komputasi Rekayasa
+       Berorientasi pada sistem fisik yang dikendalikan sistem cerdas, mulai dari kontrol
+       sederhana (on–off, PID) hingga optimasi atau AI yang terhubung langsung ke
+       perangkat. Karya yang kuat mengaitkan model sistem dinamik dengan strategi
+                                                                                       5
+  kendali, lalu membuktikan peningkatan performa melalui metrik seperti
+  stabilitas, overshoot, dan settling time. Umumnya melibatkan sensor–aktuator,
+  pemrosesan sinyal, navigasi, digital twin sederhana, dan edge inference. Luaran
+  berupa robot atau sistem otomasi yang stabil, dilengkapi kurva performa dan
+  demonstrasi prototipe yang berfungsi/berjalan.
+3) Energi, Penyimpanan, dan Elektronika Daya
+  Mencakup pembangkitan, konversi, penyimpanan, dan pemanfaatan energi
+  secara efisien dan aman, termasuk manajemen daya. Karya biasanya memadukan
+  panel surya, turbin mikro, baterai atau superkapasitor dengan BMS, konverter
+  buck/boost, inverter, dan proteksi arus/tegangan. Luaran berupa prototipe sistem
+  energi lengkap dengan hasil uji efisiensi, karakteristik ripple/noise, pengujian
+  keselamatan, serta analisis teknis-ekonomi berbasis data.
+4) Proses Termal-Fluida & Teknologi Lingkungan/Air
+  Menggabungkan rekayasa perpindahan panas dan aliran fluida untuk proses
+  lingkungan seperti filtrasi, aerasi, UV, pengeringan, atau penukar panas mini.
+  Karya yang baik menampilkan desain proses dan pengujian indikator seperti laju
+  alir, penurunan tekanan, perubahan temperatur, energi per liter, serta kualitas
+  sesudah-sebelum. Umumnya melibatkan konsep konduksi–konveksi–radiasi,
+  heat exchanger, insulasi, dan media filtrasi. Luaran berupa unit proses yang
+  berfungsi dengan protokol uji dan data performa yang jelas.
+5) Material Fungsional & Rekayasa Permukaan
+  Berfokus pada pembuatan atau modifikasi material agar memiliki sifat fisik
+  tertentu, dengan keterkaitan antara proses dan sifat terukur. Karya biasanya
+  menghubungkan komposisi, mikrostruktur, atau perlakuan permukaan dengan
+  perubahan konduktivitas, kekuatan mekanik, sifat termal/optik, atau ketahanan
+  korosi. Luaran berupa sampel material atau coating yang disertai data
+  karakterisasi dan analisis struktur–sifat untuk menunjukkan peningkatan
+  performa.
+6) Optik–Fotonika & Optoelektronika Terapan
+  Memanfaatkan cahaya untuk sensing, imaging, atau komunikasi optik sederhana,
+  dengan penekanan pada desain jalur optik dan karakterisasi performa. Umumnya
+  melibatkan LED atau laser, lensa, fotodioda, spektroskopi sederhana, optical
+  filtering, serta pengujian resolusi dan SNR. Luaran berupa perangkat optik yang
+
+
+                                                                                6
+            berfungsi (misalnya spektrometer atau sensor optik) dengan data sensitivitas,
+            batas deteksi, dan demonstrasi yang dapat diulang.
+
+
+         7) Getaran–Akustik, NDT & Monitoring Infrastruktur/Transportasi
+            Menggunakan getaran dan akustik untuk diagnosis kondisi mesin, struktur, atau
+            kendaraan, serta pemantauan keselamatan berbasis data. Karya yang baik
+            menampilkan pengambilan sinyal, pemrosesan (misalnya FFT), ekstraksi fitur,
+            dan validasi pada kondisi terkontrol. Umumnya melibatkan sensor ultrasonik,
+            akselerometer, analisis spektrum, dan ambang peringatan. Luaran berupa alat
+            diagnosis atau monitoring dengan hasil uji repeatability, sensitivitas, dan akurasi
+            klasifikasi.
+
+
+         Meskipun bidang FTR mencakup beberapa sub-bidang, penilaian karya
+         penelitian/inovasi OPSI pada bidang FTR tidak dilakukan secara terpisah per sub-
+         bidang. Sub-bidang digunakan terutama untuk memandu peserta dalam memilih
+         orientasi topik.
+         Dalam praktiknya, karya FTR sering memiliki irisan kuat antar sub-bidang, misalnya
+         instrumentasi yang terintegrasi dengan sistem tertanam dan IoT, kontrol/robotika
+         yang membutuhkan elektronika daya, atau energi terbarukan yang menuntut
+         metrologi dan pemrosesan data. Selain itu, karakter utama FTR adalah rekayasa
+         solusi berbasis sistem fisik yang pada hakikatnya membutuhkan pendekatan lintas
+         disiplin/multidisiplin (fisika, elektronika, komputasi, material, termal–fluida, hingga
+         aspek implementasi).
+
+1.5 Unsur Penyelenggara dan Pelaksana
+    Olimpiade Penelitian Siswa Indonesia (OPSI) diselenggarakan oleh Pusat Prestasi
+    Nasional (Puspresnas), Kementerian Pendidikan Dasar dan Menengah Republik
+    Indonesia. Puspresnas menetapkan panitia dan juri untuk melaksanakan kegiatan OPSI
+    dengan ruang lingkup tugas dan tanggung jawab sebagai berikut.
+
+    a.   Lembaga Penyelenggara
+         Pusat Prestasi Nasional (Puspresnas) merupakan Lembaga penyelenggara OPSI
+         dengan kewenangan:
+
+
+
+
+                                                                                              7
+   1) Puspresnas menetapkan Panitia OPSI yang berasal dari internal dan eksternal
+      Kemendikdasmen. Panitia terdiri dari panitia pengarah (steering committee) dan
+      panitia penyelenggara (organizing committee) dengan tugas dan fungsi masing-
+      masing.
+   2) Puspresnas menetapkan Juri OPSI yang berasal dari institusi perguruan tinggi
+      dan/ atau Lembaga penelitian sesuai dengan bidang lomba yang dikompetisikan.
+   3) Puspresnas mengumumkan juara yang dituangkan dalam Surat Keputusan dan
+      memberikan apresiasi kepada pemenang OPSI.
+
+
+b. Panitia Pelaksana
+   Panitia pelaksana bertugas sejak masa persiapan (pra-OPSI), pelaksanaan, hingga
+   pasca OPSI sebagai berikut:
+
+
+   1) Pra-OPSI
+      a) Melakukan koordinasi dengan Kabupaten/Kota/Provinsi melalui Dinas
+        Pendidikan dan Lembaga terkait;
+      b) Memastikan data seluruh peserta yang benar dan lengkap sesuai dengan Surat
+        dari satuan pendidikan dan menyerahkan kepada panitia untuk keperluan
+        integrasi sistem data peserta OPSI;
+      c) Menyiapkan format surat yang menjadi persyaratan yang harus diisi oleh siswa
+        dan diunggah melalui sistem aplikasi;
+      d) Memastikan seluruh kebutuhan pelaksanaan OPSI dapat terpenuhi dengan
+        baik;
+      e) Memfasilitasi infrastruktur yang dibutuhkan dalam pengembangan sistem
+        aplikasi pendukung maupun kegiatan utama demi terselenggaranya kegiatan
+        pelaksanaan OPSI dengan baik;
+      f) Melakukan monitoring sebelum pelaksanaan OPSI.
+
+
+   2) Pelaksanaan OPSI
+      a) Memastikan sistem aplikasi dapat digunakan dengan baik;
+      b) Melakukan seleksi administrasi peserta sebelum pelaksanaan reviu oleh juri;
+      c) Mendistibusikan naskah proposal dan laporan hasil penelitian kepada juri
+        sesuai dengan bidangnya;
+      d) Melakukan pengecekan plagiasi hasil karya penelitian calon finalis;
+                                                                                   8
+       e) Memastikan seluruh proses pelaksanaan sesuai dengan rencana dan kondisi di
+            lapangan.
+
+
+     3) Pasca-OPSI
+       a) Penyebarluasan informasi pemenang Final OPSI yang meraih medali emas,
+            medali perak, medali perunggu, dan penghargaan khusus melalui sarana
+            publikasi yang dimiliki oleh Puspresnas
+       b) Evaluasi penyelenggaraan OPSI dilakukan secara periodik meliputi
+            keberhasilan dan kendala yang muncul selama proses pelaksanaan OPSI (juri,
+            peserta, sarana dan panitia);
+       c) Menyimpan seluruh dokumen pelaksanaan kegiatan OPSI.
+c.   Juri
+     Puspresnas menetapkan juri OPSI yang berasal dari berbagai universitas dan instansi
+     penelitian yang kompeten. Juri menandatangani pakta integritas sebelum
+     melaksanakan tugas.
+     1) Pra-OPSI
+       a) Menyusun persyaratan peserta OPSI, termasuk ketentuan pendukung lainnya;
+       b) Menyusun panduan penilaian hasil penelitian berdasarkan Pedoman Ajang
+            Talenta.
+     2) Pelaksanaan OPSI
+       a) Melakukan reviu naskah proposal penelitian;
+       b) Melakukan penilaian naskah lengkap hasil penelitian;
+       c) Melakukan pemeringkatan hasil penilaian/ penjurian;
+       d) Melakukan sidang pleno hasil penilaian/ penjurian seluruh peserta;
+       e) Merekomendasikan calon finalis kepada Puspresnas;
+       f) Melakukan penilaian pameran hasil karya, presentasi, dan wawancara;
+       g) Melakukan pemeringkatan hasil penilaian/ penjurian;
+       h) Melakukan sidang pleno hasil penilaian/ penjurian seluruh finalis;
+       i) Merekomendasikan kandidat Juara Nasional kepada Puspresnas.
+
+
+
+
+                                                                                      9
+1.6 Alamat Penyelenggara dan Kontak
+    Panitia Olimpiade Penelitian Siswa Indonesia
+    Pusat Prestasi Nasional, Kementerian Pendidikan Dasar dan Menengah RI
+    Jl. Gardu, Srengseng Sawah, Kec. Jagakarsa, Kota Jakarta Selatan 12640,
+    Daerah Khusus Ibukota Jakarta
+    Surel (Email): puspresnas@kemdikdasmen.go.id
+    Laman: https://pusatprestasinasional.kemdikbud.go.id/
+
+
+
+
+                                                                              10
+                                     BAB II
+                                Penjelasan Umum
+2.1 Deskripsi Kegiatan
+    Olimpiade Penelitian Siswa Indonesia (OPSI) adalah ajang lomba penelitian bagi murid
+    sekolah. Peserta OPSI membangun ide atau gagasan penelitian, melaksanakan penelitian,
+    dan melaporkan hasil penelitiannya. Hasil penelitian ditulis dalam bentuk laporan yang
+    mengikuti kaidah dan metode penulisan ilmiah yang telah ditetapkan pada masing-
+    masing bidang. Peserta diharapkan mampu belajar untuk menyusun laporan ilmiah secara
+    sistematis dan komprehensif, menggunakan landasan literatur yang terpercaya dan
+    terkini.
+
+    OPSI dilaksanakan oleh Pusat Prestasi Nasional pada Tingkat Nasional dan tidak
+    berjenjang (tidak ada seleksi di tingkat Kabupaten/ Kota/ Provinsi).
+
+
+2.2 Tahapan dan Jadwal Pelaksanaan OPSI
+    Pelaksanaan kegiatan OPSI 2026 terdiri dari tahapan dengan urutan:
+
+
+
+
+    a. Pendaftaran peserta dan pengunggahan proposal penelitian OPSI 2026.
+    b. Reviu dan seleksi proposal penelitian, berupa verifikasi administrasi peserta, serta
+       reviu dan penilaian proposal penelitian. Peserta yang telah terverifikasi dan proposal
+       yang dinyatakan lolos dapat melanjutkan ke tahap pelaksanaan penelitian.
+    c. Pelaksanaan penelitian di tempat domisili masing-masing peserta.
+
+                                                                                          11
+      d. Pengunggahan laporan hasil penelitian. Hasil pelaksanaan penelitian ditulis dalam
+         laporan hasil penelitian dan diunggah untuk dilakukan penilaian.
+      e. Penilaian dan seleksi laporan hasil penelitian. Sejumlah karya hasil penelitian
+         terbaik akan diundang untuk mengikuti final OPSI.
+      f. Final OPSI dilaksanakan secara luring. Peserta memamerkan dan mempresentasikan
+         karya hasil penelitiannya, melakukan wawancara dengan tim juri, serta mengikuti
+         Research Idea Challenge yang telah ditentukan.
+
+      Jadwal pelaksanaan OPSI 2026 untuk setiap tahapan adalah sebagai berikut:
+
+ No                         Kegiatan                                   Waktu
+  1     Rilis panduan OPSI Tahun 2026                      Februari 2026
+  2     Sosialisasi pelaksanaan OPSI 2026                  12 Februari 2026
+  3     Pendaftaran peserta dan pengunggahan
+                                                           6 Feb-7 Maret 2026
+        proposal penelitian
+  4     Verifikasi administrasi peserta                    7-10 Maret 2026
+  5     Penilaian dan seleksi proposal penelitian          26 Maret – 4 April 2026
+  6     Pengumuman hasil reviu dan seleksi proposal
+                                                           6 April 2026
+        penelitian
+  7     Pelaksanaan penelitian bagi proposal yang
+                                                           April – Agustus 2026
+        lolos seleksi
+  8     Batas waktu pengunggahan laporan hasil
+                                                           31 Agustus 2026
+        penelitian
+  9     Penilaian dan seleksi laporan hasil penelitian     3 - 11 September 2026
+ 10     Pengumuman finalis OPSI 2026                       13 September 2026
+ 11     Final OPSI 2026: penilaian visualisasi hasil
+        karya , presentasi, dan wawancara hasil
+                                                           24 - 30 September 2026
+        penelitian; penetapan pemenang, dan
+        pemberian penghargaan
+
+
+2.3 Persyaratan Peserta
+      Persyaratan dan ketentuan peserta OPSI jenjang SMA/MA/SMK/Sederajat Tahun 2026
+      adalah sebagai berikut:
+
+      a. Warga Negara Indonesia;
+      b. Siswa SMA/MA/sederajat, kelas X dan/atau XI pada saat pendaftaran dan
+         pengunggahan proposal penelitian;
+      c. Setiap peserta hanya boleh terdaftar dalam satu judul penelitian;
+      d. Setiap tim peserta wajib terdiri atas dua murid/siswa dari sekolah yang sama;
+      e. Setiap sekolah mengirimkan maksimal 10 (sepuluh) tim penelitian per bidang;
+
+
+
+                                                                                         12
+    f. Setiap tim peserta wajib didampingi sampai akhir penelitian oleh satu guru
+      pembimbing yang mengajar di sekolah yang sama dengan peserta. Apabila dalam
+      perjalanannya guru pembimbing tidak dapat mendampingi sampai akhir penelitian
+      karena alasan permanen (meninggal dunia, cacat tetap, berpindah tugas di sekolah
+      lain, pensiun), maka guru pembimbing dapat digantikan oleh guru yang lain (dengan
+      surat keterangan oleh pihak yang berwenang);
+    g. Satu guru pembimbing hanya dapat mendampingi maksimal lima tim peserta;
+    h. Bidang kompetensi guru pembimbing diharapkan relevan dengan bidang penelitian
+      yang diajukan peserta;
+    i. Guru pembimbing berperan aktif untuk memberikan bimbingan dan arahan sepanjang
+      pelaksanaan penelitian;
+    j. Isi naskah penelitian sepenuhnya menjadi tanggung jawab peserta.
+
+
+2.4 Ketentuan Karya Penelitian
+    Ide atau gagasan karya penelitian agar memperhatikan hal-hal sebagai berikut:
+
+    a. Ide atau gagasan penelitian merupakan orisinal dari peserta, bukan hasil tindak
+      plagiarisme (baik dari karya lain maupun karya sendiri/ self-plagiarism). Apabila
+      karya penelitian ini merupakan bagian dari penelitian berkelanjutan, peserta harus
+      menjelaskan perbedaan/pembaruan dibandingkan dengan karya sebelumnya;
+    b. Karya penelitian belum pernah/tidak sedang diikutkan pada lomba sejenis
+      dan/atau sedang dalam proses publikasi terbitan ilmiah. Pelanggaran terhadap
+      ketentuan ini akan diberi sanksi berupa diskualifikasi;
+    c. Jika penelitian menggunakan materi yang mempunyai hak cipta dan/atau gambar dari
+      pihak lain dalam dokumen proposal, laporan, maupun presentasi, maka peserta harus
+      menyebutkan sumber referensinya dan/atau memperoleh izin pemilik hak cipta;
+    d. Penelitian tidak boleh melibatkan responden yang terkait di antaranya isu LGBT,
+      narkoba, psikotropika, prostitusi, perdagangan manusia, kejahatan seksual,
+      narapidana, dan terorisme;
+    e. Lokasi penelitian yang di daerah rawan konflik dan berbahaya sebaiknya dihindari;
+    f. Penelitian yang melibatkan subjek manusia, hewan vertebrata, cephalopoda,
+      decapoda dan penggunaan materi atau bahan penelitian lain yang berbahaya, harus
+      mendapatkan persetujuan klirens etik dalam bentuk Surat Klirens Etik dari lembaga
+      yang berwenang (Lihat Lampiran 3).
+
+                                                                                       13
+    g. Biaya penelitian maksimum adalah Rp15.000.000,00 (lima belas juta rupiah).
+       Jumlah biaya ini wajib dicantumkan secara rinci dalam Rencana Anggaran Biaya
+       (RAB) Proposal dan laporan realisasi anggaran di dalam laporan akhir penelitian.
+       Jenis pengeluaran pada RAB mencakup belanja bahan, belanja jasa (pengujian,
+       instrumen, surveyor, dll), belanja sewa (bengkel, laboratorium, dll), akomodasi dan
+       transportasi (Lampiran 6).
+
+
+2.5 Pendaftaran Peserta dan Pengunggahan Proposal
+    Pendaftaran peserta dilakukan dengan ketentuan sebagai berikut:
+
+    a. Pendaftaran peserta dilakukan melalui portal registrasi
+       https://daftar-bpti.kemendikdasmen.go.id/
+    b. Registrasi dilakukan oleh sekolah dengan melengkapi data peserta OPSI secara benar
+       dan akurat.
+
+    Proposal penelitian diunggah dengan ketentuan sebagai berikut:
+
+    a. Proposal penelitian ditulis maksimal 8 (delapan) halaman (tidak termasuk cover dan
+       lampiran).
+    b. Penulisan proposal sesuai dengan ketentuan pada masing-masing bidang dengan
+       format penulisan seperti pada Lampiran 4.
+    c. Peserta melakukan self assessment terkait kebutuhan klirens etik
+    d. Proposal penelitian dalam bentuk file (soft-copy), diunggah ke laman https://sma-
+       pusatprestasinasional.kemdikbud.go.id/opsi/ sebelum batas waktu yang telah
+       ditentukan. Proposal dikirim dalam format PDF dengan ukuran maksimum 5 MB. File
+       proposal tidak boleh dikompresi (zip).
+    e. Proposal yang sudah diunggah dan diverifikasi tidak dapat diganti atau dipindahkan
+       ke bidang lain.
+
+    Panitia akan memverifikasi persyaratan administrasi para peserta sesuai dengan
+    panduan pelaksanaan OPSI 2026.
+
+
+2.6 Seleksi Proposal Penelitian
+    Proposal penelitian yang telah diunggah akan diseleksi dengan tata cara:
+
+
+
+                                                                                       14
+    a. Tim penilai akan memeriksa proposal penelitian yang meliputi kejelasan
+       pendahuluan, landasan teori dan studi pustaka, metode penelitian, dan rancangan
+       anggaran biaya dan jadwal kegiatan.
+    b. Tim penilai memberikan masukan/saran pada proposal yang diajukan.
+    c. Peneliti yang menjalankan penelitian wajib mempertimbangkan masukan/saran yang
+       diberikan
+    d. Tim penilai memeriksa dan memberikan rekomendasi kelengkapan Klirens Etik
+       terhadap proposal yang melibatkan subjek manusia, hewan uji, dan/ atau
+       mikroorganisme serta bahan kimia berbahaya (Lihat Lampiran 3).
+    e. Hasil penilaian proposal diumumkan pada laman Pusat Prestasi Nasional.
+
+    f. Peserta yang proposalnya dinyatakan lolos seleksi dapat dilanjutkan ke tahap
+       penelitian.
+
+
+
+2.7 Pelaksanaan Penelitian dan Penyusunan Laporan
+    Peserta yang telah lolos tahap proposal selanjutnya melaksanakan kegiatan penelitian
+    sebagai berikut.
+
+    a. Peserta melaksanakan kegiatan penelitian sesuai dengan jadwal dan metode yang telah
+       disusun dalam proposal penelitian.
+    b. Seluruh aktivitas kegiatan penelitian beserta hasil yang diperoleh dicatat dan disimpan
+       dalam buku catatan/logbook penelitian (Lihat Lampiran 9).
+    c. Peserta merespon saran dan/atau masukan reviewer atas proposal penelitiannya (Lihat
+       Lampiran 10).
+    d. Peserta menuliskan laporan hasil penelitian (Lihat Lampiran 5).
+    e. Apabila dalam penelitian menggunakan perangkat bantu artificial intelligence (AI),
+       maka wajib dijelaskan pada Surat Pernyataan Penggunaan AI (Lihat Lampiran 2).
+    f. Peserta yang menggunakan responden wajib menyertakan surat pengantar dari
+       sekolah yang melakukan penelitian dan mencantumkan data responden (nama dan
+       kontak) yang diwawancara (Lihat Lampiran 7 dan 8).
+
+
+
+
+                                                                                           15
+2.8 Pengunggahan Laporan Hasil Penelitian
+    Berkas hasil penelitian diunggah pada pada laman OPSI sesuai dengan tenggat waktu
+    yang telah ditentukan, terdiri atas:
+
+    a. Naskah laporan hasil penelitian maksimal 20 halaman di luar lampiran (
+    b. logbook
+    c. Kliren etik (jika ada)
+
+    Peserta wajib memastikan bahwa berkas telah diunggah dengan benar dalam format PDF
+    dengan ukuran maksimal 8 MB.
+
+
+
+2.9 Penilaian dan Seleksi Laporan Hasil Penelitian
+    Naskah laporan hasil penelitian yang telah diunggah akan dilakukan penilaian oleh juri
+    sebagai berikut:
+
+    a. Penilaian laporan hasil penelitian dengan bobot seperti diperlihatkan pada Tabel 1.
+    b. Uji similaritas dan penggunaan AI pada laporan.
+    c. Pemeriksaan ada/ tidaknya dokumen klirens etik yang diperlukan.
+
+
+                  Tabel 1 Komponen Penilaian Laporan Hasil Penelitian
+
+
+     No                         Komponen Penilaian                   Bobot (Persen)
+
+     A                 Sistematika/Struktur/ Substansi
+
+      1    Pendahuuan/Latar Belakang                                        10
+
+      2    Metodologi Penelitian (termasuk desain dan konsep                20
+           berfikir)
+
+      3    Hasil dan Pembahasan (pelaksanaan penelitian,                    30
+           mencakup pengumpulan data, visualisasi data analisis,
+           dan interpretasi)
+
+      4    Kesimpulan dan Saran (kemampuan sintesis)                        10
+
+      5    Daftar Pustaka                                                   10
+
+      B                      Kontribusi Penelitian
+
+      6    Kebaruan                                                         10
+
+                                                                                         16
+      7       Kemanfaatan/Dampak                                             10
+
+                          Total Bobot Penilaian                            100
+
+
+    Finalis          akan         diumumkan          melalui         laman          website
+    https://pusatprestasinasional.kemdikbud.go.id/ dan media sosial Pusat Prestasi Nasional,
+    Kementerian Pendidikan Dasar dan Menengah.
+
+2.10 Final OPSI
+    Final OPSI merupakan acara puncak dengan ketentuan:
+    a. Kegiatan Final OPSI dilaksanakan secara luring yang dihadiri seluruh finalis OPSI.
+
+    b. Finalis wajib melakukan pameran (expo), presentasi dan wawancara, dan mengikuti
+       Research Idea Challenge.
+
+       1) Pameran (EXPO), dalam bentuk poster dan/atau produk yang dipamerkan selama
+          kegiatan Final OPSI.
+       2) Presentasi dan Wawancara, dilakukan di depan tim juri untuk menilai
+          penguasaan materi dan pemahaman terhadap masalah yang diselesaikan,
+          disamping untuk menilai kemampuan presentasi, serta sikap dan karakter peserta.
+       3) Research Idea Challenge, menilai kemampuan finalis mengidentifikasi dan
+          merumuskan masalah, menyusun gagasan, merancang metode kerja dan
+          pembuktian yang terukur.
+
+
+    c. Pemenang OPSI 2026 ditetapkan oleh Puspresnas berdasarkan penilaian Dewan Juri
+       OPSI 2026.
+
+    d. Pengumuman pemenang dan pemberian penghargaan dilakukan pada saat penutupan
+       final OPSI 2026.
+
+    2.10.1 Kriteria Penilaian Final OPSI
+               Penilaian akhir diambil dari Laporan Akhir dan seluruh rangkaian kegiatan
+               Final OPSI, yaitu pameran hasil karya, presentasi, wawancara, serta kegiatan
+               Research Idea Challenge. Kriteria dan bobot penilaian final OPSI sebagai
+               berikut diperlihatkan pada Tabel 2.
+
+
+
+
+                                                                                         17
+                    Tabel 2 Kriteria penilaian Final OPSI
+
+  No                   Kriteria Penilaian                       Bobot (Persen)
+   1    Laporan Penelitian                                            30
+   2    Pameran Hasil Karya (Expo)                                    10
+   3    Presentasi dan Wawancara                                      50
+   4    Research Idea Challenge                                       10
+                Total Bobot Penilaian                                100
+
+
+2.10.2 Pameran Hasil Karya
+       Pada pameran hasil karya, tim finalis menyiapkan poster yang berisi paparan
+       ringkasan hasil penelitian, dengan ketentuan sebagai berikut.
+
+       a. Poster dapat menggunakan infografis dan/ atau produk hasil penelitian serta
+          bentuk diseminasi lainnya;
+       b. Semua gambar dalam poster harus dicantumkan sumbernya serta tidak
+          melanggar unsur SARA dan politik;
+       c. Poster wajib menampilkan logo OPSI. Logo sekolah dapat ditampilkan pada
+          poster;
+       d. Poster harus memuat informasi: kode peserta, judul penelitian, nama peneliti,
+          nama dan alamat sekolah;
+       e. Ketentuan poster dapat dilihat pada Lampiran 11;
+       f. Apabila penelitian peserta menghasilkan produk/berbentuk fisik, maka
+          peserta diwajibkan membawanya ke tempat pameran hasil karya.
+
+       g. Komponen Penilaian Poster dan Produk
+          Komponen penilaian poster dan produk adalah:
+          1) Penyajian/Urutan logika berfikir (35%);
+          2) Substansi (35%);
+          3) Tampilan Poster (30%).
+
+
+
+2.10.3 Presentasi dan Wawancara
+       a. Finalis akan diundang ke ruang yang telah ditetapkan oleh Panitia untuk
+          mempresentasikan hasil penelitiannya pada ruang dan waktu yang
+          ditentukan.
+       b. Finalis wajib menunjukkan kartu siswa yang akan diverifikasi panitia.
+
+
+                                                                                    18
+       c. Finalis mempersiapkan bahan presentasi dengan format PPT (Power Point
+         Presentation) yang wajib diunggah paling lambat satu hari sebelum
+         pelaksanaan final pukul 23.59 WIB maksimal kapasitas 20MB, dan tidak
+         dapat direvisi.
+       d. Finalis memaparkan hasil penelitiannya dalam bahasa Indonesia dengan
+         waktu 10 menit dan dilanjutkan dengan sesi tanya-jawab 15 menit.
+       e. Komponen penilaian presentasi dan wawancara adalah:
+         1) Presentasi: Penyajian dan materi presentasi (Sistematika dan
+            Visualisasi) 40%;
+         2) Wawancara: Penguasaan materi dan relevansi jawaban 50%; dan
+         3) Sikap dan Karakter: 10%.
+
+
+
+2.10.4 Research Idea Challenge (RICh)
+       Research Idea Challenge (RICh) merupakan bagian dari kegiatan final OPSI
+       yang memberikan tantangan untuk membangun ide dan gagasan dalam waktu
+       tertentu dengan ketentuan sebagai berikut.
+
+       a. Tim diberi waktu untuk membangun ide dan gagasan solusi terhadap
+         tantangan yang ditentukan oleh panitia.
+       b. Tim menuangkan ide dan gagasan solusi dalam bentuk ilustrasi visual yang
+         dibuat sendiri menggunakan alat tulis yang disediakan panitia.
+       c. Komponen penilaian Research Idea Challenge adalah:
+
+
+       Tabel 3 Komponen penilaian Research Idea Challenge (RICh)
+
+ No                   Komponen Penilaian                      Bobot (Persen)
+
+ 1    Rumusan masalah dan tujuan riset                               20
+
+ 2    Tahapan realisasi ide (metodologi)                             40
+
+ 3    Kebermanfaatan konsep solusi                                   10
+
+ 4    Efektivitas komunikasi visual                                  20
+
+ 5    Kerjasama tim                                                  10
+
+                 Total Bobot Penilaian                              100
+
+
+                                                                               19
+2.11 Penetapan Pemenang dan Penghargaan
+    Pusat Prestasi Nasional menetapkan pemenang berdasarkan berita acara penilaian tim
+    juri sesuai hasil penilaian seluruh finalis melalui sidang pleno sesuai kriteria dan
+    indikator penilaian. Keputusan tim juri bersifat final dan tidak dapat diganggu gugat.
+
+    Penghargaan diberikan kepada tim finalis yang berhasil mencapai prestasi terbaik pada
+    Final Opsi. Penghargaan bagi para pemenang dalam Final OPSI diperlihatkan pada Tabel
+    4.
+
+                          Tabel 4 Penghargaan Pemenang OPSI
+
+  No           Jenis Peraihan                                Keterangan
+
+   1     Peraihan Emas                Peraihan Emas diberikan kepada pemenang yang berhasil
+                                      meraih nilai tertinggi pertama dari jumlah nilai Pameran
+                                      Hasil Karya, Presentasi dan Wawancara, serta Research
+                                      Idea Challenge. Tim juara berhak mendapatkan medali,
+                                      sertifikat dan uang pembinaan.
+
+   2     Peraihan Perak               Peraihan Perak diberikan kepada pemenang yang berhasil
+                                      meraih nilai tertinggi kedua dari jumlah nilai Pameran
+                                      Hasil Karya, Presentasi dan Wawancara, serta Research
+                                      Idea Challenge. Tim juara berhak mendapatkan medali,
+                                      sertifikat dan uang pembinaan.
+
+   3     Peraihan Perunggu            Peraihan Perunggu diberikan kepada pemenang yang
+                                      berhasil meraih nilai tertinggi ketiga dari jumlah nilai
+                                      Pameran Hasil Karya, Presentasi dan Wawancara, serta
+                                      Research Idea Challenge. Tim juara berhak
+                                      mendapatkan medali, sertifikat dan uang pembinaan.
+
+   4     Penghargaan Khusus           Penghargaan khusus diberikan kepada peserta yang
+                                      memiliki keunikan pada topik penelitiannya. Peraih
+                                      penghargaan khusus berhak mendapatkan sertifikat.
+
+   5     Finalis                      Seluruh finalis berhak mendapatkan sertifikat.
+
+
+
+
+                                                                                             20
+    Pusat Prestasi Nasional berwenang membatalkan kemenangan dan/atau penghargaan
+    karena:
+
+    a. Praktik kecurangan dalam penyelenggaraan Ajang Talenta;
+    b. Pelanggaran terhadap prosedur penyelenggaraan Ajang Talenta;
+    c. Melakukan tindak pidana, tindak kejahatan atau pelanggaran hukum.
+
+
+2.12 Etika Penelitian
+    Etika penelitian merupakan prinsip moral dan norma yang memandu perilaku peneliti
+    dalam seluruh proses penelitian. terutama yang melibatkan manusia. Etika penelitian
+    diperlukan untuk melindungi hak partisipan, menjaga integritas ilmiah, dan memastikan
+    manfaat maksimal dengan risiko minimal bagi Masyarakat. Prinsip-prinsip pada etika
+    penelitian mencakup prinsip kejujuran, integritas, privasi, kerahasiaan, transparansi, serta
+    rasa hormat dan keadilan bagi subjek penelitian yang terlibat. Etika penelitian menjaga
+    integritas ilmiah, melindungi subjek penelitian, memastikan hasil penelitian dapat
+    dipercaya, dan mencegah pelanggaran akademik seperti plagiarisme atau fabrikasi data.
+
+
+
+    2.12.1 Penelitian yang Melibatkan Manusia, Makhluk Hidup atau Bahan
+              Kimia Berbahaya
+              Penelitian yang melibatkan manusia, hewan uji, dan/atau mikroorganisme serta
+              bahan kimia berbahaya harus mendapat izin kelayakan etik untuk menjamin
+              perlindungan dan keselamatan dari risiko yang dapat timbul dari seluruh
+              perlakukan selama kegiatan penelitian. Pertimbangan aspek keamanan harus
+              lebih tinggi dari aspek manfaat yang akan diperoleh dari penelitian tersebut.
+              Kelayakan etik, atau klirens etik adalah keterangan tertulis yang diberikan oleh
+              Komisi Etik Penelitian yang menyatakan bahwa suatu proposal penelitian layak
+              dilaksanakan setelah memenuhi persyaratan tertentu. Persetujuan dari Komisi
+              Etik diperlukan sebelum kegiatan penelitian dilaksanakan. Panduan Klirens Etik
+              Penelitian dijelaskan pada Lampiran 3.
+
+
+
+
+                                                                                             21
+2.12.2 Plagiarisme
+       Tindak plagiarisme adalah perbuatan yang sengaja dalam memperoleh atau
+       mencoba memperoleh kelengkapan suatu karya ilmiah, dengan mengutip
+       sebagian atau seluruh karya dan/atau karya ilmiah pihak lain, tanpa menyertakan
+       sumber. Tindak plagiarisme mencakup:
+
+       a. Penggunaan ide atau topik penelitian tanpa menyebut sumber atau
+         memberikan penghargaan/terima kasih kepada penggagas;
+       b. Mengutip gagasan dari suatu sumber tanpa menyebut sumbernya;
+       c. Mengutip gagasan sendiri dari sumber yang telah ditulis terdahulu tanpa
+         menyebut sumbernya (swa-plagiarisme/self plagiarism).
+
+       Ketentuan terkait plagiarisme pada OPSI:
+
+       a. Panitia melakukan uji similaritas pada naskah hasil penelitian dengan
+         ketentuan maksimal similaritas 30%;
+       b. Naskah hasil penelitian yang teridentifikasi melebihi nilai batas uji
+         similaritas akan ditolak.
+
+
+       Upaya menghindari plagiarisme antara lain:
+
+       a. Menuliskan ucapan terima kasih dan penghargaan dengan menyebutkan
+         nama pihak-pihak yang telah membantu dalam memberikan ide (topik)
+         penelitian    pada   bagian    Ucapan    Terima   Kasih    dan   apa    yang
+         disumbangkannya;
+       b. Menulis kutipan langsung dan tidak langsung dengan cara yang benar;
+       c. Menyebut sumber acuan baik pada kutipan langsung maupun kutipan tidak
+         langsung;
+       d. Dalam mengutip secara tidak langsung, apa yang ditulis (kutipan) tidak sama
+         bentuk/bunyi dengan apa yang ditulis pada sumber, dan selalu menyebut
+         sumber acuan;
+       e. Apa yang tertulis pada Daftar Pustaka adalah apa yang dikutip (pustaka yang
+         tidak dikutip tidak perlu ditulis);
+       f. Jika penelitian merupakan lanjutan dari penelitian sebelumnya, paparkan
+         sejak awal.
+
+
+                                                                                   22
+2.12.3 Penggunaan Kecerdasan Buatan (AI)
+      a. Kecerdasan Artifisial (AI) hanya boleh digunakan secara terbatas untuk
+         membantu mencari referensi, memahami topik, dan memantik ide
+         (dinyatakan dalam Surat Pernyataan Penggunaan AI, Lampiran 2).
+      b. Proses penulisan proposal/laporan serta substansi analisis dan hasil harus
+         murni karya peseeta dan tidak boleh dibuatkan oleh AI.
+      c. AI bukan dijadikan pengganti proses berpikir, penulisan, dan pembuktian
+         ilmiah oleh peserta.
+
+      Panitia akan menguji penggunaan AI pada naskah hasil penelitian. Penulisan
+      seluruh isi naskah proposal dan laporan hasil penelitian, harus dilakukan sendiri
+      sebagai karya tulis peserta peneliti.
+
+
+
+2.12.4 Kecurangan dan Sanksi
+      Apabila Kecurangan terjadi pada kegiatan OPSI:
+
+      a. Naskah penelitian yang terbukti mengandung unsur kecurangan dinyatakan
+         tidak sah dan tim akan didiskualifikasi.
+      b. Tim pemenang yang didiskualifikasi wajib mengembalikan medali, sertifikat
+         dan uang pembinaan;
+      c. Sekolah peserta atau pemenang yang didiskualifikasi tidak diizinkan
+         mengikuti OPSI selama 1 (satu) tahun.
+
+
+
+
+                                                                                    23
+                            Bab III
+      Ketentuan Penulisan Proposal dan Laporan Penelitian
+
+
+3.1 Ketentuan Proposal Penelitian
+    Peserta OPSI membuat proposal dengan sistematika sebagai berikut:
+
+    ● Halaman Sampul
+    ● Daftar Isi
+    ● Daftar Tabel (jika ada)
+    ● Daftar Gambar (jika ada)
+    ● BAB 1 PENDAHULUAN
+        ○ Latar Belakang
+        ○ Rumusan Masalah
+        ○ Tujuan Penelitian
+        ○ Hipotesis (jika ada)
+        ○ Manfaat Penelitian
+    ● BAB 2 TINJAUAN PUSTAKA
+        ○ Landasan Teori
+        ○ Studi Pustaka
+    ● BAB 3 METODE PENELITIAN
+        ○ Waktu dan Tempat Penelitian
+        ○ Alat dan Bahan
+        ○ Rancangan dan Prosedur Penelitian
+        ○ Rancangan Pengolahan Data
+    ● BAB 4 RANCANGAN ANGGARAN BIAYA DAN JADWAL KEGIATAN
+        ○ Rancangan Anggaran Biaya Penelitian
+        ○ Jadwal Penelitian
+    ● DAFTAR PUSTAKA
+
+
+
+
+                                                                        24
+3.2 Ketentuan Laporan Penelitian
+    Peserta OPSI membuat laporan penelitian dengan sistematika sebagai berikut:
+
+    ■ Halaman Sampul
+    ■ Abstrak
+    ■ Daftar Isi
+    ■ Daftar Tabel (jika ada)
+    ■ Daftar Gambar (jika ada)
+    ■ BAB 1 PENDAHULUAN
+        ○ Latarbelakang
+        ○ Rumusan Masalah
+        ○ Tujuan Penelitian
+        ○ Hipotesis (jika ada)
+        ○ Manfaat Penelitian
+    ■ BAB 2 LANDASAN TEORI DAN STUDI PUSTAKA
+        ○ Landasan Teori
+        ○ Studi Pustaka
+    ■ BAB 3 METODE PENELITIAN
+        ○ Waktu dan Tempat Penelitian
+        ○ Alat dan Bahan
+        ○ Prosedur Penelitian
+        ○ Pengolahan Data
+    ■ BAB 4 HASIL DAN PEMBAHASAN
+    ■ BAB 5 ANGGARAN BIAYA DAN KEGIATAN
+        ○ Anggaran Biaya Penelitian
+        ○ Kegiatan
+    ■ BAB 5 KESIMPULAN DAN SARAN
+    ■ DAFTAR PUSTAKA
+
+
+
+
+                                                                                  25
+3.3 Contoh Topik Penelitian Bidang MST, ISH, dan FTR
+    Beberapa contoh judul/topik penelitian terkait dengan
+    a. Masalah limbah Plastik
+    b. Masalah kelaparan di suatu wilayah
+    c. Banjir Bandang yang terjadi di beberapa wilayah
+    Jika ditinjau dari bidang Matematika sains dan teknologi, bidang Fisika Terapan dan
+    rekayasa, dan bidang Ilmu sosial Humaniora maka menjadi              topik dan bahasannya
+    berbeda seperti dalam tabel berikut.
+
+MST                            ISH                               FTR
+
+Sintesis           Polimer Gerakan             Sosial Sistem Sortasi Otomatis
+Biodegradable:             (Environmentalism):        Berbasis Sensor:
+
+
+
+Meneliti      pencampuran      Mempelajari         efektivitas   Merancang ban berjalan
+bahan alami (seperti kitosan   komunitas seperti Zero Waste      (conveyor) yang dilengkapi
+dari kulit udang atau pati     Indonesia dalam mengubah          dengan sensor infra merah
+jagung) ke dalam rantai        norma sosial di tingkat lokal.    (NIR - Near Infra Red)
+polimer agar plastik dapat                                       untuk membedakan jenis
+terurai oleh mikroba tanah                                       plastik secara otomatis
+dalam waktu singkat                                              berdasarkan         spektrum
+                                                                 cahayanya agar proses daur
+                                                                 ulang lebih efisien.
+
+Bioteknologi Benih             Antropologi Budaya                Rekayasa Mesin
+Unggul:                        Makan:                            Pengolahan Pangan
+                                                                 Lokal:
+
+                                                                 Merancang mesin pencacah
+Pengembangan        varietas   Mengatasi kelaparan dengan        atau pengolah umbi-umbian
+tanaman      yang     tahan    mengkaji kembali kekayaan         menjadi tepung yang tahan
+kekeringan        (drought-    pangan lokal (seperti sagu        lama, sehingga wilayah
+tolerant) atau tahan hama      atau sorgum) agar masyarakat      terpencil    bisa     mandiri
+melalui rekayasa genetika      tidak hanya tergantung pada       pangan tanpa bergantung
+                               beras (Diversifikasi Pangan).     pada distribusi luar.
+
+
+
+
+                                                                                             26
+Analisis      Karakteristik     Analisis      Kesiapsiagaan     Rancang Bangun Sistem
+Sedimen dan Morfologi           Psikologis dan Resilience       Peringatan Dini Banjir
+Sungai untuk Memetakan          (Ketangguhan) Masyarakat di     Bandang Berbasis Internet
+Zona Risiko Banjir Bandang      Daerah Rawan Bencana Pasca      of Things (IoT) dengan
+di Wilayah Hulu.                Trauma Banjir."                 Sensor Ultrasonik dan
+                                                                Akselerometer.
+
+
+                         Tabel 5 Contoh judul/topik penelitian
+
+            MST                              ISH                             FTR
+RIDDLE-PATCH:                    Sonafire:       (Sound-based    TEREKA:            Teknologi
+Dissolvable     Microneedle      Navigation       and    Fire    Rekonstruksi      Kecelakaan
+Patch sebagai Transdermal        Emergency Response) Game        Lalu Lintas dengan Extended
+Rifampicin Delivery pada         Mitigasi Kebakaran Berbasis     Kalman Filter dan Rekacitra 3
+Pasien Tuberkulosis dengan       Audio untuk Penyandang          Dimensi
+Desain dan Karakteristik yang    Disabilitas Tunanetra pada
+Telah Dioptimalkan               SLB-A Pembina Tingkat
+                                 Nasional Jakarta
+Penelusuran            Sifat     KAMPUNG          SEPAKAT        Si BS: Sistem Informasi dan
+Biokompatibel       Sintesis     JAYA: Potret Fenomena           Optimalisasi Pelayanan Bus
+Carbon dots (CDs) dari Daun      Dominasi Suku Bugis di          Sekolah dengan Integrasi
+Bambu Apus (Gigantochloa         Tanah Jiran dari Akulturasi     Artificial Intelligence (AI)
+apus Kurz) sebagai Sistem        hingga Dampaknya pada           Computer     Vision     untuk
+Penghantaran           Obat      Diplomasi         Indonesia-    Pelacakan      lokasi     dan
+Mitomycin ke Sel Kanker          Malaysia                        Pengelolaan         Kepadatan
+                                                                 Penumpang Bus Sekolah di
+                                                                 DKI Jakarta
+Potensi Ekstrak Daun Kelor       " WARAS: GAME                   Fabrikasi Rancang Model
+(Moringa Oleifera) Sebagai       WAYANG KULIT                    "Debox (Degradation Box) "
+Terapi    Scar    Hipertrofik    BERBASIS ROLE                   Berbasis          Fotokatalis
+Melalui             Analisis     PLAYING GAME (RPG)              Nanokomposit TiO2 - Zeolit
+Histopatologi dan Ekspresi       SEBAGAI MEDIA                   dan Sinar Ultraviolet sebagai
+Gen Transforming Growth          PENANGANAN,                     Pendegradasi Limbah Cair
+Factor-B1, Tissue Inhibitor      PENDETEKSI DAN                  Industri Laundry
+Matriks Metalloproteinase 1,     PSIKOEDUKASI ANXIETY
+dan                  Matriks     DISORDER PADA
+Metalloproteinase 1              REMAJA "
+
+
+
+
+                                                                                         27
+                                         BAB IV
+                                   Prosedur Pengaduan
+
+
+Penyelenggaraan Olimpiade Penelitian Siswa Indonesia (OPSI) menuntut pelaksanaan yang
+menjunjung tinggi prinsip integritas, keadilan, dan akuntabilitas pada seluruh tahapan
+kegiatan. Dalam rangka menjaga kredibilitas dan kepercayaan publik terhadap OPSI,
+diperlukan    mekanisme       pengaduan   kecurangan    yang    jelas,   tertib,   dan   dapat
+dipertanggungjawabkan. Panduan teknis pengaduan kecurangan disusun sebagai instrumen
+pendukung untuk memastikan bahwa setiap dugaan pelanggaran dapat ditangani secara tepat,
+objektif, dan sesuai ketentuan.
+
+Bab ini bertujuan untuk memberikan kejelasan tata cara pengaduan, alur penanganan, serta
+pendokumentasian laporan secara sistematis dan terintegrasi. Dengan adanya juknis
+pengaduan kecurangan yang terstruktur, diharapkan proses pengaduan dapat berjalan lebih
+efektif, transparan, dan terdokumentasi dengan baik, sehingga pelaksanaan OPSI Tahun 2026
+dapat berlangsung secara berintegritas dan berkeadilan bagi seluruh peserta.
+
+
+1.   Pihak yang dapat menyampaikan pengaduan mencakup:
+     a.   Peserta lomba OPSI
+     b.   Orang tua/wali peserta
+     c.   Guru pendamping
+     d.   Satuan pendidikan
+     e.   Dinas pendidikan kabupaten/kota/provinsi
+2.   Jenis pengaduan yang ditangani meliputi:
+     a.   Administrasi;
+     b.   Teknis pelaksanaan;
+     c.   Dugaan pelanggaran;
+     d.   Perilaku petugas;
+     e.   Layanan publik; dan
+     f.   Hasil penilaian.
+3.   Prinsip Layanan Pengaduan
+     Penanganan pengaduan harus memenuhi prinsip:
+     a.   Transparansi
+
+
+                                                                                            28
+     b.   Responsif
+     c.   Tidak diskriminatif
+     d.   Berbasis bukti
+     e.   Menjaga kerahasiaan
+     f.   Akuntabel
+
+
+
+Pusat Prestasi Nasional dalam melaksanakan tugas dan kewenangannya, termasuk melakukan
+tindakan investigasi dan pemeriksaan terhadap peserta yang diduga melakukan kecurangan,
+harus mengedepankan prinsip perlindungan anak, yakni menjunjung tinggi kepentingan
+terbaik bagi anak, menghormati harkat dan martabat anak, serta menjamin hak anak untuk
+memperoleh perlakuan yang adil, manusiawi, bebas dari kekerasan, diskriminasi, maupun
+stigma. Oleh karena itu, sepanjang proses investigasi atau pemeriksaan dilaksanakan sesuai
+dengan ketentuan peraturan perundang-undangan dan prinsip perlindungan anak yang
+mengacu pada Undang-Undang Nomor 35 Tahun 2014 tentang Perubahan atas Undang-
+Undang Nomor 23 Tahun 2002 tentang Perlindungan Anak.
+
+Setiap proses klarifikasi atau interogasi terhadap murid terduga curang WAJIB didampingi
+oleh orang tua/wali atau guru yang netral.
+
+1.   Saluran Pengaduan Resmi
+
+     Pengaduan hanya diterima melalui saluran resmi berikut:
+
+     a.   Formulir Pengaduan Resmi (platform digital/ULT Kemendikdasmen
+          Link:https://pusatinformasi.ult.kemendikdasmen.go.id/hc/id/requests/new)
+     b.   E-mail layanan pengaduan (puspresnas@kemendikdasmen.go.id)
+     c.   Helpdesk WhatsApp Puspresnas (wa.me/6285282777740)
+     d.   Call Center Layanan Publik Kemendikdasmen (telepon:177)
+     e.   Layanan tatap muka di kantor Puspresnas dan tempat pelaksanaan lomba jam
+          operasional layanan mengikuti jam kerja resmi.
+
+
+
+
+                                                                                        29
+2.   Prosedur Pengaduan
+
+     Berikut merupakan alur penanganan pengaduan dari pelapor kepada terlapor:
+
+
+
+
+                            Gambar 1.1. Prosedur Pengaduan OPSI
+
+
+3.   Tahapan Proses Pengaduan
+     a.   Validasi Awal
+
+          Petugas melakukan validasi awal dengan memeriksa kelengkapan dokumen dari
+          pelapor yang menyampaikan pengaduan. Setelah itu, petugas menentukan
+          apakah aduan dapat diproses atau tidak.
+
+     b.   Verifikasi
+
+          Tim layanan melakukan koordinasi dengan pihak terkait untuk mendapatkan
+          informasi tambahan (berita acara, foto, atau rekaman video pelaksanaan dari
+          koordinator pengawas). Kemudian tim layanan melakukan verifikasi terhadap
+          aduan.
+
+
+
+
+                                                                                        30
+     c.   Penyelesaian Aduan
+
+          Berdasarkan hasil klarifikasi (perbandingan antara data dari pelapor dengan data
+          dari pengawas lapangan), panitia memberikan keputusan akhir dan tindak lanjut
+          yang diperlukan.
+
+     d.   Penanganan oleh Komite Etik
+
+          Jika panitia tidak dapat memberikan keputusan akhir dari pengaduan yang
+          disampaikan, panitia akan menyampaikan laporan resmi serta memohon
+          dukungan penanganan dan penyelesaian kepada komite etik.
+
+     e.   Penutupan Aduan
+
+          Pengaduan dinyatakan selesai jika jawaban resmi telah diberikan kepada
+          pelapor dan dokumen telah diarsipkan.
+
+
+
+4.   Penyampaian Pengaduan
+
+     Pelapor menyampaikan aduan dengan mencantumkan:
+
+     a.   Identitas pelapor
+     b.   Data peserta (jika ada)
+     c.   Jenis lomba
+     d.   Kronologi kejadian
+     e.   Bukti pendukung
+     Format Pengaduan terlampir di poin 11
+
+     a.   Identitas Pelapor:
+          1) Perorangan: Salinan KTP atau identitas lainnya yang absah dan masih berlaku
+              serta surat kuasa bermeterai dari pelapor (jika laporan pengaduan diwakilkan).
+          2) Pengaduan atas nama lembaga: Salinan KTP atas nama pengadu, salinan akte
+              pendirian perkumpulan/organisasi/lembaga/badan hukum, dan surat kuasa
+              bermeterai.
+     b.   Bukti kejadian meliputi lokasi, waktu, dokumen pendukung, dan kronologi.
+
+
+
+
+                                                                                             31
+     c.   Mengisi form pengaduan luring maupun daring
+          (Portal: ult.kemendikdasmen.go.id atau Kanal SP4N-LAPOR! (lapor.go.id) atau
+          posel: pengaduan@kemendikdasmen.go.id)
+
+
+5.   Penanganan pengaduan, saran dan masukan
+
+     a.   Pengguna layanan dapat menyampaikan pengaduan melalui laman pengaduan Pusat
+          Prestasi Nasional
+          https://pusatinformasi.ult.kemendikdasmen.go.id/hc/id/requests/new)
+     b.   Pengguna layanan dapat menyampaikan saran dan masukan ditujukan kepada:
+          Kepala Biro Komunikasi dan Hubungan Masyarakat Komplek Kemdikdasmen,
+          Gedung C Lantai 1 Jalan Jenderal Sudirman Senayan, Jakarta 10270;
+
+
+6.   Standar Waktu Penanganan
+
+     a.   Validasi awal         : 2 hari kerja
+     b.   Verifikasi            : 3 hari kerja
+     c.   Klarifikasi           : 7 hari kerja
+     d.   Penyelesaian dan jawaban resmi: maksimal 14 hari kerja
+
+
+7.   Batas Waktu Pengaduan
+
+     a.   Batas waktu setelah pengumuman: maksimal 1-2 hari
+     b.   Batas waktu saat pelaksanaan perlombaan: 2 hari
+
+
+8.   Kriteria Pengaduan
+
+     Pengaduan yang dapat diproses yakni:
+
+     a.   Identitas pelapor jelas
+     b.   Memiliki bukti pendukung
+     c.   Relevan dengan kegiatan lomba
+     d.   Disampaikan dalam batas waktu yang ditentukan
+     e.   Pengaduan terkait integritas pelaksanaan lomba
+     f.   Pengaduan terkait penilaian dan hasil lomba
+     g.   Pengaduan teknis sistem
+     h.   Pengaduan terkait administrasi peserta
+                                                                                    32
+i.   Pengaduan terkait aturan lomba
+j.   Pengaduan terkait perilaku panitia, juri, atau pengawas
+k.   Pengaduan terkait fasilitas dan keamanan
+
+
+Pengaduan yang Tidak Dapat Diproses:
+
+a.   Indentitas pelapor tidak jelas
+b.   Pengaduan tanpa bukti atau tidak dapat diverifikasi.
+     1) Tidak ada lampiran bukti, data, atau kronologi.
+     2) Informasi tidak jelas, tidak dapat diverifikasi, atau hanya berupa opini.
+c.   Pengaduan yang bukan kewenangan Puspresnas.
+     1) Aduan terkait kebijakan sekolah, dinas pendidikan, atau pihak di luar OPSI
+     2) Keluhan mengenai kegiatan lain di luar ajang Pusat Prestasi Nasional
+d.   Pengaduan yang melewati batas waktu.
+     1) 2 hari (dalam pelaksanaan lomba)
+     2) 2-7 hari (setelah pengumuman).
+e.   Pengaduan yang bernada tidak sopan, menghina, atau menyerang pribadi
+     1) Isi aduan mengandung kata-kata kasar, hujatan, fitnah, dan merendahkan
+         martabat pihak lain.
+     2) Aduan yang menyerang pribadi panitia, pengawas, atau juri tanpa dasar
+         fakta.
+f.   Pengaduan duplikat atau sudah diselesaikan
+     1) Aduan yang sama diajukan berulang oleh pelapor yang sama tanpa
+         informasi baru.
+     2) Aduan terhadap kasus yang sudah diberikan keputusan final.
+g.   Pengaduan yang mengandung permintaan di luar ketentuan
+     1) Meminta perubahan kebijakan lomba secara instan demi keuntungan
+         individu.
+     2) Permintaan perlakuan khusus (misal: menambah waktu ujian hanya untuk
+         satu peserta)
+h.   Pengaduan terkait tuntutan kompensasi materi (uang/imbalan)
+     1) Panitia tidak melayani klaim kompensasi finansial pribadi.
+     2) Kecuali ada pelanggaran hak peserta yang diatur dalam regulasi resmi.
+i.   Pengaduan yang sedang diproses oleh lembaga hukum lain
+
+                                                                                     33
+          1) Kasus yang sudah ditangani polisi, pengadilan, atau laporan ke Inspektorat
+              tidak diproses ganda.
+          2) Panitia hanya menindak sesuai kewenangannya.
+     j.   Pengaduan yang bermuatan politik atau propaganda
+          Isi aduan digunakan untuk kampanye, provokasi, atau isu politik di luar konteks
+          lomba.
+
+
+9.   Kerahasiaan dan Keamanan Data
+     a.   Semua data pelapor disimpan dengan prinsip perlindungan data pribadi
+     b.   Identitas pelapor dirahasiakan dari pihak yang tidak memiliki akses yang sah
+     c.   Data pribadi yang dikumpulkan hanya boleh digunakan untuk tujuan
+          penanganan pengaduan dan tidak boleh disalahgunakan untuk tujuan lain di luar
+          konteks lomba
+     d.   Penggunaan platform pelaporan yang aman
+
+
+10. Hak dan Kewajiban Pelapor
+     a.   Hak Pelapor
+          1) Pelapor mendapatkan layanan yang adil, profesional, dan objektif
+          2) Pelapor mendapatkan jawaban resmi dan penjelasan apabila pengaduan
+              dinyatakan tidak dapat diproses
+          3) Identitas pelapor dilindungi dari segala bentuk tindakan diskriminasi,
+              intimidasi, atau pembalasan akibat dari laporan yang disampaikannya
+     b.   Kewajiban Pelapor
+          1) Pelapor menyampaikan informasi yang benar berdasarkan data dan fakta
+              (tidak berdasarkan opini atau persepsi pribadi)
+          2) Pelapor menjaga etika dan menggunakan bahasa sopan
+          3) Pelapor menggunakan saluran pengaduan resmi
+          4) Pelapor mematuhi batas waktu pengaduan
+          5) Pelapor tidak menyebarkan informasi yang belum terverifikasi
+          6) Pelapor menghormati keputusan akhir panitia/komite etik
+
+
+11. Format Laporan Pengaduan
+
+     Lampiran berisi contoh formulir yang terdiri dari:
+
+                                                                                            34
+   a.   Email:
+   b.   Nama:
+   c.   No. Handphone:
+   d.   Provinsi dan Kota/Kabupaten:
+   e.   Asal Sekolah/Instansi:
+   f.   Peran: Dinas Pendidikan/Satuan Pendidikan/Umum
+   g.   Jenis laporan: Keluhan & Kendala
+   h.   Jenis lomba:
+   i.   Kronologi kejadian:
+   j.   Bukti pendukung:
+
+
+12. Dokumentasi dan Arsip
+
+   Semua pengaduan diberi nomor tiket dan diarsipkan digital. Data disimpan sesuai
+   ketentuan retensi arsip. Pengarsipan yang lengkap terdiri dari:
+
+   a.   Laporan (ULT, Gform, dokumen, atau lainnya)
+   b.   Data baik berupa foto, video, berita acara atau bukti lainnya
+   c.   Keputusan buat pelapor berupa berita acara laporan dari pihak Puspresnas
+   d.   Keputusan buat pelapor dari komite etik (jika dilakukan)
+
+
+
+
+                                                                                     35
+                                        BAB V
+                                        Penutup
+
+
+Dirilisnya Panduan Olimpiade Penelitian Siswa Indonesia (OPSI) menjadi tonggak penting
+dalam penyelenggaraan OPSI yang terarah, terukur, dan berkelanjutan. Panduan ini diharapkan
+dapat menjadi acuan bersama bagi seluruh pemangku kepentingan, mulai dari murid, pendidik,
+pembimbing, hingga juri, dalam memahami tujuan, mekanisme, serta standar pelaksanaan
+OPSI secara komprehensif.
+
+Keberadaan panduan OPSI diharapkan mampu meningkatkan kualitas pelaksanaan penelitian
+murid melalui penegasan tahapan penelitian yang sistematis dan sesuai kaidah ilmiah. Dengan
+panduan yang jelas, peserta dapat mengembangkan kemampuan berpikir kritis, analitis, dan
+solutif, yang merupakan kompetensi kunci dalam pendekatan Science, Technology,
+Engineering, and Mathematics (STEM).
+
+Panduan OPSI juga berperan strategis dalam mendorong integrasi prinsip-prinsip STEM ke
+dalam kegiatan penelitian peserta. Penelitian yang dikembangkan tidak hanya berorientasi pada
+penguasaan konsep, tetapi juga pada penerapan ilmu pengetahuan dan teknologi untuk
+menghasilkan inovasi yang relevan dengan tantangan nyata di lingkungan sekitar.
+
+Penyelenggaraan OPSI diharapkan semakin mampu mencetak talenta riset muda yang adaptif,
+inovatif, dan berdaya saing ke depan. Panduan ini menjadi landasan penting dalam membangun
+ekosistem pembinaan penelitian berbasis STEM yang berkelanjutan, sehingga OPSI dapat
+memberikan kontribusi nyata dalam menyiapkan generasi unggul menuju Indonesia Emas
+2045.
+
+
+
+
+                                                                                          36
+                                                               Lampiran
+Lampiran 1: Surat Pernyataan Karya Orisinal
+
+                  SURAT PERNYATAAN ORISINALITAS KARYA PENELITIAN
+Yang bertanda tangan di bawah ini:
+Nama Ketua                   : …………………………………………………………………
+NISN Ketua                   : …………………………………………………………………
+Nama Anggota                 : …………………………………………………………………
+NISN Anggota                 : …………………………………………………………………
+Asal Sekolah                : …………………………………………………………………
+Nama Pembimbing             : …………………………………………………………………
+
+dengan ini menyatakan sejujurnya bahwa proposal penelitian kami dengan judul
+.......................................................................................................................................................
+.......................................................................................................................................................
+.......................................................................................................................................................
+.......................................................................................................................................................
+bersifat orisinal/bukan hasil tindak plagiarisme/belum pernah dikompetisikan dan/atau tidak
+sedang diikutkan pada lomba penelitian sejenis dan/atau tidak sedang dalam proses publikasi
+terbitan ilmiah.
+
+Bilamana dikemudian hari ditemukan ketidaksesuaian dengan pernyataan ini, saya bersedia
+menerima konsekuensi sesuai aturan OPSI.
+
+Demikian pernyataan ini dibuat dengan sesungguhnya dan dengan sebenar-benarnya.
+
+                                                                                         Dibuat di ……………
+                                                                                         pada tanggal.............. 2026
+
+      Mengetahui,                                                                              Yang membuat pernyataan
+      Kepala Sekolah
+
+
+        TTD+ Stempel Sekolah                                                                   (Materai resmi Rp10.000)
+        Nama Kepala Sekolah                                                                    Nama Ketua
+      NIP…………………                                                                                     NISN ………………..
+
+
+
+
+                                                                                                                                                  37
+Lampiran 2: Surat Pernyataan Penggunaan Kecerdasan Buatan (AI)
+            SURAT PERNYATAAN PENGGUNAAN KECERDASAN ARTIFISIAL
+
+
+Yang bertanda tangan di bawah ini:
+Nama Ketua                   : …………………………………………………………………
+NISN Ketua                   : …………………………………………………………………
+Nama Anggota                 : …………………………………………………………………
+NISN Anggota                 : …………………………………………………………………
+Asal Sekolah                : …………………………………………………………………
+Nama Pembimbing             : …………………………………………………………………
+
+dengan ini menyatakan sejujurnya bahwa proposal penelitian saya dengan judul
+.......................................................................................................................................................
+(menggunakan/ tidak menggunakan*) bantuan perangkat bantu/perangkat lunak Kecerdasan
+Artifisial untuk:
+      a. Menemukan ide *)
+      b. Mencari referensi *)
+      c. …. (sebutkan)
+Perangkat lunak Kecerdasan Artifisial yang digunakan:
+      a. …. (sebutkan aplikasi AI yang digunakan)
+      b. …..
+Penggunaan perangkat bantu Kecerdasan Artifisial sesuai dengan ketentuan pada Panduan
+OPSI 2026. Bilamana di kemudian hari ditemukan ketidaksesuaian dengan pernyataan ini, saya
+bersedia menerima konsekuensi sesuai aturan OPSI.
+
+Demikian pernyataan ini dibuat dengan sesungguhnya dan dengan sebenar-benarnya.
+
+                                                                                         Dibuat di ………
+                                                                                         pada tanggal.............. 2026
+      Mengetahui,                                                                           Yang membuat pernyataan
+      Kepala Sekolah
+
+        TTD+ Stempel Sekolah                                                                   (Materai resmi Rp10.000)
+
+
+      Nama Kepala Sekolah                                                                                  Nama Ketua
+    NIP …………………                                                                                             NISN ………………..
+Catatan: *) coret yang tidak perlu/ tidak sesuai
+
+
+
+
+                                                                                                                                                  38
+Lampiran 3: Panduan Klirens Etik Penelitian
+
+                              KLIRENS ETIK PENELITIAN
+
+(Untuk penelitian yang melibatkan manusia, hewan uji (vertebrata, cephalopoda, decapoda),
+mikroorganisme berbahaya dan bahan kimia).
+
+Klirens etik atau kelayakan etik adalah keterangan tertulis yang diberikan oleh Komisi Etik
+Penelitian untuk riset yang melibatkan makhluk hidup yang menyatakan bahwa suatu proposal
+penelitian layak dilaksanakan setelah memenuhi persyaratan tertentu. Persetujuan dari Komite
+Etik dalam suatu penelitian sangat diperlukan untuk publikasi hasil penelitian. Komite Etik
+Penelitian biasanya terdapat di perguruan tinggi atau lembaga penelitian. Komite ini terdiri atas
+para ahli yang kompeten di bidangnya dan telah mendapat sertifikat GCP (Good Clinical
+Practice) sehingga dipandang mampu mempertimbangkan kelayakan suatu proposal
+penelitian, untuk bisa dilakukan atau tidak dari sisi pertimbangan etik. Dasar pertimbangannya
+adalah bahwa seluruh subjek yang diikutsertakan dalam proses penelitian (mulai dari
+pembuatan proposal hingga diseminasi) harus dilindungi keselamatannya dari risiko yang akan
+timbul dari seluruh perlakuan yang diberikan selama penelitian. Pertimbangan aspek keamanan
+harus lebih tinggi daripada aspek manfaat yang akan diperoleh dari penelitian tersebut.
+
+A. Penelitian Yang Menggunakan Hewan Coba Sebagai Subjek Penelitian
+
+     Penelitian yang menggunakan objek Penelitian Hewan Coba harus melalui proses Klirens
+Etik penelitian, mulai dari hewan ternak, satwa liar hingga hewan coba. Penggunaan hewan
+dalam proses penelitian yang memerlukan kaidah/klirens etik yaitu semua hewan bertulang
+belakang (vertebrata), dan beberapa hewan yang tidak bertulang belakang (invertebrata)
+meliputi; jenis Cephalopoda (cumi-cumi, gurita, nautilus), dan jenis decapoda (udang, lobster,
+kepiting). Prinsip dalam etik penelitian dalam menggunakan hewan coba sendiri mengacu pada
+tulisan "The Principles of Humane Experimental Technique" by W.M.S. Russell and R.L.
+Burch in 1959. Terdapat tiga prinsip yang disebut 3R: 1. Replacement atau penggantian
+mengacu pada metode mensubstitusi Hewan Coba dengan model lain seperti program
+komputer, kultur sel, atau Hewan Coba dengan tingkatan sensitivitas (sentient) lebih rendah;
+2. Reduction atau pengurangan melibatkan strategi menggunakan jumlah hewan minimal tanpa
+mengurangi validitas data atau berupa pengurangan perlakuan Penelitian yang menimbulkan
+sakit dan stres; dan 3. Refinement atau perbaikan berkenaan dengan modifikasi sistem
+pemeliharaan atau prosedur Penelitian untuk meningkatkan kesejahteraan hewan atau
+meminimalisasi sakit dan stres.
+
+    Pada pelaksanaannya sendiri penggunaan hewan coba mengacu pada Lima prinsip
+kesejahteraan hewan yang diusung oleh Asosiasi Dokter Hewan Amerika (American
+Veterinary Medical Association – AVMA) yaitu: 1. Bebas dari rasa haus, lapar dan malnutrisi;
+2. Bebas dari ketidaknyamanan; 3. Bebas dari rasa sakit, luka dan penyakit; 4. Bebas untuk
+mengekspresikan perilaku normal dan 5. Bebas dari rasa takut dan stres.
+
+
+
+                                                                                              39
+     Berdasarkan prinsip-prinsip tersebut Komisi Klirens Etik akan bersidang dan memutuskan
+untuk memberikan atau menolak klirens etik dari suatu penelitian. Mulai dari jenis hewan yang
+dipergunakan (spesies, umur, jenis kelamin, dll), proses penelitian (perlakuan terhadap hewan),
+hingga apa yang akan dilakukan terhadap hewan setelah proses penelitian. Kompetensi dari
+peneliti dan personel anggota penelitian juga menjadi pertimbangan dalam pemberian suatu
+klirens etik.
+
+     Jumlah hewan yang akan digunakan dalam penelitian juga harus dipertimbangkan agar
+sesuai dengan metode yang digunakan dalam penelitian. Penggunaan hewan dalam jumlah
+banyak tidak memenuhi kaidah etik karena jumlah hewan yang akan dikorbankan banyak,
+terlebih lagi jika hewan tersebut akan dimatikan setelah percobaan berakhir. Pemberian
+perlakuan kepada hewan harus dilakukan oleh seorang teknisi, laboran yang telah mengikuti
+pelatihan khusus penanganan hewan coba, supaya perlakuan yang diterima oleh semua hewan
+coba memperhatikan prinsip kesejahteraan hewan (animal welfare). Untuk kegiatan penelitian
+yang melakukan tindakan fisik khusus (intervensi), maka wajib didampingi oleh dokter hewan
+atau institusi yang bersertifikasi. Contoh perlakuan yang diberikan kepada hewan coba dapat
+berupa pemberian makan atau obat tertentu melalui sonde, contoh intervensi pembuatan luka
+pada permukaan kulit atau pengambilan darah dari bagian ekor atau jantung, serta penelitian
+dengan hewan coba yang sudah dikondisikan mengalami kelainan, misalnya tikus DM
+(Diabetes Melitus).
+
+    Klirens etik terhadap cara penanganan Hewan Coba setelah selesai penelitian juga harus
+diperhatikan, apakah hewan coba akan dimatikan dengan cara dibius atau dibunuh dengan
+kapitasi leher atau cara lain. Hewan coba juga harus dikuburkan dengan tata cara yang baik
+dan benar.
+
+B. Penelitian Yang Menggunakan Manusia Sebagai Subjek Penelitian
+
+     Semua penelitian yang menggunakan manusia sebagai subjek penelitian wajib
+mengajukan persetujuan etik. Tujuan utama persetujuan etik adalah untuk melindungi subyek
+penelitian dari ketidaknyamanan secara fisik (rasa nyeri atau sakit, ancaman), psikis (tertekan,
+stres) maupun secara sosial-budaya (konsekuensi hukum, stigma diasingkan dari masyarakat)
+sebagai akibat berpartisipasi dalam penelitian.
+
+     Semua penelitian yang melibatkan manusia harus memperhatikan tiga prinsip dasar kode
+etik (CIOMS, 2017) yaitu:
+
+ 1.   Menghormati individu (Respect for Individual), setidaknya ada 2 (dua) etika dasar yang
+      perlu diperhatikan:
+      a) Menghormati otonomi: menghargai kebebasan seseorang terhadap pilihan sendiri.
+          Responden diberi kebebasan menentukan pilihan dan bebas dari paksaan untuk
+          berpartisipasi dalam kegiatan penelitian. Oleh karena itu, peneliti harus
+          mempersiapkan formulir persetujuan responden (informed consent). Responden juga
+          berhak mengundurkan diri selama penelitian berlangsung apabila ia merasa tidak
+          nyaman.
+
+                                                                                             40
+      b) Melindungi subyek penelitian: melindungi individu/subjek penelitian yang memiliki
+          keterbatasan atau kerentanan dari eksploitasi dan bahaya. Peneliti harus menjamin
+          kerahasiaan data responden termasuk informasi yang bersifat pribadi. Tidak semua
+          orang menginginkan informasinya diketahui oleh orang lain, sehingga peneliti perlu
+          memperhatikan privasi dan kebebasan individu tersebut. Peneliti tidak boleh
+          menampilkan informasi mengenai identitas responden, baik nama maupun alamat
+          responden ke dalam hasil penelitiannya atau di dalam publikasinya. Peneliti dapat
+          menggunakan kode (inisial atau nomor identitas responden).
+ 2.   Kemanfaatan (Beneficence): kewajiban secara etik untuk memaksimalkan manfaat dan
+      meminimalkan bahaya. Prinsip ini menekankan bahwa semua penelitian harus
+      bermanfaat bagi masyarakat. Oleh karena itu rancangan penelitian harus jelas dan peneliti
+      yang bertanggung jawab harus mempunyai kompetensi yang sesuai dan dapat melindungi
+      subyek penelitian dari resiko yang tidak diinginkan.
+ 3.   Berkeadilan (Distributive Justice): Keseimbangan antara beban dan manfaat ketika
+      berpartisipasi dalam penelitian. Prinsip ini menekankan bahwa setiap individu yang
+      berpartisipasi dalam penelitian harus diperlakukan sesuai dengan latar belakang dan
+      kondisi masing-masing. Perbedaan perlakuan antara satu individu/kelompok dengan lain
+      dapat dibenarkan bila dapat dipertanggung jawabkan secara moral dan dapat diterima oleh
+      masyarakat. Misalnya memberikan kompensasi berupa barang maupun uang dalam batas
+      yang bisa diterima dan tidak terkesan membeli informasi.
+
+Penelitian yang melibatkan manusia harus menyiapkan informed consent (formulir berupa surat
+pernyataan kesediaan menjadi subjek penelitian).
+
+
+
+C. Penelitian yang Menggunakan Bahan (Kimia) yang Sensitif dan Beresiko Bagi Subjek,
+   Objek Penelitian dan Lingkungan
+
+     Penelitian yang membutuhkan Klirens Etik Riset bidang Kimia bertujuan untuk
+melindungi pelaku riset, subjek riset, serta lingkungan dari bahaya yang dapat timbul sebagai
+akibat dari riset yang dilakukan. Dalam hal ini ruang lingkup yang harus mempertimbangkan
+etik     dalam       melakukan       penelitiannya      seperti     menggunakan        senyawa-
+senyawa/pelarut/komponen yang termasuk dalam bahan kimia kategori berbahaya (bahan alam
+atau sintetis) yang diatur oleh peraturan dari instansi teknis terkait atau berdasarkan Material
+Safety Data Sheet (MSDS) dan penelitian yang melakukan uji organoleptik (rasa, bau, tekstur
+produk penelitian) yang melibatkan manusia sebagai subjek uji.
+
+Semua riset bidang Kimia dilakukan dengan memperhatikan prinsip-prinsip dasar kode etik,
+yaitu
+
+ 1.   Kemanfaatan (Beneficence): kewajiban secara etik untuk memaksimalkan manfaat bagi
+      umat manusia dan meminimalkan ancaman bahaya terhadap manusia dan lingkungan.
+      Sehingga, rancangan riset harus jelas dan peneliti yang bertanggung jawab harus
+
+
+                                                                                            41
+       mempunyai kompetensi yang sesuai dan dapat melindungi pelaku dan subjek riset dari
+       resiko yang tidak diinginkan.
+ 2.    Keselamatan dan Keamanan (Safety and Security). Pelaksana riset harus mendorong
+       aplikasi, penggunaan, dan pengembangan ilmu pengetahuan dan teknologi yang
+       bermanfaat sambil mendorong dan memelihara budaya keselamatan, kesehatan, dan
+       keamanan yang kuat.
+ 3.    Keselamatan bagi manusia yang terlibat dalam riset (Security of People Involved in
+       Scientific Research). Dalam riset yang melibatkan manusia sebagai subyek risetnya,
+       periset harus berusaha untuk meminimalkan kerusakan dan risiko serta memaksimalkan
+       manfaat. Periset harus menghormati martabat manusia, privasi, dan otonomi, serta
+       mampu melindungi individu/subjek riset yang memiliki keterbatasan atau kerentanan dari
+       eksploitasi dan bahaya.
+ 4.    Akuntabilitas (Accountability). Periset memiliki tanggung jawab untuk memastikan
+       bahwa bahan kimia, peralatan, dan fasilitas dilindungi dari penyelewengan serta tidak
+       digunakan untuk tujuan ilegal, berbahaya, atau merusak. Pelaksana riset harus
+       mengetahui undang-undang dan peraturan yang berlaku yang mengatur pembuatan dan
+       penggunaan bahan kimia, dan melakukan tindakan apabila ada penyalahgunaan bahan
+       kimia, pengetahuan ilmiah, peralatan, dan fasilitas
+
+
+Disarankan menghindari melakukan proses penelitian yang terkait dengan hal-hal
+beresiko/sensitif sebagai contoh bahan narkoba dan psikotropika, bahan yang termasuk dalam
+Senjata Kimia, aditif berbahaya dan juga penelitian yang menggunakan bahan hasil proses
+biologi/bioproses yang berbahaya terhadap manusia maupun lingkungan.
+
+Daftar Pustaka
+
+      Shamoo, A.E. & Resnik, D.B. 2003. Responsible Conduct of Research. New York:
+      Oxford University Press.
+
+
+
+
+                                                                                          42
+  Lampiran 4: Format Penulisan Proposal Penelitian
+
+
+  Aturan Penulisan Proposal:
+
+ i.    Proposal penelitian ditulis dalam bahasa Indonesia, diketik menggunakan program
+       pengolah kata (word processor), kertas A4 dengan margin normal (2,54 cm dari atas,
+       bawah, kiri dan kanan), dan jenis huruf Times New Roman dengan spasi Multiple 1,15.
+ii.    Ukuran huruf (font) yang lebih kecil dapat diterapkan dalam menyajikan tabel dan gambar
+       (Times New Roman 10 pt). Nama ilmiah spesies (termasuk subspesies, varietas, dll.) harus
+       ditulis dalam huruf miring mengikuti kaidah penulisan yang berlaku.
+iii.   Kutipan dalam naskah ditulis dalam sistem "nama dan tahun" dan disusun dari A sampai
+       Z. Dalam mengutip artikel yang ditulis oleh dua penulis, keduanya harus disebutkan,
+       namun, untuk tiga dan lebih penulis, hanya nama (keluarga) terakhir dari penulis pertama
+       disebutkan, yang diikuti oleh dkk. misalnya Saharjo dan Nurhayati (2006) atau (Boonkerd
+       2003a, b, c; Sugiyarto 2004; El-Bana dan Nijs 2005; Balagadde dkk. 2008).
+
+
+
+
+                                                                                            43
+             Halaman Sampul Proposal (logo OPSI sesuai contoh di bawah
+                                        ini)
+
+
+
+
+                        PROPOSAL PENELITIAN OPSI
+             (Times New Roman 14 pt, huruf kapital, huruf tebal, posisi di
+                                     tengah)
+
+
+
+                     Judul Proposal Penelitian yang Diusulkan
+                 (Times New Roman 14 pt, huruf tebal, posisi di tengah)
+
+
+
+                              Nama Tim Peneliti
+             (Times New Roman 12 pt, huruf kapital, huruf tebal, posisi di
+                                     tengah)
+
+
+
+                    Bidang dan Sub Bidang Kompetisi Penelitian
+                 (Times New Roman 12 pt, huruf tebal, posisi di tengah)
+                             Contoh : ISH dan Sosiologi
+
+
+
+                                 Nama Sekolah
+                 (Times New Roman 12 pt, huruf tebal, posisi di tengah)
+
+
+
+                              Kabupaten, Provinsi
+                 (Times New Roman 12 pt, huruf tebal, posisi di tengah)
+
+
+
+                                     Tahun 2026
+
+                 (Times New Roman 12 pt, huruf tebal, posisi di tengah)
+
+(halaman baru)
+
+
+                                                                             44
+                        BAB 1. PENDAHULUAN (16 pt)
+1.1 LATAR BELAKANG (12 pt)
+       Bab ini berisi uraian tentang latar belakang atau justifikasi ilmiah dan permasalahan
+yang akan diteliti. Selain itu, permasalahan yang diuraikan perlu dilengkapi dengan data terkini
+sesuai kondisi yang terjadi saat ini. Alasan penelitian perlu diungkapkan melalui pemaparan
+fenomena nyata atau penelitian yang pernah dilakukan sebelumnya. Peneliti perlu
+menghubungkan keterbatasan dari penelitian sebelumnya dan keterbaruan dari penelitian yang
+diajukan, serta kesenjangan yang terjadi antara kondisi saat ini dengan kondisi yang seharusnya
+sehingga terlihat kebaruan dari penelitian yang diusulkan. Pada bab ini perlu dicantumkan
+tujuan khusus penelitian, manfaat penelitian, keutamaan penelitian, temuan yang ditargetkan,
+kontribusi penelitian terhadap ilmu pengetahuan. Dengan demikian, cara penyelesaian masalah
+menjadi runut dan memberikan pengetahuan yang komprehensif untuk menambah khazanah
+ilmu pengetahuan. (11 pt)
+
+
+
+1.2 RUMUSAN MASALAH (12 pt)
+
+Rumusan masalah menjelaskan secara rinci dan terarah inti persoalan penelitian yang akan
+dikaji. Pada bagian ini, penulis perlu menguraikan masalah utama yang muncul dari latar
+belakang penelitian, sehingga rumusan masalah menjadi jembatan logis antara kondisi faktual
+yang telah dijelaskan sebelumnya dengan fokus kajian penelitian. Rumusan masalah harus
+disusun secara spesifik, tidak terlalu luas, dan dapat diteliti secara ilmiah agar penelitian
+memiliki arah yang jelas. Perumusan masalah dapat disajikan dalam bentuk pertanyaan
+penelitian atau pernyataan masalah yang mencerminkan apa yang belum diketahui, belum
+dipahami, atau belum terpecahkan. (11 pt)
+
+
+
+1.3 TUJUAN PENELITIAN (12 pt)
+
+        Tujuan penelitian menjelaskan secara rinci apa yang ingin dicapai melalui
+pelaksanaan penelitian. Tujuan penelitian disusun sebagai jawaban langsung atas rumusan
+masalah, sehingga harus selaras dan konsisten dengan permasalahan yang telah ditetapkan
+sebelumnya. Pada bagian ini, penulis menguraikan arah utama penelitian, apakah bertujuan
+untuk memahami suatu fenomena, menganalisis hubungan atau pengaruh antar variabel,
+mengevaluasi kebijakan atau program, mengembangkan model atau konsep tertentu, maupun
+merumuskan rekomendasi berbasis temuan penelitian. Selain itu, tujuan penelitian perlu
+dirumuskan secara spesifik, terukur, dan realistis, sesuai dengan ruang lingkup dan metode
+penelitian yang digunakan. Tujuan dapat disajikan dalam bentuk tujuan umum dan tujuan
+khusus untuk memperjelas tahapan pencapaian penelitian.
+
+
+
+
+                                                                                             45
+1.4    HIPOTESIS (jika ada) (12 pt)
+        Hipotesis merupakan dugaan sementara atas permasalahan penelitian yang masih
+perlu dibuktikan secara empiris. Hipotesis disusun berdasarkan landasan teori, hasil penelitian
+terdahulu, serta kerangka pemikiran yang telah dibangun sebelumnya, sehingga tidak bersifat
+spekulatif. Keberadaan hipotesis menunjukkan bahwa penelitian memiliki arah analitis yang
+jelas, khususnya dalam penelitian kuantitatif atau penelitian yang bertujuan menguji
+hubungan, pengaruh, atau perbedaan antar variabel. Hipotesis dirumuskan secara jelas,
+spesifik, dan dapat diuji dengan metode penelitian yang digunakan.
+
+1.5   MANFAAT PENELITIAN (12 pt)
+        Manfaat penelitian menjelaskan kontribusi yang diharapkan dari hasil penelitian.
+Peneliti dapat menjelaskan pihak yang memperoleh manfaat serta bentuk manfaat yang
+diterima. Penjabaran manfaat penelitian menunjukkan bahwa penelitian tidak hanya penting
+secara akademik, tetapi juga memiliki relevansi dan kegunaan nyata bagi pengembangan ilmu
+pengetahuan, pemecahan masalah, atau pengambilan keputusan.
+
+
+
+
+                                                                                            46
+(halaman baru)
+
+                     BAB 2. TINJAUAN PUSTAKA (16 pt)
+        Tinjauan pustaka memuat semua informasi tentang hasil penelitian terdahulu yang
+relevan untuk menentukan state of the art (posisi penelitian yang akan dilakukan) dan teori-
+teori yang melandasi penelitian yang akan dilakukan. (11 pt)
+
+
+
+2.1 LANDASAN TEORI (12 pt)
+Bagian yang berisi kumpulan teori, konsep, dan prinsip ilmiah yang digunakan sebagai alat
+analisis dalam sebuah penelitian. Isi utama landasan teori berupa teori dasar yang menjadi
+payung penelitian yang akan dilakukan, definisi konsep dan variabel yang akan diteliti, serta
+dimensi dan indikator dalam proses pengukuran.
+
+
+2.2 STUDI PUSTAKA (12 pt)
+Bagian yang berisi kajian hasil penelitian terdahulu yang relevan dengan topik penelitian
+yang memuat temuan utama, metodologi, serta persamaan dan perbedaan dengan penelitian
+yang akan dilakukan. Bagian ini berfungsi untuk menunjukkan kesenjangan penelitian
+(research gap) dan memposisikan penelitian dalam konteks keilmuan yang lebih luas.
+
+
+
+(halaman baru)
+
+                    BAB 3. METODE PENELITIAN (16 pt)
+Pada bagian ini peneliti menjelaskan secara rinci metode dan tahapan penelitian yang
+dilaksanakan, uraian bahan dan peralatan yang digunakan, cara kerja, dan lain-lain sesuai
+dengan metodologi penelitian masing-masing bidang yang dijelaskan pada Bab 3 (Tabel 6).
+Bagian ini dapat dibagi menjadi beberapa sub-bab sesuai kebutuhan.
+
+3.1   Waktu dan Tempat Penelitian (12 pt)
+
+          Bagian ini menginformasikan rencana waktu dan tempat penelitian. (11 pt)
+
+3.2   Alat dan Bahan (12 pt)
+
+          Bagian ini memuat informasi alat dan bahan utama yang digunakan dalam penelitian.
+(11 pt)
+
+3.3   Rancangan dan Prosedur Penelitian (12 pt)
+
+
+
+
+                                                                                           47
+        Pada bagian ini peneliti menjelaskan rancangan dan instrumen penelitian yang akan
+dijalankan, termasuk didalamnya jenis data yang digunakan, cara-cara pemerolehan data dan
+cara kerja alat (bila ada). Peneliti perlu menjelaskan informasi teknis yang memadai terkait cara
+penyelesaian masalah melalui desain atau rancangan yang dapat diukur dengan pengamatan
+(pengukuran, analisis, dan wawancara dll.) dan dilengkapi dengan instrumen pemerolehan data
+seperti daftar pertanyaan untuk wawancara, pedoman observasi/eksperimen, angket/kuesioner,
+dan lain-lain. (11 pt) .
+
+        Penelitian yang menggunakan manusia atau hewan vertebrata sebagai subjek penelitian
+diwajibkan melampirkan surat keterangan lolos klirens etik dari instansi yang berwenang,
+seperti dari BRIN, perguruan tinggi, lembaga penelitian, dan lain-lain.
+
+
+
+3.4 Rancangan Pengolahan Data (12 pt)
+
+        Bagian ini menjelaskan rencana teknik pengolahan data yang akan digunakan dalam
+penelitian. Peneliti mendeskripsikan langkah-langkah analisis data, teknik statistik atau
+kualitatif yang diterapkan, perangkat lunak atau tools yang digunakan, serta cara interpretasi
+hasil analisis. Rancangan pengolahan data harus sesuai dengan jenis data dan tujuan penelitian
+yang telah ditetapkan. (11 pt)
+
+(halaman baru)
+
+
+     BAB 4. RANCANGAN ANGGARAN BIAYA DAN JADWAL
+                    KEGIATAN (16 pt)
+4.1 Rancangan Anggaran Biaya Penelitian (12 pt)
+Bagian ini memuat rincian anggaran biaya yang dibutuhkan untuk melaksanakan penelitian.
+Rancangan anggaran biaya meliputi biaya alat dan bahan, biaya jasa, biaya sewa dan biaya
+akomodasi dan transportasi. Total anggaran maksimal Rp 15,000,000. Komponen pengeluaran
+sesuai dengan kebutuhan penelitian. Format rancangan anggaran biaya mengikuti ketentuan
+yang tercantum.
+
+ No        Komponen Pengeluaran                                      Jumlah Anggaran (Rp)
+
+ 1         Biaya Alat dan Bahan                                Rp.
+
+           contoh
+              a. Hewan uji
+              b. Alat laboratorium
+              c. ……
+              d. …….
+
+ 2         Biaya Jasa                                          Rp.
+
+
+                                                                                             48
+           contoh
+              a. Honor surveyor
+              b. Biaya analisis lab
+              c. …..
+              d. …..
+
+
+ 3         Biaya Sewa                                       Rp.
+
+           contoh
+              a. Sewa bengkel
+              b. ……
+              c. ……
+              d. ……
+
+
+ 4         Akomodasi dan Transportasi                       Rp.
+
+           contoh
+              a. Biaya penginapan
+              b. …….
+              c. ….
+              d.
+
+                           Total                            Rp.
+
+
+
+4.2 Jadwal Penelitian (12 pt)
+Bagian ini menjelaskan linimasa atau jadwal pelaksanaan penelitian secara keseluruhan. Jadwal
+peneltian disusun secara kronologis dan mencakup semua tahapan penelitian, mulai dari
+persiapan, pelaksanaan, pengumpulan data, analisis data, hingga penyusunan laporan akhir.
+Setiap kegiatan harus memiliki target waktu yang jelas dan realistis sesuai dengan durasi
+penelitian yang telah ditetapkan
+
+     No                      Kegiatan                             Tanggal Pelaksanaan
+
+ 1        …….
+
+ 2        …….
+
+ 3        ……
+
+ 4        dst
+
+
+
+
+ PERNYATAAN PENGGUNAAN KECERDASAN ARTIFISIAL (AI) (14 pt)
+
+
+
+                                                                                         49
+Bagian ini memuat pernyataan jenis perangkat AI dan untuk apa penggunaanya dalam
+penelitian ini (11 pt).
+
+                         DAFTAR PUSTAKA (16 pt)
+        Bagian ini memuat referensi yang dirujuk dalam naskah proposal penelitian dan
+ditulis secara alfabetis dan konsisten sesuai dengan selingkung (APA, MLA, atau yang lain)
+yang digunakan. Ukuran huruf tiap pustaka 11 pt. Daftar pustaka tidak bersumber dari
+wikipedia atau blog pribadi.
+
+Contoh pustaka jurnal:
+
+  Yuliana N.D., Iqbal M., Jahangir M., Wijaya C.H., Korthout H., Kottenhage M., Kim H.K.,
+    Verpoorte R. 2011. Screening of selected Asian spices for anti obesity-related
+    bioactivities. Food Chem 126: 1724-1729. DOI: 10.1016/j.foodchem.2010.12.066.
+
+Contoh pustaka buku:
+
+  Lioe H.N., Apriyantono A., Yasuda M. 2012. Soy Sauce: Typical Aspects of Japanese
+     Shoyu and Indonesian Kecap. 93-102. CRC Press, Boca Raton, Florida.
+
+Contoh pustaka skripsi, tesis, dan disertasi:
+
+  Merdiyanti A. 2008. Paket Teknologi Pembuatan Mi Kering dengan Memanfaatkan Bahan
+    Baku Tepung Jagung [Skripsi]. Bogor: Fakultas Teknologi Pertanian, Institut Pertanian
+    Bogor.
+
+Contoh pustaka dari internet:
+
+  Van der Sman RGM. 2012. Soft matter approaches to food structuring.
+    http://www.sciencedirect.com/science/article/pii/S0001868612000620 [04 Juni 2012].
+
+
+
+
+                                                                                       50
+Lampiran 5: Format Penulisan Laporan Penelitian
+
+Aturan Penulisan Laporan Penelitian:
+
+● Laporan hasil penelitian ditulis dalam bahasa Indonesia, diketik menggunakan program
+  MS Word, kertas A4 dengan margin normal (2,54 cm dari atas, bawah, kiri dan kanan),
+  dan jenis huruf Times New Roman dengan spasi Multiple 1,15.
+● Ukuran huruf (font) yang lebih kecil dapat diterapkan dalam menyajikan tabel dan gambar
+  (10 pt). Nama ilmiah spesies (termasuk subspesies, varietas, dll.) harus ditulis dalam huruf
+  miring mengikuti kaidah penulisan yang berlaku.
+● Kutipan dalam naskah ditulis dalam sistem "nama dan tahun" dan disusun dari yang
+  terlama ke terbaru dan dari A sampai Z. Dalam mengutip artikel yang ditulis oleh dua
+  penulis, keduanya harus disebutkan, namun, untuk tiga dan lebih penulis, hanya nama
+  (keluarga) terakhir dari penulis pertama disebutkan, yang diikuti oleh dkk. misalnya
+  Saharjo dan Nurhayati (2006) atau (Boonkerd 2003a, b, c; Sugiyarto 2004; El-Bana dan
+  Nijs 2005; Balagadde dkk. 2008).
+
+
+
+
+                                                                                          51
+                 LAPORAN PENELITIAN OPSI
+
+(Times New Roman 14 pt, huruf kapital, huruf tebal, posisi di tengah)
+
+
+
+                     Judul Laporan Penelitian
+
+      (Times New Roman 14 pt, huruf tebal, posisi di tengah)
+
+
+
+                        Nama Tim Peneliti
+
+(Times New Roman 12 pt, huruf kapital, huruf tebal, posisi di tengah)
+
+
+
+          Bidang dan Sub Bidang Kompetisi Penelitian
+
+      (Times New Roman 12 pt, huruf tebal, posisi di tengah)
+
+                     Contoh : ISH dan Sosiologi
+
+
+
+                          Nama Sekolah
+
+      (Times New Roman 12 pt, huruf tebal, posisi di tengah)
+
+
+
+                       Kabupaten, Provinsi
+
+      (Times New Roman 12 pt, huruf tebal, posisi di tengah)
+
+
+
+                            Tahun 2026
+
+      (Times New Roman 12 pt, huruf tebal, posisi di tengah)
+
+                         ABSTRAK (12 pt)
+
+
+
+                                                                        52
+Abstrak terdiri atas maksimal 250 kata. Abstrak memuat ringkasan umum dari keseluruhan
+hasil penelitian, dengan tidak menjelaskan terlalu detail setiap bagian. Abstrak ditulis secara
+runtut dan sistematis, dimulai dengan latar belakang dan tujuan dilakukannya penelitian, cara
+menyelesaikan masalah (metode), hasil dan pembahasan serta kesimpulan yang diperoleh.
+Informasi bersifat indikatif, kuantitatif, dan tidak normatif.
+
+Kata kunci (keywords) terdiri atas tiga sampai lima kata berbasis terminologi penting yang
+menggambarkan penelitian. (Times New Roman 11 pt)
+
+
+
+(halaman selanjutnya)
+
+
+
+                        BAB 1. PENDAHULUAN (16 pt)
+1.1 LATAR BELAKANG (12 pt)
+       Bab ini berisi uraian tentang latar belakang atau justifikasi ilmiah dan permasalahan
+yang akan diteliti. Selain itu, permasalahan yang diuraikan perlu dilengkapi dengan data terkini
+sesuai kondisi yang terjadi saat ini. Alasan penelitian perlu diungkapkan melalui pemaparan
+fenomena nyata atau penelitian yang pernah dilakukan sebelumnya. Peneliti perlu
+menghubungkan keterbatasan dari penelitian sebelumnya dan keterbaruan dari penelitian yang
+diajukan, serta kesenjangan yang terjadi antara kondisi saat ini dengan kondisi yang seharusnya
+sehingga terlihat kebaruan dari penelitian yang diusulkan. Pada bab ini perlu dicantumkan
+tujuan khusus penelitian, manfaat penelitian, keutamaan penelitian, temuan yang ditargetkan,
+kontribusi penelitian terhadap ilmu pengetahuan. Dengan demikian, cara penyelesaian masalah
+menjadi runut dan memberikan pengetahuan yang komprehensif untuk menambah khazanah
+ilmu pengetahuan. (11 pt)
+
+
+
+1.2 RUMUSAN MASALAH (12 pt)
+
+Rumusan masalah menjelaskan secara rinci dan terarah inti persoalan penelitian yang akan
+dikaji. Pada bagian ini, penulis perlu menguraikan masalah utama yang muncul dari latar
+belakang penelitian, sehingga rumusan masalah menjadi jembatan logis antara kondisi faktual
+yang telah dijelaskan sebelumnya dengan fokus kajian penelitian. Rumusan masalah harus
+disusun secara spesifik, tidak terlalu luas, dan dapat diteliti secara ilmiah agar penelitian
+memiliki arah yang jelas. Perumusan masalah dapat disajikan dalam bentuk pertanyaan
+penelitian atau pernyataan masalah yang mencerminkan apa yang belum diketahui, belum
+dipahami, atau belum terpecahkan. (11 pt)
+
+
+
+1.3 TUJUAN PENELITIAN (12 pt)
+
+                                                                                             53
+        Tujuan penelitian menjelaskan secara rinci apa yang ingin dicapai melalui
+pelaksanaan penelitian. Tujuan penelitian disusun sebagai jawaban langsung atas rumusan
+masalah, sehingga harus selaras dan konsisten dengan permasalahan yang telah ditetapkan
+sebelumnya. Pada bagian ini, penulis menguraikan arah utama penelitian, apakah bertujuan
+untuk memahami suatu fenomena, menganalisis hubungan atau pengaruh antar variabel,
+mengevaluasi kebijakan atau program, mengembangkan model atau konsep tertentu, maupun
+merumuskan rekomendasi berbasis temuan penelitian. Selain itu, tujuan penelitian perlu
+dirumuskan secara spesifik, terukur, dan realistis, sesuai dengan ruang lingkup dan metode
+penelitian yang digunakan. Tujuan dapat disajikan dalam bentuk tujuan umum dan tujuan
+khusus untuk memperjelas tahapan pencapaian penelitian.
+
+
+
+1.4    HIPOTESIS (jika ada) (12 pt)
+        Hipotesis merupakan dugaan sementara atas permasalahan penelitian yang masih
+perlu dibuktikan secara empiris. Hipotesis disusun berdasarkan landasan teori, hasil penelitian
+terdahulu, serta kerangka pemikiran yang telah dibangun sebelumnya, sehingga tidak bersifat
+spekulatif. Keberadaan hipotesis menunjukkan bahwa penelitian memiliki arah analitis yang
+jelas, khususnya dalam penelitian kuantitatif atau penelitian yang bertujuan menguji
+hubungan, pengaruh, atau perbedaan antar variabel. Hipotesis dirumuskan secara jelas,
+spesifik, dan dapat diuji dengan metode penelitian yang digunakan.
+
+1.5   MANFAAT PENELITIAN (12 pt)
+        Manfaat penelitian menjelaskan kontribusi yang diharapkan dari hasil penelitian.
+Peneliti dapat menjelaskan pihak yang memperoleh manfaat serta bentuk manfaat yang
+diterima. Penjabaran manfaat penelitian menunjukkan bahwa penelitian tidak hanya penting
+secara akademik, tetapi juga memiliki relevansi dan kegunaan nyata bagi pengembangan ilmu
+pengetahuan, pemecahan masalah, atau pengambilan keputusan.
+
+
+
+
+                                                                                            54
+(halaman baru)
+
+                     BAB 2. TINJAUAN PUSTAKA (16 pt)
+        Tinjauan pustaka memuat semua informasi tentang hasil penelitian terdahulu yang
+relevan untuk menentukan state of the art (posisi penelitian yang akan dilakukan) dan teori-
+teori yang melandasi penelitian yang akan dilakukan. (11 pt)
+
+2.1 LANDASAN TEORI (12 pt)
+Bagian yang berisi kumpulan teori, konsep, dan prinsip ilmiah yang digunakan sebagai alat
+analisis dalam sebuah penelitian. Isi utama landasan teori berupa teori dasar yang menjadi
+payung penelitian yang akan dilakukan, definisi konsep dan variabel yang akan diteliti, serta
+dimensi dan indikator dalam proses pengukuran.
+
+
+2.2 STUDI PUSTAKA (12 pt)
+Bagian yang berisi kajian hasil penelitian terdahulu yang relevan dengan topik penelitian
+yang memuat temuan utama, metodologi, serta persamaan dan perbedaan dengan penelitian
+yang akan dilakukan. Bagian ini berfungsi untuk menunjukkan kesenjangan penelitian
+(research gap) dan memposisikan penelitian dalam konteks keilmuan yang lebih luas.
+
+
+
+(halaman baru)
+
+                    BAB 3. METODE PENELITIAN (16 pt)
+Pada bagian ini peneliti menjelaskan secara rinci metode dan tahapan penelitian yang
+dilaksanakan, uraian bahan dan peralatan yang digunakan, cara kerja, dan lain-lain sesuai
+dengan metodologi penelitian masing-masing bidang yang dijelaskan pada Bab 3 (Tabel 6).
+Bagian ini dapat dibagi menjadi beberapa sub-bab sesuai kebutuhan.
+
+3.1   Waktu dan Tempat Penelitian (12 pt)
+
+          Bagian ini menginformasikan rencana waktu dan tempat penelitian. (11 pt)
+
+3.2   Alat dan Bahan (12 pt)
+
+          Bagian ini memuat informasi alat dan bahan utama yang digunakan dalam penelitian.
+(11 pt)
+
+3.3   Prosedur Penelitian (12 pt)
+
+        Pada bagian ini peneliti menjelaskan prosedur dan instrumen penelitian yang
+dijalankan, termasuk didalamnya jenis data yang digunakan, cara-cara pemerolehan data dan
+cara kerja alat (bila ada). Peneliti perlu menjelaskan informasi teknis yang memadai terkait cara
+
+                                                                                             55
+penyelesaian masalah melalui desain atau rancangan yang dapat diukur dengan pengamatan
+(pengukuran, analisis, dan wawancara dll.) dan dilengkapi dengan instrumen pemerolehan data
+seperti daftar pertanyaan untuk wawancara, pedoman observasi/eksperimen, angket/kuesioner,
+dan lain-lain. (11 pt) .
+
+3.4 Pengolahan Data (12 pt)
+
+        Bagian ini menjelaskan teknik pengolahan data yang akan digunakan dalam penelitian.
+Peneliti mendeskripsikan langkah-langkah analisis data, teknik statistik atau kualitatif yang
+diterapkan, perangkat lunak atau tools yang digunakan, serta cara interpretasi hasil analisis.
+Rancangan pengolahan data harus sesuai dengan jenis data dan tujuan penelitian yang telah
+ditetapkan. (11 pt)
+
+(halaman selanjutnya)
+
+
+
+                   BAB 4. HASIL DAN PEMBAHASAN (14 pt)
+
+        Bagian ini memuat deskripsi temuan dan analisis pembahasan berdasarkan data
+penelitian yang valid. Penyajian hasil ditampilkan dalam bentuk ilustrasi, tabel, dan/atau
+gambar (foto, diagram, gambar skematik, grafik, dll.).
+
+Sistematika gambar dan tabel (pt 11)
+
+       Judul tabel diletakkan di bagian atas tabel, sedangkan judul gambar diletakkan di bagian
+bawah gambar. Angka dan tabel maksimum tiga halaman harus disajikan dengan jelas. Tabel
+angka secara berurutan sesuai dengan penampilan mereka dalam teks. Judul gambar ditulis di
+bawah gambar, sementara judul tabel ditulis di atas tabel. Bagan lebih disukai untuk
+menggunakan gambar hitam dan putih. Semua properti gambar orang lain harus disebutkan
+sumbernya. Gambar dan tabel diletakkan dalam naskah dengan posisi tengah halaman (center).
+Dalam penyajian gambar (khususnya grafik) sumbu Y dan X diberi judul termasuk satuan yang
+digunakan.
+
+Contoh Penyajian Tabel dalam Naskah:
+
+
+
+
+Contoh Penyajian Gambar dalam Naskah:
+
+                                                                                           56
+   Gambar 1: Tingkat kekeruhan sari buah sirsak dengan berbagai konsentrasi enzim
+
+
+
+
+        Gambar 2: Implementasi rangkaian perangkat bantu pembelajaran elektronika
+
+
+
+(halaman selanjutnya)
+
+
+
+                 BAB 5. KESIMPULAN DAN SARAN (14 pt)
+
+Pada bagian ini, peneliti menjawab rumusan masalah dan menunjukkan ketercapaian tujuan
+penelitian. Peneliti menyampaikan temuan utama secara singkat, jelas, dan padat, tanpa
+
+                                                                                    57
+mengulang uraian panjang atau menyajikan data baru. Kesimpulan ditulis berdasarkan hasil
+analisis yang telah dibahas sebelumnya, sehingga mencerminkan apa yang ditemukan dalam
+penelitian, bukan pendapat atau asumsi peneliti.
+
+
+
+(halaman selanjutnya)
+
+
+
+                        UCAPAN TERIMA KASIH (14 pt)
+
+Bagian ini berisi ucapan terima kasih yang penulis sampaikan kepada pihak-pihak yang telah
+membantu terlaksananya penelitian, contohnya atas dukungan pembiayaan, fasilitas
+laboratorium, alat, narasumber utama, dan lain-lain. (11 pt)
+
+
+
+                  PERNYATAAN PENGGUNAAN AI (14 pt)
+
+Bagian ini memuat pernyataan jenis perangkat AI dan untuk apa penggunaanya dalam
+penelitian ini (11 pt).
+
+
+
+                            DAFTAR PUSTAKA (14 pt)
+
+Bagian ini memuat referensi yang dirujuk dalam naskah penelitian dan ditulis secara
+alfabetis dan konsisten sesuai dengan selingkung yang digunakan (seperti dalam contoh).
+Ukuran huruf tiap pustaka 11 pt. Daftar pustaka TIDAK bersumber dari Wikipedia atau blog
+pribadi.
+
+Contoh pustaka jurnal:
+
+  Yuliana N.D., Iqbal M., Jahangir M., Wijaya C.H., Korthout H., Kottenhage M., Kim H.K.,
+    Verpoorte R. 2011. Screening of selected Asian spices for anti obesity-related
+    bioactivities. Food Chem 126: 1724-1729. DOI: 10.1016/j.foodchem.2010.12.066.
+
+Contoh pustaka buku:
+
+  Lioe H.N., Apriyantono A., Yasuda M. 2012. Soy Sauce: Typical Aspects of Japanese
+     Shoyu and Indonesian Kecap. 93-102. CRC Press, Boca Raton, Florida.
+
+Contoh pustaka skripsi, tesis, dan disertasi:
+
+  Merdiyanti A. 2008. Paket Teknologi Pembuatan Mie Kering dengan Memanfaatkan Bahan
+    Baku Tepung Jagung [Skripsi]. Bogor: Fakultas Teknologi Pertanian, Institut Pertanian
+    Bogor.
+
+                                                                                       58
+Contoh pustaka dari internet:
+
+  Van der Sman RGM. 2012. Soft matter approaches to food structuring.
+    http://www.sciencedirect.com/science/article/pii/S0001868612000620 [04 Juni 2012].
+
+  Contoh Pustaka dari seminar/prosiding
+
+  Tekin, M., Baş, D., Geçkil, T. dan Koyuncuoğlu, Ö. 2019. Entrepreneurial competences of
+    university students in the digital age: A scale development study. Proceedings of the
+    International Symposium for Production Research. August 28-30 2019, Vienna, Austria.
+    pp. 593-604.
+
+(halaman selanjutnya)
+
+
+
+                                LAMPIRAN (14 pt)
+
+Memuat dokumen penting pendukung naskah (sesuai format)
+
+   1. Realisasi Rencana Anggaran Biaya (RAB) penelitian. Format RAB dapat dilihat pada
+      Lampiran 6.
+   2. Lampiran lainnya
+
+
+
+
+                                                                                      59
+Lampiran 6: Format Rencana Anggaran Biaya (RAB)
+
+
+ No                   Jenis Pengeluaran                    Jumlah Anggaran (Rp)
+
+
+ 1.   Belanja bahan                                     Rp.
+
+         a. …..
+         b. ….
+         c. ….
+
+ 2.   Belanja jasa (pengujian, instrumen, surveyor, dll) Rp.
+
+         a. …..
+         b. …..
+         c. ….
+
+ 3.   Belanja sewa (bengkel, laboratorium, dll)         Rp.
+         a. ….
+         b. ….
+         c. ….
+
+ 4.   Akomodasi dan transportasi                        Rp.
+
+         a. ….
+         b. ….
+         c. ….
+
+                        Total                           Rp.
+
+
+
+
+                                                                                  60
+Lampiran 7: Informed Consent - Surat Pengantar Kepada Responden/ Subjek
+Penelitian
+
+
+Informed consent adalah persetujuan yang diberikan oleh responden setelah menerima
+penjelasan lengkap dan memahami risiko, manfaat, dan konsekuensi dari aktivitas penelitian
+yang dilakukan tersebut, memastikan keputusan dibuat secara sukarela tanpa paksaan. Ini
+adalah hak responden untuk berpartisipasi dalam keputusan mereka sendiri dan merupakan
+kewajiban profesional, diatur dalam hukum, dan dapat dilakukan secara lisan, tertulis, atau
+tersirat.
+
+Isi informed consent adalah sebagai berikut:
+
+● Penjelasan latar belakang dan tujuan penelitian
+● Penjelasan mengenai prosedur yang akan dilakukan kepada responden, misalnya
+  wawancara atau pengambilan darah atau pemberian sesuatu yang harus dimakan dan
+  sebagainya.
+● Penjelasan kemungkinan risiko dan ketidaknyamanan yang dapat ditimbulkan dari
+  perlakuan yang diberikan. Misalnya pengambilan darah akan menimbulkan rasa nyeri,
+    memerah, dan bengkak. Sebaiknya dijelaskan pula bagaimana menangani efek samping dari
+    perlakuan yang diberikan kepada subjek
+● Penjelasan manfaat yang akan didapatkan oleh subjek dari penelitian
+● Persetujuan peneliti dapat menjawab setiap pertanyaan yang diajukan subjek berkaitan
+  dengan prosedur penelitian
+● Persetujuan subjek dapat mengundurkan diri kapan saja
+● Jaminan anonimitas dan kerahasiaan data, bahwa data yang bersangkutan tidak akan
+  ditampilkan atau dipublikasi
+
+
+A. Contoh Penjelasan Kepada Subjek Penelitian
+
+1. Penelitian yang bertujuan mengetahui kadar gula darah pada siswa SMA di Jakarta
+
+Perkenalkan nama saya Budi, seorang pelajar SMA di Jakarta. Bersama dengan teman sekolah
+saya, Rina, kami ingin melakukan penelitian untuk mengetahui rata- rata gula darah siswa SMA
+di seluruh Jakarta Pusat. Dalam penelitian ini kami akan melakukan pengukuran gula darah
+dengan menggunakan alat glucotest dengan cara menusukkan jarum ke salah satu jari,
+kemudian darah yang keluar diteteskan pada kertas yang akan diteteskan pada kertas yang akan
+dimasukkan ke dalam alat glucotest. Pengambilan setetes darah dari ujung jari biasanya hanya
+menimbulkan rasa kaget, nyeri ringan, dan rasa tidak nyaman. Bila timbul efek samping akibat
+pengambilan darah berupa bengkak pada ujung jari, kami akan memberikan thrombophop
+supaya bengkak menghilang. Anda bebas menolak ikut dalam penelitian ini. Bila Anda telah
+memutuskan untuk ikut, Anda juga bebas untuk mengundurkan diri setiap saat. Semua data
+penelitian ini akan diperlakukan secara rahasia sehingga tidak memungkinkan orang lain untuk
+menghubungkannya dengan Anda. Anda diberi kesempatan untuk menanyakan semua hal yang
+
+                                                                                         61
+belum jelas sehubungan dengan penelitian ini. Bila sewaktu-waktu terjadi rasa nyeri atau
+membutuhkan penjelasan, Anda dapat menghubungi peneliti (Budi, No. Telp.……………..,
+alamat ……………… ; Rina, No. Telp. ………………., alamat ……………..).
+
+
+
+2. Penelitian yang bertujuan melakukan wawancara kepada para pelajar untuk
+   mengetahui dampak penggunaan telepon seluler terhadap prestasi siswa di sekolah.
+
+Perkenalkan nama saya Mira, seorang pelajar SMA di Jakarta. Saya ingin melakukan penelitian
+untuk mengetahui dampak penggunaan telepon seluler terhadap prestasi siswa di sekolah.
+Dalam penelitian ini saya akan melakukan wawancara dengan mengajukan 20 pertanyaan yang
+berkaitan dengan aktivitas yang dilakukan siswa dengan waktu kira-kira 1 jam. Wawancara
+akan menyita waktu Anda dan menyebabkan rasa tidak nyaman. Oleh karena itu, Anda bebas
+menolak ikut dalam penelitian ini. Bila Anda telah memutuskan untuk ikut, Anda juga bebas
+untuk mengundurkan diri setiap saat. Semua data penelitian ini akan diperlakukan secara
+rahasia sehingga tidak memungkinkan orang lain untuk menghubungkannya dengan Anda.
+Anda diberi kesempatan untuk menanyakan semua hal yang belum jelas sehubungan dengan
+penelitian ini. Bila sewaktu waktu terjadi rasa nyeri atau membutuhkan penjelasan, Anda dapat
+menghubungi peneliti (Mira, No. Telp. …………….., alamat ……………..).
+
+
+
+
+B. Contoh Surat Kepada Subjek Penelitian
+
+                KOP SURAT SEKOLAH YANG MELAKUKAN PENELITIAN
+
+
+
+JUDUL PENELITIAN
+
+Kami/Saya dari SMP/MTs ..... sedang melakukan studi yang bertujuan untuk …… Dalam studi
+ini kami akan mewawancarai*/survey sejumlah .... responden/informan yang dipilih .... (secara
+acak/direkomendasikan/diinformasikan oleh…..)**. Anda terpilih sebagai salah satu
+(responden/informan) dalam studi ini. Wawancara/survey akan memerlukan waktu sekitar ….
+menit/jam.
+
+Kami/Saya menjamin bahwa identitas Anda dan informasi yang Anda berikan akan dijaga
+kerahasiaannya. Identitas Anda ataupun setiap informasi yang memungkinkan untuk
+mengidentifikasi Anda sebagai subjek penelitian ini dalam laporan studi tidak akan digunakan
+selain untuk keperluan penelitian ini
+
+Partisipasi Anda sepenuhnya bersifat sukarela. Anda berhak untuk berhenti berpartisipasi
+setiap saat, atau menolak menjawab sebagian pertanyaan. Jika Anda memiliki pertanyaan
+apapun terkait studi ini, jangan segan-segan untuk menanyakannya kepada peneliti yang
+mewawancarai/melakukan survey.
+
+                                                                                          62
+Jika Anda memiliki pertanyaan apapun terkait studi ini di kemudian hari, Anda dapat
+menghubungi peneliti:
+
+Nama Peneliti        :………………………………………….
+Alamat Sekolah       :………………………………………….
+No HP                :…………………..
+E-mail               : …………………..
+
+Pertanyaan tambahan maupun keluhan/keberatan terhadap hak-hak Anda sebagai responden
+dalam studi ini dapat disampaikan kepada Kepala Sekolah tempat kami melakukan penelitian:
+
+Kepala Sekolah
+Nama Sekolah
+Alamat Sekolah
+No Tel dan Email Sekolah
+
+  * Bila wawancara memerlukan rekaman, dan atau pengambilan gambar/foto harus
+    mendapatkan izin dari responden
+  ** Pilih sesuai dengan metode pengumpulan data yang digunakan
+
+
+
+
+                                                                                      63
+Lampiran 8: Informed Consent - Contoh Form Persetujuan Mengikuti Penelitian
+
+              FORMULIR PERSETUJUAN MENGIKUTI PENELITIAN
+
+
+
+Dengan ini saya:
+
+Nama          :    ………………………………………………
+Usia          :    …….. tahun
+Alamat        :    ………………………………………………
+Nomor Telpon :     …………..
+
+Menyatakan bahwa semua penjelasan di atas telah disampaikan kepada saya dan semua
+pertanyaan saya telah dijawab oleh peneliti. Saya mengerti bahwa bila masih memerlukan
+penjelasan, saya akan mendapat jawaban dari peneliti.
+
+Dengan menandatangani formulir ini, saya setuju untuk ikut serta dalam penelitian ini.
+
+
+
+ Tanda Tangan Subjek                          Tanda Tangan Orang Tua/Pendamping Subjek*
+
+ Tanggal: ………….                                            Tanggal: ………….
+
+
+
+
+(………………………)                                                (………………………)
+
+*diperlukan jika subjek penelitian di bawah umur/disabilitas/kelompok rentan.
+
+
+
+
+                                                                                         64
+Lampiran 9: Format Logbook
+
+
+ N    Tanggal                 Aktivitas              Pihak yang      Dokumentasi
+ o.                                                   berperan
+
+ 1    Contoh:    Jelaskan kegiatan yang dilakukan,                Dalam bentuk foto
+      11 April   lokasi kegiatan,                                 kegiatan
+      2026
+
+ 2
+
+
+
+ 3
+
+
+
+ 4
+
+
+
+ 5
+
+
+
+
+                                                                                 65
+Lampiran 10: Contoh Form Penjelasan atas Masukan Reviewer pada Proposal
+Penelitian
+
+
+  No          Komentar reviewer                          Respons Peneliti
+
+   1     Contoh: Rancangan penelitian       Contoh: Sudah ditambahkan variabel
+         perlu diuraikan lebih rinci        independen “pemberian pupuk organik cair
+         meliputi variabel dan parameter.   sebanyak 3 variasi konsentrasi” dan variabel
+                                            dependen berupa “pertumbuhan tanaman”.
+                                            Parameter yang diamati berupa tinggi
+                                            tanaman dan jumlah daun.
+
+
+
+   2
+
+   3
+
+   4
+
+
+
+
+                                                                                    66
+Lampiran 11: Panduan Poster Final OPSI
+
+Poster yang dimaksud pada OPSI adalah media informasi untuk mendeskripsikan rangkaian
+penelitian yang dibuat dengan ketentuan sebagai berikut:
+
+● Poster memuat judul, nama peneliti, nama sekolah, latar belakang, rumusan masalah dan
+    tujuan penelitian, metode penelitian, data dan analisis, serta kesimpulan dan saran serta
+    referensi secara ringkas dan jelas.
+● Poster mencantumkan logo OPSI dan Kemendikdasmen.
+● Unsur visualisasi poster terdiri atas huruf, gambar, tabel, dan warna yang ditata secara
+    estetik, informatif, dan komunikatif. Komponen poster terdiri atas kutipan, foto, gambar,
+    dan ilustrasi diutamakan dari dokumen peneliti/pribadi. Jika komponen tersebut diperoleh
+    dari sumber lain harus disertai sumbernya.
+● Poster digital dalam bentuk file berukuran A4 (21 x 29,7 cm), orientasi poster Portrait,
+    jenis file PDF, maksimum file 5 MB, diunggah di website Puspresnas paling lambat 1 hari
+    sebelum pelaksanaan OPSI Nasional.
+● Poster cetak untuk pameran hasil karya menyesuaikan gerai/booth.
+
+
+
+
+                                                                                          67
+68
+

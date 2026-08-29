@@ -1,0 +1,2 @@
+Nama,Usia,Gender,Berat_kg,Tinggi_cm,BMI,Diabetes,GlukosaRef,TerakhirMakan_jam,SuhuTubuh,SuhuAmbient,HR_est,SpO2_est,IR_Mean,IR_Min,IR_Max,IR_Std,IR_RMS,RED_Mean,RED_Min,RED_Max,RED_Std,RED_RMS,Ratio_AC,Ratio_DC,Samples
+Ana,17,P,39.0,150.0,17.33,0,116.0,6.0,30.71,30.95,68.4,96.99,53726.10,49017.00,56517.00,1509.02,53747.27,39130.69,36581.00,40484.00,787.27,39138.61,0.520400,0.728337,1003

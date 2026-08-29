@@ -1,0 +1,14 @@
+Nama,Usia,Gender,Berat_kg,Tinggi_cm,BMI,Diabetes,GlukosaRef,TerakhirMakan_jam,SuhuTubuh,SuhuAmbient,HR_est,SpO2_est,IR_Mean,IR_Min,IR_Max,IR_Std,IR_RMS,RED_Mean,RED_Min,RED_Max,RED_Std,RED_RMS,Ratio_AC,Ratio_DC,Samples,_source,source_file_count,exclude_reason
+Aandidiini,19,P,48,156,19.72,0,78,7,0,0,62.2,97.78,48341.77,47570,49139,357.95,48343.08,39011.96,38689,39456,184.81,39012.42,0.488846,0.807003,1002,sensable_dataset(17).csv,1,invalid_temperature_zero_or_negative
+Aira Cantika Putri,16,L,42,154,17.71,0,110,5,0,34.13,65.1,99.43,15510.75,15073,15927,265.78,15513.02,8616.91,8435,8796,98.9,8617.48,0.422717,0.555545,1002,sensable_dataset(14).csv,1,invalid_temperature_zero_or_negative
+Aira Cantika Putri,16,L,42,154,17.71,0,110,5,0,0,60.9,99.67,15844.31,15618,16187,48.13,15844.38,8730.25,8639,8874,21.66,8730.29,0.413005,0.551003,1002,sensable_dataset(14).csv,1,invalid_temperature_zero_or_negative
+Atun,24,P,54,165,19.83,0,131,2,0,0,71.8,87.27,82.67,71,93,3.24,82.73,77.65,67,87,2.95,77.71,0.909091,0.939301,1003,sensable_dataset(11).csv,1,invalid_temperature_zero_or_negative
+Bapak ana,53,L,65,165,23.88,0,121,5.5,0,0,62.2,94.87,45805.78,45209,46663,334.45,45807,34093.16,33699,34579,200.87,34093.73,0.605227,0.744298,1002,sensable_dataset(12).csv,2,invalid_temperature_zero_or_negative
+Naufal,15,L,76,162,28.96,0,82,2.5,0,31.79,67.8,98.87,46023.17,43559,48355,1198.37,46038.79,36476.35,35430,37566,604.52,36481.34,0.445371,0.792565,1002,sensable_dataset(2)(2).csv,1,invalid_temperature_zero_or_negative
+Naufal,15,L,76,161,29.32,0,82,2.5,0,0,62,97.64,43470.18,42919,44432,294.55,43471.19,32659.49,32263,33011,173.45,32659.92,0.494382,0.751308,1002,sensable_dataset(2)(2).csv,1,invalid_temperature_zero_or_negative
+Olivia,20,L,53,153,22.64,0,72,8,0,0,63.1,94.77,46559.41,45763,47664,481.92,46561.9,34295.39,33780,34938,314.96,34296.82,0.609153,0.736594,1003,sensable_dataset(19).csv,1,invalid_temperature_zero_or_negative
+Ulhaq,15,L,72,167,25.82,0,92,6,0,0,62.9,95.58,51210.2,50039,52042,501.33,51212.64,35053.47,34552,35707,257.1,35054.45,0.576635,0.684502,1003,sensable_dataset(1).csv,1,invalid_temperature_zero_or_negative
+aaandirini,19,P,48,156,19.72,0,78,7,0,0,61.2,100,48761.22,48275,49209,202.89,48761.65,39380.18,39234,39558,65.69,39380.25,0.346895,0.807613,1002,sensable_dataset(17).csv,1,invalid_temperature_zero_or_negative
+Aandidiini,19,P,48,156,19.72,0,78,7,27.91,30.79,200,90.71,6044.56,8,64122,15696.05,16819.71,4364.67,0,49470,11353.4,12163.48,0.771594,0.722083,1002,sensable_dataset(18).csv,4,low_optical_signal_capture
+Dua,23,L,28,178,8.84,0,115,9,28.65,27.51,76.3,95.87,79.81,71,94,4.34,79.93,19.12,13,26,2.34,19.26,0.565217,0.239568,1014,sensable_dataset(2).csv,1,low_optical_signal_capture
+Pertama,20,L,14,150,6.22,0,113,3,28.65,27.51,76.3,95.87,79.81,71,94,4.34,79.93,19.12,13,26,2.34,19.26,0.565217,0.239568,1014,sensable_dataset(2).csv,1,low_optical_signal_capture

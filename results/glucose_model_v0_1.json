@@ -1,0 +1,67 @@
+{
+  "version": "glucose_model_v0.1",
+  "task": "regression",
+  "target": {
+    "column": "GlukosaRef",
+    "meaning": "glucometer reference glucose",
+    "unit": "mg/dL"
+  },
+  "features": [
+    "Usia",
+    "Berat_kg",
+    "Tinggi_cm",
+    "BMI",
+    "TerakhirMakan_jam",
+    "SuhuTubuh",
+    "SuhuAmbient",
+    "HR_est",
+    "SpO2_est",
+    "IR_Mean",
+    "IR_Min",
+    "IR_Max",
+    "IR_Std",
+    "IR_RMS",
+    "RED_Mean",
+    "RED_Min",
+    "RED_Max",
+    "RED_Std",
+    "RED_RMS",
+    "Ratio_AC",
+    "Ratio_DC",
+    "Samples"
+  ],
+  "excluded_from_features": [
+    "SubjectID",
+    "Nama",
+    "Gender",
+    "Diabetes",
+    "GlukosaRef",
+    "SuhuTubuh_Imputed",
+    "SuhuAmbient_Imputed"
+  ],
+  "validation": {
+    "method": "GroupKFold",
+    "group_column": "SubjectID",
+    "n_splits": 5,
+    "random_state": 42
+  },
+  "models": {
+    "linear_regression": {
+      "enabled": true,
+      "standardize": true
+    },
+    "random_forest": {
+      "enabled": true,
+      "n_estimators": 200,
+      "max_depth": 6,
+      "min_samples_leaf": 2,
+      "random_state": 42,
+      "n_jobs": -1
+    }
+  },
+  "notes": [
+    "GlukosaRef is a target/reference only and must never be an input feature.",
+    "This is an exploratory model version and is not clinical validation.",
+    "The trained artifact is not directly executable on Arduino/ESP32."
+  ]
+}

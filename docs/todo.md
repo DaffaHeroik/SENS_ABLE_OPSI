@@ -1,0 +1,26 @@
+# Project TODO
+
+- [x] Define the test-only ESP32 payload schema and safe sensor ranges without health identifiers or glucometer-reference values
+- [x] Add database tables for device tokens and accepted sensor test readings
+- [x] Implement a public HTTPS ingestion route with per-device token authentication, payload validation, rate limiting, and safe error responses
+- [x] Implement a public health/status endpoint that exposes no readings or secrets
+- [x] Add protected owner-only queries for gateway status and recent accepted readings
+- [x] Build the authenticated owner dashboard with a royal-blue technical blueprint visual system
+- [x] Add ESP32 HTTPS connection instructions and a copyable sample JSON request
+- [x] Add Vitest coverage for token authentication, validation, privacy rejection, and owner-only access
+- [x] Apply the database migration and verify data persistence with non-identifying test payloads
+- [x] Verify desktop and mobile dashboard rendering, run tests, and check logs
+- [x] Save a verified project checkpoint and provide the deployment instructions
+- [x] Assess and document supported browser USB flashing, build-service, and OTA update boundaries for ESP32
+- [x] Add a firmware artifact registry with version, checksum, release notes, and gateway configuration metadata
+- [x] Add a browser-authorized USB deployment guide and device preflight checks without claiming silent USB access
+- [x] Add secure OTA-ready partition configuration and a disabled device-side update template; automatic OTA remains blocked until a certificate-aware application artifact and rollback test exist
+- [x] Add authenticated reporting views for ingestion activity, device status, firmware releases, and exportable technical evidence
+- [x] Add automated tests for firmware metadata validation, access control, and reporting queries
+- [x] Verify the extended dashboard and connection workflow
+- [x] Add a public guest installer route that exposes only approved firmware release metadata and browser USB flashing controls
+- [x] Keep firmware upload, existing device-token visibility, raw gateway readings, and technical reports owner-only; allow only rate-limited one-time guest enrollment for the selected installer device
+- [x] Add guest-safe local provisioning guidance that writes Wi-Fi credentials and a one-time token directly to the selected ESP32 without listing or retaining them in the public page
+- [x] Add tests proving guest endpoints do not expose tokens, readings, or owner-only release controls
+- [x] Verify the guest installer in signed-out browser state
+- [x] Save the guest-installer checkpoint and prepare publication, USB-flash, and certificate-aware reporting instructions

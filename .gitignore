@@ -1,4 +1,59 @@
+# Python
 __pycache__/
 *.pyc
-.DS_Store
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.whl
+.venv/
+venv/
+ENV/
+
+# Model artifacts (large files)
 *.pkl
+*.joblib
+*.tflite
+*.h5
+*.onnx
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node.js (web dashboard)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+web/dist/
+web/build/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Arduino build artifacts
+*.elf
+*.bin
+*.hex
