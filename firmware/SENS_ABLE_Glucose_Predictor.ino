@@ -1,8 +1,9 @@
 /*
- * SENS-ABLE Glucose Predictor v1.1
+ * SENS-ABLE Glucose Predictor v1.2
  * ESP32 + MAX30100 + MLX90614 + OLED + Speaker + Vibrator
  *
- * Predicts blood glucose from PPG sensor signal using embedded Random Forest.
+ * Library: MAX30100 by Kontakt (Connor Huffine)
+ * API: begin(pulseWidth, ledCurrent, sampleRate), readSensor(), sensor.IR/RED
  *
  * Hardware Connections:
  *   OLED    : SDA=21, SCL=22
@@ -38,7 +39,6 @@ const char* AP_PASS = "sensable123";
 
 // Measurement Settings
 #define RECORD_SEC    10
-#define SAMPLE_RATE   100
 #define MAX_SAMPLES   1200
 #define MIN_SAMPLES   100
 
@@ -162,25 +162,6 @@ void vibratePattern(int status) {
     }
 }
 
-// ===================== READ PPG SENSOR =====================
-// Read one sample from MAX30100 FIFO
-// Returns true if data available, false otherwise
-bool readPPGSample(float &irVal, float &redVal) {
-    // Check if FIFO has data
-    uint8_t samples = sensor.getFIFOSamples();
-    if (samples == 0) {
-        return false;
-    }
-    
-    // Read raw FIFO data
-    uint32_t irRaw = 0, redRaw = 0;
-    sensor.readFIFO(&irRaw, &redRaw);
-    
-    irVal = (float)irRaw;
-    redVal = (float)redRaw;
-    return true;
-}
-
 // ===================== COMPUTE FEATURES =====================
 void computeFeatures() {
     if (sampleCount < MIN_SAMPLES) {
@@ -226,22 +207,18 @@ void computeFeatures() {
     
     features.samples = sampleCount;
     
-    Serial.printf("Features computed: IR[%.1f, %.1f, %.1f] RED[%.1f, %.1f, %.1f]\n",
+    Serial.printf("Features: IR[%.1f, %.1f, %.1f] RED[%.1f, %.1f, %.1f]\n",
                   features.irMean, features.irMin, features.irMax,
                   features.redMean, features.redMin, features.redMax);
 }
 
 // ===================== RUN INFERENCE =====================
 void runInference() {
-    // Read temperature sensors
     sensorData.bodyTemp = readMLXObject();
     sensorData.ambientTemp = readMLXAmbient();
-    
-    // Placeholder HR/SpO2
     sensorData.hr = 70.0;
     sensorData.spo2 = 98.0;
     
-    // Prepare feature array
     float inputFeatures[GLUCOSE_MODEL_FEATURES] = {
         features.age,
         features.weight,
@@ -270,10 +247,8 @@ void runInference() {
     predictedGlucose = predict_glucose(inputFeatures);
     glucoseStatus = interpret_glucose(predictedGlucose);
     
-    // Use String() to wrap const char* for printf
     String statusStr = glucose_status_text(glucoseStatus);
-    Serial.printf("Predicted Glucose: %.1f mg/dL (%s)\n", 
-                  predictedGlucose, statusStr.c_str());
+    Serial.printf("Predicted: %.1f mg/dL (%s)\n", predictedGlucose, statusStr.c_str());
 }
 
 // ===================== SHOW RESULT =====================
@@ -293,7 +268,6 @@ void showResult() {
     String statusStr = glucose_status_text(glucoseStatus);
     Serial.printf("Status: %s\n", statusStr.c_str());
     Serial.printf("Body Temp: %.1f C\n", sensorData.bodyTemp);
-    Serial.printf("Ambient: %.1f C\n", sensorData.ambientTemp);
 }
 
 // ===================== WEB HANDLERS =====================
@@ -336,7 +310,6 @@ String buildHTML(String content = "") {
     
     html += "'>" + String(predictedGlucose, 1) + " mg/dL</div>";
     
-    // Wrap const char* in String() for concatenation
     String statusText = glucose_status_text(glucoseStatus);
     html += "<p>Status: " + statusText + "</p>";
     html += "<p>Body Temp: " + String(sensorData.bodyTemp, 1) + " C</p>";
@@ -398,7 +371,7 @@ void setup() {
     digitalWrite(SPEAKER_PIN, LOW);
     digitalWrite(VIBRO_PIN, LOW);
     
-    // Initialize OLED bus
+    // Initialize OLED on Bus 0
     BusOLED.begin(OLED_SDA, OLED_SCL);
     BusOLED.setClock(100000);
     
@@ -407,22 +380,19 @@ void setup() {
         while (1);
     }
     
-    oledShow("SENS-Able v1.1", "Glucose Predictor", "Booting...", "");
+    oledShow("SENS-Able v1.2", "Glucose Predictor", "Booting...", "");
     
-    // Initialize sensor bus
+    // Initialize MAX30100 on Bus 1
+    // Library uses global Wire, so we assign BusSensor to Wire first
     BusSensor.begin(MAX_SDA, MAX_SCL);
     BusSensor.setClock(400000);
+    Wire = BusSensor;
     
-    // Pass BusSensor directly to sensor.begin() — no need to reassign Wire
-    if (!sensor.begin(BusSensor)) {
-        oledShow("ERROR!", "MAX30100 failed");
-        while (1);
-    }
+    // begin(pulseWidth, ledCurrent, sampleRate)
+    sensor.begin(pw1600, i50, sr100);
     
-    sensor.setMode(MAX30100_MODE_SPO2_HR);
-    sensor.setLedsCurrent(MAX30100_LED_CURR_50MA, MAX30100_LED_CURR_27_1MA);
-    sensor.setLedsPulseWidth(MAX30100_SPC_PW_1600US_16BITS);
-    sensor.setSamplingRate(MAX30100_SAMPRATE_100HZ);
+    // Reassign Wire back to OLED bus for OLED/MLX operations
+    Wire = BusOLED;
     
     // Set default user data
     features.age = 25.0;
@@ -446,7 +416,7 @@ void setup() {
     
     playBeep(2, 100, 100);
     
-    Serial.println("=== SENS-Able Glucose Predictor v1.1 ===");
+    Serial.println("=== SENS-Able Glucose Predictor v1.2 ===");
     Serial.println("Ready for measurements!");
 }
 
@@ -455,15 +425,22 @@ void loop() {
     server.handleClient();
     
     if (state == RECORDING) {
-        // Read PPG sensor (already configured on BusSensor)
+        // Switch to sensor bus for MAX30100
+        Wire = BusSensor;
+        
+        // Kontakt library: getNumSamp() checks FIFO, readSensor() reads IR+RED
         if (sampleCount < MAX_SAMPLES) {
-            float irVal = 0, redVal = 0;
-            if (readPPGSample(irVal, redVal)) {
-                irBuf[sampleCount] = irVal;
-                redBuf[sampleCount] = redVal;
+            int avail = sensor.getNumSamp();
+            if (avail > 0) {
+                sensor.readSensor();
+                irBuf[sampleCount] = (float)sensor.IR;
+                redBuf[sampleCount] = (float)sensor.RED;
                 sampleCount++;
             }
         }
+        
+        // Switch to OLED bus for display
+        Wire = BusOLED;
         
         // Update display with progress
         if (millis() % 500 < 20) {
