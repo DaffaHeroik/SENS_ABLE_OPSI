@@ -1,33 +1,38 @@
 /*
- * SENS-Able KALIBRASI TEST v1.0
+ * SENS-Able KALIBRASI TEST v2.0
  * 
- * Firmware untuk TEST PERBANDINGAN: Prediksi AI vs Glukometer Nyata
+ * Fixed: log[] rename, MAX30100 dual-library support, const char* handling
  * 
  * CARA PAKAI:
  * 1. Upload ke ESP32
  * 2. Buka Serial Monitor (115200 baud)
- * 3. Letakkan jari di MAX30102 → tunggu 10 detik
- * 4. Sistem prediksi glukosa dari sensor PPG
+ * 3. Ketik 'start' → letakkan jari di MAX30102 (10 detik)
+ * 4. Catat prediksi AI dari OLED
  * 5. Ukur glukosa dengan glukometer NYATA
- * 6. Ketik nilai glukometer di Serial Monitor
- * 7. Sistem hitung error otomatis
- * 8. Ulangi untuk 3 pengukuran (hemat chip!)
- * 
- * Output di Serial:
- *   PREDIKSI | GLUKOMETER | ERROR | STATUS
- * 
- * Output di OLED:
- *   Prediksi AI | Status | Suhu
- * 
- * Hardware:
- *   ESP32 + MAX30102 + MLX90614 + OLED + Buzzer
+ * 6. Ketik hasil glukometer di Serial (angka saja) → ENTER
+ * 7. Ulangi 3x (hemat chip!)
+ * 8. Ketik 'hasil' untuk ringkasan
  */
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
-#include <MAX30100.h>
 #include <math.h>
+
+// ===================== MAX30100 LIBRARY DETECTION =====================
+// Try Kontakt library first (has pw1600, i50, sr100)
+// If not available, use OXullo library (has begin(), getIR(), getRed())
+#if __has_include(<MAX30100.h>)
+  #include <MAX30100.h>
+  // Check if Kontakt API exists by testing a known Kontakt constant
+  #if defined(pw1600)
+    #define MAX30100_KONTAKT 1
+  #else
+    #define MAX30100_OXULLO 1
+  #endif
+#else
+  #error "MAX30100 library not found! Install MAX30100 by Kontakt or OXullo"
+#endif
 
 // Include the embedded ML model
 #include "model_glucose_inference.h"
@@ -84,8 +89,8 @@ struct Features {
 float predictedGlucose = 0;
 int glucoseStatus = 0;
 
-// ===================== CALIBRATION LOG =====================
-struct CalibrationEntry {
+// ===================== CALIBRATION DATA (renamed from 'log' to avoid math.h conflict) =====================
+struct CalibEntry {
     float predicted;
     float reference;
     float error;
@@ -93,8 +98,8 @@ struct CalibrationEntry {
     unsigned long timestamp;
 };
 
-CalibrationEntry log[10]; // max 10 entries
-int logCount = 0;
+CalibEntry calibData[10]; // renamed from 'log' to 'calibData'
+int calibCount = 0;
 int testNumber = 0;
 float referenceInput = 0;
 String inputBuffer = "";
@@ -128,6 +133,27 @@ float readMLXAmbient() {
         return raw * 0.02 - 273.15;
     }
     return 0;
+}
+
+// ===================== READ PPG SAMPLE (handles both libraries) =====================
+bool readPPGSample(float *irOut, float *redOut) {
+#ifdef MAX30100_KONTAKT
+    // Kontakt library: begin(pw1600, i50, sr100), readSensor(), sensor.IR, sensor.RED
+    int avail = sensor.getNumSamp();
+    if (avail > 0) {
+        sensor.readSensor();
+        *irOut = (float)sensor.IR;
+        *redOut = (float)sensor.RED;
+        return true;
+    }
+    return false;
+#else
+    // OXullo library: begin(), update(), getIR(), getRed()
+    sensor.update();
+    *irOut = (float)sensor.getIR();
+    *redOut = (float)sensor.getRed();
+    return true;
+#endif
 }
 
 // ===================== OLED DISPLAY =====================
@@ -232,73 +258,66 @@ void runInference() {
 void showResult() {
     String line1 = "=== PREDIKSI AI ===";
     String line2 = String(predictedGlucose, 1) + " mg/dL";
-    String line3 = glucose_status_text(glucoseStatus);
+    String line3 = String(glucose_status_text(glucoseStatus)); // wrap in String()
     String line4 = "Suhu: " + String(sensorData.bodyTemp, 1) + "C";
     
     oledShow(line1, line2, line3, line4);
     
-    // Audio feedback
     switch (glucoseStatus) {
-        case 0:  playBeep(1, 100); break;  // Normal
-        case 1:  playBeep(2, 150, 100); break;  // Pre-DM
-        case 2:  playBeep(3, 300, 200); break;  // DM
-        case 3:  playBeep(5, 100, 50); break;  // Low
+        case 0:  playBeep(1, 100); break;
+        case 1:  playBeep(2, 150, 100); break;
+        case 2:  playBeep(3, 300, 200); break;
+        case 3:  playBeep(5, 100, 50); break;
     }
 }
 
 // ===================== SERIAL OUTPUT =====================
-void printHeader() {
-    Serial.println();
-    Serial.println("╔══════════════════════════════════════════════════╗");
-    Serial.println("║     SENS-Able KALIBRASI TEST - Data Logging     ║");
-    Serial.println("╠══════════════════════════════════════════════════╣");
-    Serial.println("║ Test | AI (mg/dL) | Glukometer | Error | Status  ║");
-    Serial.println("╠══════════════════════════════════════════════════╣");
-}
-
-void printTestResult(int testNum, float predicted, float reference, float error, String status) {
+void printTestResult(int testNum, float predicted, float reference, float err, const char* status) {
     Serial.printf("║  %d   |   %6.1f   |   %6.1f   | %5.1f | %-8s ║\n",
-                  testNum, predicted, reference, error, status.c_str());
+                  testNum, predicted, reference, err, status);
 }
 
 void printSummary() {
-    if (logCount == 0) return;
+    if (calibCount == 0) {
+        Serial.println(">>> Belum ada data test! Ketik 'start' untuk mulai.");
+        return;
+    }
     
     float totalError = 0;
     float maxError = 0;
     float minError = 999;
-    int accurateCount = 0; // error < 15
+    int accurateCount = 0;
     
-    for (int i = 0; i < logCount; i++) {
-        float err = abs(log[i].error);
+    for (int i = 0; i < calibCount; i++) {
+        float err = fabs(calibData[i].error);
         totalError += err;
         if (err > maxError) maxError = err;
         if (err < minError) minError = err;
         if (err < 15) accurateCount++;
     }
     
-    float avgError = totalError / logCount;
-    float accuracy = (float)accurateCount / logCount * 100;
+    float avgError = totalError / calibCount;
+    float accuracy = (float)accurateCount / calibCount * 100;
     
+    Serial.println();
+    Serial.println("╔══════════════════════════════════════════════════╗");
+    Serial.println("║              RINGKASAN KALIBRASI                 ║");
     Serial.println("╠══════════════════════════════════════════════════╣");
-    Serial.println("║                  RINGKASAN                       ║");
-    Serial.println("╠══════════════════════════════════════════════════╣");
-    Serial.printf("║ Jumlah test   : %d                               ║\n", logCount);
-    Serial.printf("║ Rata-rata error: %.1f mg/dL                      ║\n", avgError);
-    Serial.printf("║ Error terkecil: %.1f mg/dL                       ║\n", minError);
-    Serial.printf("║ Error terbesar: %.1f mg/dL                       ║\n", maxError);
-    Serial.printf("║ Akurasi (<15) : %.0f%%                            ║\n", accuracy);
+    Serial.printf("║ Jumlah test    : %d                              ║\n", calibCount);
+    Serial.printf("║ Rata-rata error: %.1f mg/dL                     ║\n", avgError);
+    Serial.printf("║ Error terkecil : %.1f mg/dL                     ║\n", minError);
+    Serial.printf("║ Error terbesar : %.1f mg/dL                     ║\n", maxError);
+    Serial.printf("║ Akurasi (<15)  : %.0f%%                           ║\n", accuracy);
     Serial.println("╚══════════════════════════════════════════════════╝");
     
-    // Also print in CSV format for easy copy
     Serial.println();
-    Serial.println("=== CSV FORMAT (copy paste ke Excel) ===");
-    Serial.println("Test,AI_Prediction,Glukometer_Reference,Error,Status,Body_Temp");
-    for (int i = 0; i < logCount; i++) {
-        String status = glucose_status_text(interpret_glucose(log[i].predicted));
+    Serial.println("=== CSV (copy ke Excel) ===");
+    Serial.println("Test,AI_Prediction,Glukometer,Error,Status,Body_Temp");
+    for (int i = 0; i < calibCount; i++) {
+        const char* status = glucose_status_text(interpret_glucose(calibData[i].predicted));
         Serial.printf("%d,%.1f,%.1f,%.1f,%s,%.1f\n",
-                      i + 1, log[i].predicted, log[i].reference, 
-                      log[i].error, status.c_str(), log[i].bodyTemp);
+                      i + 1, calibData[i].predicted, calibData[i].reference,
+                      calibData[i].error, status, calibData[i].bodyTemp);
     }
 }
 
@@ -307,11 +326,9 @@ void setup() {
     Serial.begin(115200);
     delay(1000);
     
-    // Initialize pins
     pinMode(SPEAKER_PIN, OUTPUT);
     digitalWrite(SPEAKER_PIN, LOW);
     
-    // Initialize OLED on Bus 0
     BusOLED.begin(OLED_SDA, OLED_SCL);
     BusOLED.setClock(100000);
     
@@ -320,50 +337,50 @@ void setup() {
         while (1);
     }
     
-    oledShow("SENS-Able KALIBRASI", "Test Prediksi AI", "vs Glukometer", "Booting...");
+    oledShow("SENS-Able KALIBRASI", "v2.0 - Fixed", "Booting...", "");
     
-    // Initialize MAX30100 on Bus 1
+    // Initialize MAX30100
     BusSensor.begin(MAX_SDA, MAX_SCL);
     BusSensor.setClock(400000);
     Wire = BusSensor;
+    
+#ifdef MAX30100_KONTAKT
+    Serial.println("Library: Kontakt MAX30100");
     sensor.begin(pw1600, i50, sr100);
+#else
+    Serial.println("Library: OXullo MAX30100");
+    sensor.begin();
+#endif
+    
     Wire = BusOLED;
     
-    // Set default user data
     features.age = 25.0;
     features.weight = 60.0;
     features.height = 165.0;
     features.bmi = features.weight / ((features.height / 100.0) * (features.height / 100.0));
     features.lastMeal = 2.0;
     
-    // Welcome message
     Serial.println();
     Serial.println("╔══════════════════════════════════════════════════╗");
-    Serial.println("║   SENS-Able KALIBRASI TEST v1.0                  ║");
-    Serial.println("║   Perbandingan Prediksi AI vs Glukometer         ║");
+    Serial.println("║   SENS-Able KALIBRASI TEST v2.0                 ║");
     Serial.println("╠══════════════════════════════════════════════════╣");
     Serial.println("║ CARA PAKAI:                                      ║");
-    Serial.println("║ 1. Letakkan jari di MAX30102 (10 detik)          ║");
-    Serial.println("║ 2. Catat prediksi AI dari OLED                   ║");
-    Serial.println("║ 3. Ukur glukosa dengan glukometer                ║");
-    Serial.println("║ 4. Ketik nilai glukometer di Serial (angka saja) ║");
-    Serial.println("║ 5. Tekan ENTER                                   ║");
-    Serial.println("║ 6. Ulangi untuk test berikutnya                  ║");
-    Serial.println("║ 7. Ketik 'hasil' untuk lihat ringkasan           ║");
+    Serial.println("║ 1. Ketik 'start'                                 ║");
+    Serial.println("║ 2. Letakkan jari di MAX30102 (10 detik)          ║");
+    Serial.println("║ 3. Catat prediksi AI dari OLED                   ║");
+    Serial.println("║ 4. Ukur glukometer → ketik angka → ENTER         ║");
+    Serial.println("║ 5. Ulangi 3x → ketik 'hasil' untuk ringkasan     ║");
     Serial.println("╚══════════════════════════════════════════════════╝");
     Serial.println();
     
-    oledShow("SENS-Able KALIBRASI", "Tekan ENTER di", "Serial Monitor", "untuk mulai test!");
+    oledShow("SENS-Able READY", "Ketik 'start'", "di Serial Monitor", "untuk mulai test!");
     
-    // Ready beep
     playBeep(2, 100, 100);
-    
     state = IDLE;
 }
 
 // ===================== LOOP =====================
 void loop() {
-    // Check for serial input
     while (Serial.available()) {
         char c = Serial.read();
         
@@ -372,47 +389,41 @@ void loop() {
                 if (inputBuffer.equalsIgnoreCase("hasil") || inputBuffer.equalsIgnoreCase("summary")) {
                     printSummary();
                 } else if (inputBuffer.equalsIgnoreCase("mulai") || inputBuffer.equalsIgnoreCase("start")) {
-                    // Start new measurement
                     state = RECORDING;
                     sampleCount = 0;
                     recStart = millis();
                     oledShow("Mulaiukur...", "Letakkan jari", "di MAX30102", "Tunggu 10 detik");
                     Serial.println("\n>>> Mulai pengukuran... Letakkan jari di sensor!");
                 } else {
-                    // Try to parse as glucose reference value
                     float ref = inputBuffer.toFloat();
                     if (ref > 0 && ref < 500) {
                         referenceInput = ref;
                         
-                        // Calculate and log
-                        float error = predictedGlucose - referenceInput;
-                        String status = glucose_status_text(glucoseStatus);
+                        float err = predictedGlucose - referenceInput;
+                        const char* status = glucose_status_text(glucoseStatus);
                         
-                        log[logCount].predicted = predictedGlucose;
-                        log[logCount].reference = referenceInput;
-                        log[logCount].error = error;
-                        log[logCount].bodyTemp = sensorData.bodyTemp;
-                        log[logCount].timestamp = millis();
-                        logCount++;
+                        calibData[calibCount].predicted = predictedGlucose;
+                        calibData[calibCount].reference = referenceInput;
+                        calibData[calibCount].error = err;
+                        calibData[calibCount].bodyTemp = sensorData.bodyTemp;
+                        calibData[calibCount].timestamp = millis();
+                        calibCount++;
                         testNumber++;
                         
-                        // Print result
-                        printTestResult(testNumber, predictedGlucose, referenceInput, error, status);
+                        printTestResult(testNumber, predictedGlucose, referenceInput, err, status);
                         
-                        // Show on OLED
                         String line1 = "Test #" + String(testNumber) + " SELESAI";
                         String line2 = "AI: " + String(predictedGlucose, 1) + " mg/dL";
                         String line3 = "Real: " + String(referenceInput, 1) + " mg/dL";
-                        String line4 = "Error: " + String(abs(error), 1) + " mg/dL";
+                        String line4 = "Error: " + String(fabs(err), 1) + " mg/dL";
                         oledShow(line1, line2, line3, line4);
                         
-                        // Audio feedback based on error
-                        if (abs(error) < 10) {
-                            playBeep(2, 100, 50);  // Good accuracy
-                        } else if (abs(error) < 20) {
-                            playBeep(1, 200);  // Moderate
+                        if (fabs(err) < 10) {
+                            playBeep(2, 100, 50);
+                        } else if (fabs(err) < 20) {
+                            playBeep(1, 200);
                         } else {
-                            playBeep(3, 100, 100);  // High error
+                            playBeep(3, 100, 100);
                         }
                         
                         Serial.println(">>> Tersimpan! Ketik 'start' untuk test berikutnya.");
@@ -420,51 +431,40 @@ void loop() {
                         
                         state = IDLE;
                     } else {
-                        Serial.println(">>> Input tidak valid! Ketik angka glukometer (contoh: 105)");
+                        Serial.println(">>> Input tidak valid! Ketik angka glukometer.");
                     }
                 }
             }
             inputBuffer = "";
-        } else if (c >= '0' && c <= '9' || c == '.' || c == '-') {
+        } else if ((c >= '0' && c <= '9') || c == '.' || c == '-') {
             inputBuffer += c;
         }
     }
     
-    // Recording state
     if (state == RECORDING) {
-        // Switch to sensor bus
         Wire = BusSensor;
         
         if (sampleCount < MAX_SAMPLES) {
-            int avail = sensor.getNumSamp();
-            if (avail > 0) {
-                sensor.readSensor();
-                irBuf[sampleCount] = (float)sensor.IR;
-                redBuf[sampleCount] = (float)sensor.RED;
+            float ir, red;
+            if (readPPGSample(&ir, &red)) {
+                irBuf[sampleCount] = ir;
+                redBuf[sampleCount] = red;
                 sampleCount++;
             }
         }
         
-        // Switch to OLED bus
         Wire = BusOLED;
         
-        // Update progress
         static unsigned long lastUpdate = 0;
         if (millis() - lastUpdate > 500) {
             int elapsed = (millis() - recStart) / 1000;
-            int progress = (elapsed * 100) / RECORD_SEC;
-            
-            String line1 = "Merekam... " + String(elapsed) + "/" + String(RECORD_SEC) + " dtk";
-            String line2 = "Sampel: " + String(sampleCount);
-            String line3 = "Progress: " + String(progress) + "%";
-            String line4 = "";
-            
-            // Draw progress bar
-            oledShow(line1, line2, line3, line4);
+            oledShow("Merekam... " + String(elapsed) + "/" + String(RECORD_SEC) + " dtk",
+                     "Sampel: " + String(sampleCount),
+                     "Progress: " + String((elapsed * 100) / RECORD_SEC) + "%",
+                     "");
             lastUpdate = millis();
         }
         
-        // Check if recording complete
         if ((millis() - recStart) >= (RECORD_SEC * 1000)) {
             state = PREDICTING;
             oledShow("Memproses...", "Menghitung fitur", "Menjalankan AI", "");
@@ -473,23 +473,15 @@ void loop() {
             runInference();
             showResult();
             
-            // Prompt for glucometer reading
             Serial.println();
-            Serial.println("╔══════════════════════════════════════════════════╗");
-            Serial.printf("║ Prediksi AI: %.1f mg/dL (%s)              \n", 
-                         predictedGlucose, glucose_status_text(glucoseStatus).c_str());
-            Serial.println("╠══════════════════════════════════════════════════╣");
-            Serial.println("║ Sekarang ukur dengan glukometer!                 ║");
-            Serial.println("║ Ketik hasil glukometer (angka) lalu tekan ENTER  ║");
-            Serial.println("╚══════════════════════════════════════════════════╝");
-            Serial.print(">>> Glukometer: ");
+            Serial.printf(">>> Prediksi AI: %.1f mg/dL (%s)\n", 
+                         predictedGlucose, glucose_status_text(glucoseStatus));
+            Serial.println(">>> Sekarang ukur dengan glukometer!");
+            Serial.print(">>> Ketik hasil glukometer: ");
             
-            // Show on OLED
-            String line1 = "PREDIKSI AI:";
-            String line2 = String(predictedGlucose, 1) + " mg/dL";
-            String line3 = glucose_status_text(glucoseStatus);
-            String line4 = "Ketik glukometer!";
-            oledShow(line1, line2, line3, line4);
+            oledShow("PREDIKSI AI:", String(predictedGlucose, 1) + " mg/dL",
+                     String(glucose_status_text(glucoseStatus)),
+                     "Ketik glukometer!");
             
             state = WAITING_REFERENCE;
         }
