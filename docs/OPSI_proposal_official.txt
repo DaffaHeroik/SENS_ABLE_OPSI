@@ -1,0 +1,393 @@
+
+
+
+
+
+
+
+
+PROPOSAL PENELITIAN OPSI 
+
+SENS-Able: Smart Health Monitor Inklusif berbasis AI dengan Audio, Visual dan Vibrasi yang Ramah Bagi Pengguna Disabilitas
+
+
+
+AntroOptic Team
+Muhammad Daffa Ramadhan
+Aira Cantika Putri
+
+
+
+Bidang FTR dan Sistem Pengukuran & Monitoring Cerdas
+
+
+
+Madrasah Aliyah Negeri 2 Kota Bima
+
+
+Kota Bima, Nusa Tenggara Barat
+
+Tahun 2026
+ABSTRAK
+
+Kebutuhan pemantauan kondisi kesehatan secara mandiri memerlukan sistem yang tidak hanya mampu mengukur parameter kesehatan, tetapi juga mudah diakses oleh pengguna dengan kebutuhan aksesibilitas yang berbeda. Penelitian ini bertujuan untuk mengembangkan SENS-Able (Smart Health Monitor Inklusif), yaitu perangkat pemantauan kesehatan berbasis mikrokontroler yang menyediakan keluaran visual, audio, dan vibrasi. Penelitian menggunakan metode eksperimen kuantitatif dengan pendekatan user-centered design. Sistem dirancang menggunakan ESP32 sebagai mikrokontroler utama, sensor MAX30102 untuk memperoleh data denyut jantung, serta sensor MLX90614 untuk mengukur suhu tubuh. Data hasil pengukuran ditampilkan melalui OLED dan disampaikan melalui keluaran audio serta vibrasi sebagai bentuk umpan balik multimodal. Pengujian dilakukan terhadap responden melalui pengukuran parameter kesehatan dan evaluasi kemudahan penggunaan alat. Hasil penelitian menunjukkan bahwa [MASUKKAN HASIL UTAMA DAN ANGKA PENGUJIAN]. Berdasarkan hasil pengujian tersebut, SENS-Able mampu [MASUKKAN KETERAMPILAN/FUNGSI ALAT YANG BERHASIL DICAPAI]. Penelitian ini menunjukkan bahwa integrasi pengukuran kesehatan dengan keluaran multimodal dapat mendukung pengembangan perangkat pemantauan kesehatan yang lebih inklusif dan mudah digunakan.
+
+Kata kunci: SENS-Able, pemantauan kesehatan, ESP32, aksesibilitas, keluaran multimodal
+BAB 1. PENDAHULUAN
+
+LATAR BELAKANG
+Kesehatan merupakan aspek penting dalam kehidupan manusia, terlebih jika menghadapi penyakit kronis yang membutuhkan perawatan dan pengawasan yang rutin. Dua jenis penyakit dengan angka penderita yang cukup tinggi di Indonesia saat ini adalah diabetes melitus dan penyakit jantung. Berdasarkan laporan International Diabetes Federation (IDF), Indonesia termasuk dalam lima negara dengan jumlah penderita diabetes terbanyak di dunia dengan lebih dari 19,5 juta penderita, dan diperkirakan meningkat hingga lebih dari 20 juta kasus pada tahun 2025. Selain itu, penyakit kardiovaskular seperti penyakit jantung juga menjadi penyebab kematian tertinggi di Indonesia, dengan prevalensi gagal jantung sekitar 1,5% dari populasi (Kementerian Kesehatan RI, 2021). Diabetes melitus memiliki hubungan yang erat dengan penyakit kardiovaskular, karena penderita diabetes memiliki risiko lebih tinggi mengalami gangguan pada jantung dan pembuluh darah. Oleh karena itu, pengecekan rutin terhadap kadar gula darah dan detak jantung menjadi solusi untuk mencegah terjadinya penyakit-penyakit tersebut (Marasabessy dan Nasela, 2020).
+Sebagian besar alat pemantau kesehatan yang beredar di Indonesia masih mengandalkan antar muka berbasis visual, seperti tampilan digital dan grafik, sehingga menimbulkan keterbatasan akses bagi penyandang disabilitas. Padahal, berdasarkan data Susenas (BPS, 2022), jumlah penyandang disabilitas di Indonesia mencapai lebih dari 22,5 juta jiwa, dengan sekitar 3,7 juta di antaranya mengalami gangguan penglihatan dan pendengaran. Mereka yang juga menderita diabetes atau penyakit jantung harus bergantung pada bantuan orang lain hanya untuk mengetahui hasil pemantauan, yang berdampak pada berkurangnya kemandirian dan meningkatkan risiko keterlambatan deteksi dini kondisi berbahaya seperti hipoglikemia mendadak atau aritmia (Yaqin, 2025).
+Kemajuan teknologi modern khususnya dalam sensor kesehatan dan kecerdasan buatan (AI) menjadi solusi yang memiliki potensi untuk masalah tersebut, sensor modern kini mampu melakukan pengukuran kadar gula darah dan pengukuran detak jantung dengan akurasi yang tinggi. Data yang dihasilkan oleh sensor kemudian diproses menggunakan algoritma kecerdasan buatan berbasis Tiny Machine Learning (TinyML) yang diimplementasikan pada mikrokontroler untuk mengenali pola kesehatan dan memprediksi risiko yang mungkin muncul lebih awal. Dengan adanya teknologi ini pengguna tidak hanya mengetahui angka mentah hasil pengukuran, tetapi juga mendapatkan pemahaman yang lebih praktis tentang kondisi kesehatanna (Putra, 2024).
+
+Selain itu, untuk memenuhi kebutuhan tunanetra, hasil pemeriksaan tidak disampaikan dalam bentuk visual saja, akan tetapi disertai dengan suara (audio feedback) dan getaran (haptic feedback). Sistem ini memungkinkan penyandang disabilitas untuk menerima informasi secara tepat, mudah dan mandiri. Misalnya hasil pemeriksaan berupa suara dan tampilan visual serta getaran untuk mendukung hasil pemeriksaan (Anwar, 2012).Pengembangan alat pemantau kesehatan berbasis AI untuk penyandang disabilitas (SENS-Able) ini diharapkan mampu mengatasi permasalahan dan keterbatasan akses kesehatan bagi penyandang disabilitas. Dengan adanya alat ini penyandang disabilitas dapat lebih mandiri dalam menjaga kesehatan, meningkatkan kualitas hidup dan mengurangi risiko komplikasi berbahaya akibat keterlambatan penanganan. Inovasi ini sekaligus dapat menjadi bentuk dukungan teknologi tepat guna yang inklusif, humanis dan relevan dengan kebutuhan masyarakat modern (Putra dan Nurraharjo, 2023).
+
+
+RUMUSAN MASALAH
+Bagaimana cara merancang dan mengembangkan alat SENS-Able sebagai sistem pemantau kesehatan inklusif untuk mengukur kadar gula darah, detak jantung, dan suhu tubuh bagi penyandang disabilitas?
+Bagaimana tingkat akurasi pengukuran, kecepatan respons, dan skor usability alat SENS-Able dalam memantau kadar gula darah, detak jantung, dan suhu tubuh?
+
+TUJUAN PENELITIAN
+Untuk merancang dan mengembangkan alat SENS-Able: Smart Health Monitor Inklusif untuk mengukur kadar gula darah, detak jantung dan suhu tubuh yang ramah  bagi penyandang disabilitas.
+Untuk mengukur tingkat efektivitas alat SENS-Able: Smart Health Monitor Inklusif untuk mengukur kadar gula darah, detak jantung dan suhu tubuh. 
+
+MANFAAT PENELITIAN
+Memberikan solusi nyata bagi penyandang disabilitas (tunanetra, tunarungu) untuk dapat memantau kadar gula darah dan detak jantung secara mandiri.
+Membantu mendeteksi indikasi awal secara mandiri kondisi kesehatan berisiko sehingga meningkatkan keselamatan pengguna.
+Meningkatkan kemandirian dan kualitas hidup disabilitas (tunanetra, tunarungu) dengan menghadirkan alat yang mudah digunakan.
+Menjadi inovasi teknologi tepat guna yang dapat dikembangkan lebih lanjut sebagai produk kesehatan inklusif di masyarakat.
+Memberikan kontribusi pada pengembangan teknologi kesehatan inklusif berbasis TinyML yang dapat direplikasi untuk penelitian selanjutnya.
+BAB 2. TINJAUAN PUSTAKA
+LANDASAN TEORI
+a. Diabetes Melitus dan Pemantauan Gula Darah
+Diabetes melitus ditandai dengan tingginya kadar glukosa darah dan memerlukan pemantauan rutin untuk mencegah komplikasi. Alat tradisional kurang ramah bagi tunanetra karena hanya menampilkan hasil secara visual (Mauldy & Ibnu, 2024).
+b. Penyakit Jantung dan Pemantauan Detak Jantung
+Pemantauan detak jantung menjadi indikator penting untuk mendeteksi kondisi tubuh. Sensor detak jantung, seperti ECG, mampu merekam aktivitas jantung secara real-time, membantu mendeteksi aritmia, hipertensi, dan risiko serangan jantung (Tampubolon & Turnip, 2023).
+c. Kecerdasan Buatan (AI) dalam Kesehatan
+AI dapat menganalisis data fisiologis dan mendeteksi pola risiko kesehatan, memungkinkan sistem memberikan peringatan dini dan rekomendasi kepada pengguna (Kushariyadi, Pasrun & Mardikawati, 2024).
+d. Internet of Things dalam Kesehatan
+Internet of Things (IoT) dalam kesehatan mengintegrasikan perangkat medis dan sensor non-invasif untuk mengumpulkan data yang dianalisis untuk mendeteksi pola dan memprediksi risiko, sehingga pemantauan kesehatan menjadi mandiri, nyaman, dan dapat diakses penyandang disabilitas (Ratna, 2020).
+
+STUDI PUSTAKA
+Tabel Penelitian Terdahulu
+Peneliti (Tahun)
+Parameter
+Output
+Platform
+Kelebihan
+Kekurangan
+Dwiyanti (2025)
+Gula darah, denyut nadi, SpO2, suhu
+Visual + Audio
+Mikrokontroller
+Sudah ada audio untuk aksebilitas
+Belum ada AI, output terbatas (hanya audio), belum ada getaran
+Siswanto (2022)
+Gula darah
+Visual (web)
+Arduino + IoT
+Monitoring jarak jauh via web
+Hanya visual, non-inklusif, tanpa AI
+Mufidah dkk. (2024)
+Kajian literatur & jantung
+-
+-
+Data epidemiologis komprehensif
+Tidak mengembangkan alat
+Kushariyadi dkk. (2024)
+Review AI di kesehatan
+-
+-
+Teori AI terbaru
+Tidak ada implementasi
+Sari & Lazha (2023)
+Gula darah
+Visual (cloud)
+IoT
+Real-time cloud
+Hanya satu parameter, tidak inklusif
+Penelitian ini
+Gula darah, detak jantung, suhu
+Visual + Audio + Vibrasi + AI
+ESP32 + TinyML
+Multimodal inklusif, AI on-device, multi-parameter
+-
+
+Berdasarkan kajian pustaka di atas, sebagian besar penelitian sebelumnya berfokus pada satu atau dua parameter kesehatan, masih mengandalkan output visual, dan belum mengintegrasikan kecerdasan buatan secara langsung pada perangkat. Penelitian yang menggunakan AI masih bersifat teoretis atau berbasis cloud, sehingga kurang responsif dan membutuhkan koneksi internet. Selain itu, belum ada penelitian yang secara khusus merancang sistem monitoring kesehatan dengan tiga modalitas output (visual, audio, vibrasi) yang dapat diakses oleh penyandang tunanetra dan tunarungu sekaligus. Oleh karena itu, penelitian ini mengisi celah tersebut dengan mengembangkan SENS-Able, sebuah sistem terpadu yang menggabungkan sensor multi-parameter, analisis AI berbasis TinyML pada mikrokontroler ESP32, serta umpan balik multimodal yang inklusif.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BAB 3 METODE PENELITIAN
+Waktu dan Tempat Penelitian
+ Berikut ini jadwal penelitian yang menjadi pedoman bagi peneliti
+No
+Kegiatan
+Bulan pada Tahun 2026
+
+
+Maret
+April
+Mei
+Juni
+
+Tahap Persiapan Penelitian
+
+
+
+
+
+Penyusunan dan Pengajuan Judul
+✓
+
+
+
+
+Pengajuan Proposal
+✓
+
+
+
+
+Tahap Pelaksanaan 
+
+
+
+
+
+Pengumpulan Data 
+
+✓
+
+
+
+Analisis Data
+
+
+✓
+
+
+Tahap Penyusunan Laporan
+
+
+
+
+
+Revisi dan Penyempurnaan Laporan
+
+
+
+✓
+
+Finalisasi Laporan
+
+
+
+✓
+Alat dan Bahan 
+3.2.1 Tabel Alat/Komponen Utama
+No
+Nama Alat
+Fungsi
+Harga
+1.
+ESP32 DevKit
+Mikrokontroler utama
+Rp. 93.000,00
+2.
+MAX30102
+Sensor PPG untuk analisis sinyal denyut & estimasi gula darah
+Rp. 65.000,00
+3.
+OLED 0.96” I2C
+Menampilkan data real-time
+Rp. 38.000,00
+4.
+PAS-0158
+Mengirimkan output suara
+Rp.12.000,00
+5.
+MLX90614 Infrared
+Mengukur suhu tubuh tanpa kontak
+Rp. 110.000,00
+6.
+Motor vibrasi (SEN-0085)
+Mengirimkan getaran (haptic feedback)
+Rp. 7.000,00
+7
+Glucometer
+Mengukur kadar gula darah
+Rp. 300.000,00
+8.
+Laptop
+Pemprograman dan analisis data
+Rp. 0 (milik pribadi)
+
+
+
+
+
+3.2.2 Tabel Alat/Komponen Pendukung
+No
+Nama Alat
+Fungsi
+Harga
+1.
+Kabel Jumper
+Penghubung rangkaian 
+Rp. 7.000,00
+2.
+Breadboard
+Media rangkaian komponen elektronik
+Rp. 7.500,00
+3.
+Power Supply 5V-2A
+Sumber energi untuk sistem beroperasi
+Rp. 13.400,00
+4
+Chip Glucometer
+Mengkalibrasi alat pengukur gula darah
+Rp. 50.000,00
+5
+Jarum Lancet
+Menusuk dan mengambil sampel darah
+Rp. 20.000,00
+6
+Alkohol Swab
+Sterilisasi kulit sebelum ditusuk
+Rp. 35.000,00
+Rancangan dan Prosedur Penelitian
+Penelitian menggunakan metode eksperimen kuantitatif dan user-centered design (UCD). Sistem SENS-Able terdiri dari ESP32, sensor MAX30102 (PPG) dan MLX90614 (suhu), serta output OLED, speaker, dan motor vibrasi. Data PPG diproses dengan TinyML untuk estimasi gula darah dan deteksi risiko; getaran dibedakan menjadi pola normal, waspada, dan bahaya.
+Prosedur:
+Kalibrasi sensor terhadap alat standar (glukometer, pulse oximeter, termometer digital).
+Pengujian pada 15 responden (5 tunanetra, 5 tunarungu, 5 non-disabilitas) dengan 30 kali pengukuran per parameter.
+Observasi kemudahan penggunaan.
+Kuesioner usability skala Likert 1 – 5.
+Variabel:
+Bebas: parameter kesehatan (detak jantung, suhu, gula darah) dan jenis output.
+Terikat: akurasi (MAE), kecepatan respons, skor usability.
+Kontrol: kondisi ruang (25 – 27°C), responden dalam keadaan istirahat.
+Indikator keberhasilan:
+MAE detak jantung <3 bpm, suhu <0,3°C, gula darah <15 mg/dL.
+Skor ratarata kuesioner ≥4.
+≥80% responden dapat menggunakan alat mandiri setelah satu demonstrasi.
+Model AI dilatih dengan dataset PPG publik dan dideploy ke ESP32 via TensorFlow Lite Micro. Diagram alir sistem ditunjukkan pada Gambar 1.
+
+Gambar 1. Flowchart Sistem SENS-Able
+
+Rancangan Pengolahan Data
+Data kuantitatif dianalisis dengan membandingkan hasil sensor terhadap alat standar, lalu dihitung MAE, rata‑rata, dan simpangan baku. Data kualitatif dari observasi dan kuesioner dianalisis deskriptif untuk menilai kemudahan, kenyamanan, dan kejelasan output. Pengolahan data menggunakan Arduino IDE.
+
+BAB 4. RANCANGAN ANGGARAN BIAYA DAN JADWAL KEGIATAN 
+Rancangan Anggaran Biaya Penelitian
+No.
+Komponen Pengeluaran
+Jumlah Anggaran (Rp)
+1
+Biaya Alat dan Bahan
+ESP32 Devkit
+MAX30102
+OLED 0.96” 12C
+PAS-0158
+MLX90614 Infrared
+Motor vibrasi (SEN-0085)
+Kabel Jumper
+Breadboard
+Power Supply 5V-2A
+Glucometer
+Chip Glucometer
+Jarum Lancet
+Alkohol Swab
+Rp. 759.900,00
+2
+Biaya Jasa
+Cetak kuesioner penelitian (?)
+(Rp500/lembar × 50 = Rp25.000,00)
+Jasa pencetakan laporan penelitian
+(Rp500 × 30 halaman = Rp15.000,00)
+Rp. 40.000,00
+3
+Biaya Sewa
+Tidak terdapat biaya sewa alat pada penelitian ini karena seluruh perangkat yang digunakan merupakan milik peneliti
+Rp. 0
+4
+Akomodasi dan Transportasi
+Biaya perjalanan peneliti menuju lokasi pengujian alat dan pengambilan data responden. (Rp. 20.000,00)
+Biaya konsumsi untuk peneliti saat kegiatan pengujian berlangsung. (Rp. 30.000,00)
+Rp. 50.000,00
+Total
+Rp. 839.900,00
+Jadwal Penelitian
+No.
+Kegiatan
+Tanggal Pelaksanaan
+1
+Pengajuan judul dan penyusunan proposal penelitian
+18 Februari – 06 Maret
+2
+Pengajuan dokumen penelitian
+06 Maret
+3
+Perancangan sistem dan desain alat
+08 Maret – 19 Maret
+4
+Perakitan alat serta uji coba terhadap respoden
+24 Maret – 19  April
+5
+Pengumpulan dan analisis data penelitian
+20 April – 22 Mei
+6
+Penyusunan, revisi dan finalisasi laporan penelitian
+25 Mei – 29 Juni
+
+
+DAFTAR PUSTAKA
+
+Adrian, M. A., Widiarto, M. R., & Kusumadiarti, R. S. (2021). Health Monitoring System dengan Indikator Suhu Tubuh, Detak Jantung dan Saturasi Oksigen Berbasis Internet of Things (IoT). J. Petik, 7(2), 108-118.
+Anwar, A. (2012). Kacamata Pendeteksi Benda Untuk Tuna Netra Berbasis Mikrokontroler Atmega8. Universitas Islam Negeri Alauddin Makassar, 1-79.
+Cahyati, A., Februanti, S., & Adini, S. (2021). Deteksi Dini Tekanan Darah Dan Kadar Gula Darah Sebagai Pencegahan Kegawatdaruratan Penyakit Jantung. ABDIMAS: Jurnal Pengabdian Masyarakat, 4(1), 594-599.
+Dwiyanti, E. (2025). Pengembangan Sistem Pemantau Kesehatan Non-Invasive dengan Pengukuran Gula Darah dan Vital Signs untuk Penyandang Disabilitas Visual (Doctoral dissertation, Fakultas Teknik Universitas Sultan Ageng Tirtayasa).
+Hermansyah, A., Hardiyanti, R., & Prasetyo, A. P. P. (2022). Sistem Perekam Detak Jantung Berbasis Internet Of Things (IoT) dengan Menggunakan Pulse Heart Rate Sensor. JTEV (Jurnal Tek. Elektro dan Vokasional), 8(2), 338-348.
+Kushariyadi, K., Apriyanto, H., Herdiana, Y., Asy’ari, F. H., Judijanto, L., Pasrun, Y. P., & Mardikawati, B. (2024). Artificial intelligence: Dinamika perkembangan AI beserta penerapannya. PT. Sonpedia Publishing Indonesia.
+Marasabessy, N. B., & Nasela, S. J. (2020). Pencegahan penyakit diabetes melitus (DM) tipe 2. Penerbit Nem.
+Mauldy Akhmad, R., & Ibnu, F. (2024). HUBUNGAN DUKUNGAN KELUARGA DENGAN KEPATUHAN MELAKUKAN KONTROL RUTIN PADA PENDERITA DIABETES MELITUS DI UPTD PUSKESMAS MODOPURO (Doctoral dissertation, Perpustakaan Universitas Bina Sehat).
+Mufidah, N., Raji, H. F., Adnala, S., Putri, N. M. M. E., Ibrahim, S. M., Ifadah, E., ... & Laksono, R. D. (2024). Penyakit Tidak Menular. PT. Sonpedia Publishing Indonesia.
+Putra, B. E., & SpJP, F. I. H. A. (2024). Integrasi teknologi dalam manajemen kardiologi: dari telemedicine hingga kecerdasan buatan. Stiletto Book.
+Putra Selvia, W. L., & Nurraharjo, E. (2023). ALAT PENGUKUR KADAR GULA DARAH NON-INVASIVE BERBASIS ARDUINO. Jurnal Informatika dan Rekayasa Elektronik, 6(2), 189-195.
+Ratna, S. (2020). Sistem monitoring kesehatan berbasis internet of things (IoT). Al Ulum: Jurnal Sains dan Teknologi, 5(2), 83-87.
+Siswanto, D. O. (2022). Alat Pengukur Kadar Gula Darah Berbasis Iot Web dengan Teknik No-Invasive. Blantika: Multidisciplinary Journal, 1(1), 76-95.
+Sari, N. N., & Lazha, A. F. K. (2023). Pengukur Gula Darah Non-Invasif Berbasis Internet of Things. Spektral, 4(1), 179-185.
+Tampubolon, L. F., Ginting, A., & Turnip, F. E. S. (2023). Gambaran Faktor yang Mempengaruhi Kejadian Penyakit Jantung Koroner (PJK) di Pusat Jantung Terpadu (PJT). Jurnal Ilmiah Permas: Jurnal Ilmiah STIKES Kendal, 13(3), 1043-1052.
+Yaqin, M. A. (2025). PENGARUH PEMANFAATAN ARTIFICIAL INTELLIGENCE TERHADAP AKSESIBILITAS LITERASI DIGITAL PENYANDANG DISABILITAS TUNANETRA BERBASIS APLIKASI SCREEN READER PADA SMARTPHONE (Doctoral dissertation, Universitas Islam Sultan Agung Semarang).
+
+
+
+
+
+
+
+
+
+
+
+-914400000
+
+-914400000
