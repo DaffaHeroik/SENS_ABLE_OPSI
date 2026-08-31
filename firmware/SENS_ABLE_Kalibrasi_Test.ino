@@ -19,19 +19,17 @@
 #include <Adafruit_SSD1306.h>
 #include <math.h>
 
-// ===================== MAX30100 LIBRARY DETECTION =====================
-// Try Kontakt library first (has pw1600, i50, sr100)
-// If not available, use OXullo library (has begin(), getIR(), getRed())
-#if __has_include(<MAX30100.h>)
-  #include <MAX30100.h>
-  // Check if Kontakt API exists by testing a known Kontakt constant
-  #if defined(pw1600)
-    #define MAX30100_KONTAKT 1
-  #else
-    #define MAX30100_OXULLO 1
-  #endif
+// ===================== MAX30100 LIBRARY =====================
+// Include MAX30100.h directly — works with BOTH Kontakt and OXullo
+#include <MAX30100.h>
+
+// Detect which library: Kontakt defines pw1600, OXullo does not
+#if defined(pw1600)
+  #define MAX30100_KONTAKT 1
+  // Kontakt: begin(pw1600, i50, sr100), readSensor(), sensor.IR, sensor.RED, getNumSamp()
 #else
-  #error "MAX30100 library not found! Install MAX30100 by Kontakt or OXullo"
+  #define MAX30100_OXULLO 1
+  // OXullo: begin(), update(), getIR(), getRed(), getFIFOSamples()
 #endif
 
 // Include the embedded ML model
