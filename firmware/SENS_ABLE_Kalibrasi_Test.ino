@@ -20,17 +20,9 @@
 #include <math.h>
 
 // ===================== MAX30100 LIBRARY =====================
-// Include MAX30100.h directly — works with BOTH Kontakt and OXullo
+// Using Kontakt library (Connor Huffine)
+// API: begin(pw,i,sr), readSensor(), sensor.IR, sensor.RED, getNumSamp()
 #include <MAX30100.h>
-
-// Detect which library: Kontakt defines pw1600, OXullo does not
-#if defined(pw1600)
-  #define MAX30100_KONTAKT 1
-  // Kontakt: begin(pw1600, i50, sr100), readSensor(), sensor.IR, sensor.RED, getNumSamp()
-#else
-  #define MAX30100_OXULLO 1
-  // OXullo: begin(), update(), getIR(), getRed(), getFIFOSamples()
-#endif
 
 // Include the embedded ML model
 #include "model_glucose_inference.h"
@@ -133,10 +125,8 @@ float readMLXAmbient() {
     return 0;
 }
 
-// ===================== READ PPG SAMPLE (handles both libraries) =====================
+// ===================== READ PPG SAMPLE (Kontakt API) =====================
 bool readPPGSample(float *irOut, float *redOut) {
-#ifdef MAX30100_KONTAKT
-    // Kontakt library: begin(pw1600, i50, sr100), readSensor(), sensor.IR, sensor.RED
     int avail = sensor.getNumSamp();
     if (avail > 0) {
         sensor.readSensor();
@@ -145,13 +135,6 @@ bool readPPGSample(float *irOut, float *redOut) {
         return true;
     }
     return false;
-#else
-    // OXullo library: begin(), update(), getIR(), getRed()
-    sensor.update();
-    *irOut = (float)sensor.getIR();
-    *redOut = (float)sensor.getRed();
-    return true;
-#endif
 }
 
 // ===================== OLED DISPLAY =====================
@@ -342,13 +325,7 @@ void setup() {
     BusSensor.setClock(400000);
     Wire = BusSensor;
     
-#ifdef MAX30100_KONTAKT
-    Serial.println("Library: Kontakt MAX30100");
     sensor.begin(pw1600, i50, sr100);
-#else
-    Serial.println("Library: OXullo MAX30100");
-    sensor.begin();
-#endif
     
     Wire = BusOLED;
     
